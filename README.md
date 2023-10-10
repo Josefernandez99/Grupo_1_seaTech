@@ -27,3 +27,7 @@ INTEGRANTES
 4- Valentin Silva. Edad 22. Estudiante de Ing en Informatica.
 
 5- Adrian Gonzalez. Edad 38. Tecnico y Estudiante de LIC.
+
+SITIOS DE REFERENCIAS
+
+1 - https://www.zanovellobarcos.com.ar/ Buen diseño.
