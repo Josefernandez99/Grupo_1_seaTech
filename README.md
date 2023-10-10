@@ -31,3 +31,5 @@ INTEGRANTES
 SITIOS DE REFERENCIAS
 
 1 - https://www.zanovellobarcos.com.ar/ Buen diseño.
+
+2 - https://www.cosasdebarcos.com Esta relacionado con barcos y su venta. Un diseño simple.
