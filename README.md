@@ -15,3 +15,7 @@ El público al que apuntan sus ventas varía según el tipo de barcos y servicio
 5- Compradores de lujo: Personas de alto poder adquisitivo que buscan yates de lujo o embarcaciones exclusivas.
 
 En resumen, un sitio de ventas de barcos atiende a una audiencia diversa que abarca desde aficionados a la navegación hasta propietarios de embarcaciones experimentados, ofreciendo una amplia gama de productos y servicios relacionados con el mundo de la navegación.
+
+INTEGRANTES
+
+1- Francisco Polzoni. Edad 30. Analista TI.
