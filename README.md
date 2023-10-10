@@ -19,3 +19,5 @@ En resumen, un sitio de ventas de barcos atiende a una audiencia diversa que aba
 INTEGRANTES
 
 1- Francisco Polzoni. Edad 30. Analista TI.
+
+2- Guillermo Federico González. Edad 23. Estudiante de la Licenciatura en Sistemas de Información.
