@@ -25,3 +25,5 @@ INTEGRANTES
 3-Jose Enrique Fernandez. Edad 23. tecnico en informatica. 
 
 4- Valentin Silva. Edad 22. Estudiante de Ing en Informatica.
+
+5- Adrian Gonzalez. Edad 38. Tecnico y Estudiante de LIC.
