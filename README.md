@@ -23,3 +23,5 @@ INTEGRANTES
 2- Guillermo Federico González. Edad 23. Estudiante de la Licenciatura en Sistemas de Información.
 
 3-Jose Enrique Fernandez. Edad 23. tecnico en informatica. 
+
+4- Valentin Silva. Edad 22. Estudiante de Ing en Informatica.
