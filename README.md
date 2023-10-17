@@ -34,4 +34,6 @@ SITIOS DE REFERENCIAS
 
 2 - https://www.cosasdebarcos.com Esta relacionado con barcos y su venta. Un diseño simple.
 
-3 - https://marinauno.com.ar/venda-su-barco/ Esta página presenta un diseño UX amigable con el usuario.
+3 - https://marinauno.com.ar/ Esta página presenta un diseño UX amigable con el usuario.
+
+4 - https://webmarine.com.ar/ Tiene una interfaz sencilla, buen diseño.
