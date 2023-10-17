@@ -37,3 +37,5 @@ SITIOS DE REFERENCIAS
 3 - https://marinauno.com.ar/ Esta página presenta un diseño UX amigable con el usuario.
 
 4 - https://webmarine.com.ar/ Tiene una interfaz sencilla, buen diseño.
+
+5 - https://martinhuergo.com.ar/ Diseño simple, con muchas fotos, poco texto.
