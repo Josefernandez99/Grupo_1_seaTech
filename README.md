@@ -28,6 +28,8 @@ INTEGRANTES
 
 5- Adrian Gonzalez. Edad 38. Tecnico y Estudiante de LIC.
 
+6- Nahuel Nour. Edad 20. Estudiante de programación.
+
 SITIOS DE REFERENCIAS
 
 1 - https://www.zanovellobarcos.com.ar/ Buen diseño.
