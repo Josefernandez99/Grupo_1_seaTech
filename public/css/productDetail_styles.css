@@ -5,7 +5,7 @@
 }
 
 .carrousel{
-    width: 100%;
+    width: 45%;
     padding: 50px;
 }
 
@@ -77,8 +77,21 @@
     border-radius: 5px;
     color: white;
     padding: 5px;
+    margin-top: 10px;
 }
 
 .producto button:hover{
     background-color: #0022AA;
+}
+
+.descripcionProducto{
+    display: flex;
+    padding: 25px;
+    justify-content: center;
+}
+
+.caja_contenedora{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
