@@ -1,0 +1,85 @@
+:root {
+    --primary-100:#0074D9;
+    --primary-200:#5fa2ff;
+    --primary-300:#d1ffff;
+    --accent-100:#7FDBFF;
+    --accent-200:#007a9b;
+    --text-100:#FFFFFF;
+    --text-200:#e0e0e0;
+    --background-color:#01203f;
+    --bg-200:#162e50;
+    --bg-300:#31466a;    
+}
+
+
+
+body{
+    background-color: #01203f;
+}
+
+main{
+    width: 90%;
+    margin:auto;
+
+}
+
+.contenedor-principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    background-color:#0074D9;
+    border-radius: 15px;
+    width: 100%;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+
+
+}
+.contenedor-form{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 30px;
+
+}
+.controls{
+    border: none;
+    padding: 12px;
+    border-radius: 20px; 
+    margin: 10px 0px;
+}
+.button{
+    border-radius: 10px;
+    margin: 10px 40px;
+    padding: 3px;
+    background-color:greenyellow;
+    color: red;
+
+}
+.olvidaste-tu-password{
+    margin: 10px 10px; 
+    background-color:#0074D9;
+
+}
+.olvidaste-tu-password a{
+    color:antiquewhite; 
+    
+   
+}
+@media (min-width:768px){
+   
+    .contenedor-form{
+        width: 100%;
+       
+    }
+    .contenedor-principal{
+        margin-top: 26px;
+        margin-bottom: 26px;
+    }
+    .olvidaste-tu-password{
+        margin: 10px 200px;
+    }
+}
