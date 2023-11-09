@@ -3,8 +3,8 @@ main {
     margin: auto;
 }
 
-:root {
-    --background-color: #01203f;
+body {
+    background-color: var(--background-color);
 }
 
 .logo {
@@ -12,20 +12,45 @@ main {
 }
 
 .contenedor-formulario {
-    margin: auto;
+    margin: 10px auto;
     border: solid 3px red;
     display: flex;
     flex-direction: column;
     padding: 20px;
+    background-color: var(--primary-200);
+    border-radius: 3%;
 }
 
 .contenedor-input,
 .contenedor-select {
     padding: 15px;
+    border: solid 1px red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input {
+    width: 90%;
+    border: none;
+    padding: 10px;
+    border-radius: 18px;
+}
+
+select {
+
+    width: 90%;
+    border: none;
+    padding: 10px;
+    border-radius: 18px;
+
 }
 
 
-
-button {
-    padding: 10px;
+.boton {
+    margin: 10px 0px;
+    padding: 8px;
+    width: 50%;
+    border-radius: 20px;
+    border: none;
 }
