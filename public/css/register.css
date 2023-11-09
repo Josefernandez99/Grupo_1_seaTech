@@ -24,20 +24,12 @@ main {
     align-items: center;
 }
 
-input {
+.contenedor-input input,
+.contenedor-select select {
     width: 90%;
     border: none;
     padding: 10px;
     border-radius: 18px;
-}
-
-select {
-
-    width: 90%;
-    border: none;
-    padding: 10px;
-    border-radius: 18px;
-
 }
 
 
@@ -63,8 +55,8 @@ select {
         width: 30%;
     }
 
-    input,
-    select {
+    .contenedor-input input,
+    .contenedor-select select {
         width: 70%;
         margin-left: 10px;
     }
@@ -72,8 +64,8 @@ select {
 
 @media (min-width:1024px) {
 
-    input,
-    select {
+    .contenedor-input input,
+    .contenedor-select select {
         width: 50%;
     }
 
