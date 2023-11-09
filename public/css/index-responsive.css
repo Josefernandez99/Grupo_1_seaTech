@@ -175,13 +175,7 @@
         border: 1px solid #ccc;
     }
     .search-bar-div button {
-        background-color: #5fa2ff;
-        color: white;
-        padding: 4px 4px 4px 4px;
-        border: none;
-        cursor: pointer;
         width: 23%;
-        opacity: 0.9;
     }
     .search-bar {
         width: 100%;
@@ -272,13 +266,8 @@
         border: 1px solid #ccc;
     }
     .search-bar-div button {
-        background-color: #5fa2ff;
-        color: white;
-        padding: 4px 4px 4px 4px;
-        border: none;
-        cursor: pointer;
         width: 19%;
-        opacity: 0.9;
+
     }
     .search-bar {
         width: 100%;
