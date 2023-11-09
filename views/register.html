@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Registro</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="images/logo/logo-solo.png" alt="Logo" class="logo">
+    </header>
+
+    <main>
+
+        <form action="index.html" method="POST" class="contenedor-formulario">
+
+            <div class="contenedor-input">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" name="fullname" placeholder="Tu nombre" required>
+            </div>
+
+            <div class="contenedor-input">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" name="email" placeholder="Tu email" required>
+            </div>
+
+            <div class="contenedor-input">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" name="email" placeholder="Repetir tu email" required>
+            </div>
+
+            <div class="contenedor-input">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" name="telefono" placeholder="Telefono de contacto" required>
+            </div>
+
+            <div class="contenedor-input">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Contraseña" name="contrasena" required>
+            </div>
+
+            <div class="contenedor-select">
+
+                <i class="fa-solid fa-location-dot"></i>
+                <select name="provincia">
+                    <option value="Buenos Aires">Buenos Aires</option>
+                    <option value="Catamarca">Catamarca</option>
+                    <option value="Chaco">Chaco</option>
+                    <option value="Chubut">Chubut</option>
+                    <option value="Córdoba">Córdoba</option>
+                    <option value="Corrientes">Corrientes</option>
+                    <option value="Entre Ríos">Entre Ríos</option>
+                    <option value="Formosa">Formosa</option>
+                    <option value="Jujuy">Jujuy</option>
+                    <option value="La Pampa">La Pampa</option>
+                    <option value="La Rioja">La Rioja</option>
+                    <option value="Mendoza">Mendoza</option>
+                    <option value="Misiones">Misiones</option>
+                    <option value="Neuquén">Neuquén</option>
+                    <option value="Río Negro">Río Negro</option>
+                    <option value="Salta">Salta</option>
+                    <option value="San Juan">San Juan</option>
+                    <option value="San Luis">San Luis</option>
+                    <option value="Santa Cruz">Santa Cruz</option>
+                    <option value="Santa Fe">Santa Fe</option>
+                    <option value="Santiago del Estero">Santiago del Estero</option>
+                    <option value="Tierra del Fuego">Tierra del Fuego</option>
+                    <option value="Tucumán">Tucumán</option>
+                </select>
+
+            </div>
+
+
+            <div class="contenedor-botones">
+                <button type="submit">Crear cuenta</button>
+            </div>
+
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>

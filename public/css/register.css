@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+:root {
+    --background-color: #01203f;
+}
+
+.logo {
+    width: 50%;
+}
+
+.contenedor-formulario {
+    margin: auto;
+    border: solid 3px red;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.contenedor-input {
+    padding: 15px;
+}
