@@ -1,19 +1,14 @@
+body {
+    background-color: var(--background-color);
+}
+
 main {
     width: 90%;
     margin: auto;
 }
 
-body {
-    background-color: var(--background-color);
-}
-
-.logo {
-    width: 50%;
-}
-
 .contenedor-formulario {
     margin: 10px auto;
-    border: solid 3px red;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -24,7 +19,6 @@ body {
 .contenedor-input,
 .contenedor-select {
     padding: 15px;
-    border: solid 1px red;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,9 +42,42 @@ select {
 
 
 .boton {
-    margin: 10px 0px;
-    padding: 8px;
     width: 50%;
-    border-radius: 20px;
-    border: none;
+    padding: 10px 5px;
+    color: #fff;
+    background-image: linear-gradient(135deg, #0074D9 40%, #1a65cf);
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px 0px;
+}
+
+@media (min-width:768px) {
+
+    .contenedor-input,
+    .contenedor-select {
+        display: block;
+    }
+
+    .boton {
+        width: 30%;
+    }
+
+    input,
+    select {
+        width: 70%;
+        margin-left: 10px;
+    }
+}
+
+@media (min-width:1024px) {
+
+    input,
+    select {
+        width: 50%;
+    }
+
+    .boton {
+        width: 20%;
+    }
 }
