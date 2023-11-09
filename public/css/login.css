@@ -1,0 +1,12 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+ 
+.form-login{
+    width: 400px;
+    height: 340px;
+    background-color: blue;
+}

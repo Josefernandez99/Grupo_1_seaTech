@@ -17,3 +17,7 @@ app.get('/productDetail',(req,res) => {
 const puerto = 3000
 app.listen(puerto, () => 
 console.log('Servidor corriendo puerto:' + puerto));
+
+app.get('/login',(req,res) => {
+    res.sendFile(path.join(__dirname, 'views/login.html'))
+});
