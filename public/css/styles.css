@@ -44,12 +44,11 @@ header {
 }
 .search-bar-div button {
     background-color: #5fa2ff;
-    color: white;
+    color: #fff;
     padding: 4px 4px 4px 4px;
     border: none;
     cursor: pointer;
     width: 19%;
-    opacity: 0.9;
 }
 .search-bar {
     width: 100%;
@@ -66,14 +65,15 @@ header {
     font-size: 14px;
     padding-right: 5px;
     text-decoration: none;
-    color: #FFFFFF;
+    color: #fff;
 }
 .nav-bar-div {
     width: 50%;
+    margin-bottom: 10px;
 }
 .nav-bar {
     list-style-type: none;
-    color: white;
+    color: #fff;
     display: flex;
 }
 .burger-menu {
@@ -136,11 +136,11 @@ footer {
 }
 .links {
     padding: 5px;
-    color: #FFFFFF;
+    color: #fff;
     text-decoration: none;
 }
 #icons {
-    color: #FFFFFF;
+    color: #fff;
     padding-right: 5px;
 }
 /*FIN FOOTER*/
@@ -182,7 +182,7 @@ footer {
         display: none;
     }
 }
-@media (min-width:321px) and (max-width:375px) {
+@media (min-width:321px) and (max-width:424px) {
     .nav-bar {
         display: none;
     }
@@ -216,7 +216,7 @@ footer {
         display: none;
     }
 }
-@media (min-width:376px) and (max-width:767px) {
+@media (min-width:425px) and (max-width:767px) {
     .nav-bar {
         display: none;
     }
@@ -249,6 +249,20 @@ footer {
     .div-contacto {
         height: 30px;
     }
+}
+@media (min-width:530px) and (max-width:767px) {
+/*MOBILE TO TABLE*/
+.articulo-box-1, .articulo-box-2, .articulo-box-3, .articulo-box-4 {
+    width: 45%;
+    margin: auto;
+    margin-top: 10px;
+}
+.conteiner-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/*FIN MOBILE TO TABLE*/
 }
 /*TABLET*/
 @media (min-width:768px) and (max-width:1023px) {
@@ -302,13 +316,7 @@ footer {
         border: 1px solid #ccc;
     }
     .search-bar-div button {
-        background-color: #5fa2ff;
-        color: white;
-        padding: 4px 4px 4px 4px;
-        border: none;
-        cursor: pointer;
         width: 23%;
-        opacity: 0.9;
     }
     .search-bar {
         width: 100%;
@@ -331,7 +339,6 @@ footer {
         padding-bottom: 10px;
     }
     /*FIN HEADER*/
-
     /*FOOTER*/
     .logo-footer {
         width: 50%;
@@ -386,13 +393,8 @@ footer {
         border: 1px solid #ccc;
     }
     .search-bar-div button {
-        background-color: #5fa2ff;
-        color: white;
-        padding: 4px 4px 4px 4px;
-        border: none;
-        cursor: pointer;
         width: 19%;
-        opacity: 0.9;
+
     }
     .search-bar {
         width: 100%;
