@@ -45,15 +45,15 @@
 }
 
 #itemCarrousel-1{
-    background-color: rgb(226, 50, 50);
+    background-color: red;
 }
 
 #itemCarrousel-2{
-    background-color: rgb(50, 200, 226);
+    background-color: lightblue;
 }
 
 #itemCarrousel-3{
-    background-color: rgb(200, 226, 50);
+    background-color: greenyellow;
 }
 
 .contenedorCarrouselController{
