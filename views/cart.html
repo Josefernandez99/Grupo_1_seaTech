@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Hoja de estilos para el carrito-->
+    <link rel="stylesheet" href="/css/cart_styles.css">
+    <!-- Hoja de estilos para normalizar-->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <!-- Conexion a google para la fuente ROBOTO-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="product">
+        <img class="img-product">
+        <p class="name-product">Nombre del producto</p>
+        <p class="model">Modelo</p>
+        <p class="color">Color</p>
+        <p class="price">Precio del producto</p>
+        <form action="/cart" method="get">
+            <button type="reset" name="delete">Eliminar</button>
+            <label name="cant">Cantidad
+                <select name="cant">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </label>
+        </form>
+    </div>
+    <div>BARRA SEPARADORAaAaAaA</div>
+
+    <div class="total">
+        <p class="total-to-pay">Total</p>
+        <p class="total-price">Precio Total</p>
+        <form action="/home">
+            <button type="submit" name="continue"><a href="/">Continuar</a></button>
+        </form>
+    </div>
+</body>
+
+</html>
