@@ -1,0 +1,148 @@
+:root {
+    --primary-100:#0074D9;
+    --primary-200:#5fa2ff;
+    --primary-300:#d1ffff;
+    --accent-100:#7FDBFF;
+    --accent-200:#007a9b;
+    --text-100:#FFFFFF;
+    --text-200:#e0e0e0;
+    --background-color:#01203f;
+    --bg-200:#162e50;
+    --bg-300:#31466a;    
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #e0e0e0;
+}
+/*HEADER*/
+header {
+    width: 100%;
+    background-color: #001F3F;
+}
+.logo-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #001F3F;
+}
+.logo-img {
+    width: 80%;
+    padding-bottom: 5px;
+}
+.search-bar-div form {
+    width: 100%;
+    padding-left: 25px;
+}
+.search-bar-div input[type=text] {
+    width: 82%;
+    padding: 3px;
+    border: 1px solid #ccc;
+}
+.search-bar-div button {
+    background-color: #5fa2ff;
+    color: white;
+    padding: 4px 4px 4px 4px;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+    opacity: 0.9;
+}
+.search-bar {
+    width: 100%;
+    padding: 4px;
+    background-color: #001F3F;
+}
+.search-bar input {
+    width: 60%;
+}
+.button-search-bar {
+    width: auto;
+}
+.nav-var-1-list {
+    font-size: 14px;
+    padding-right: 5px;
+}
+.nav-bar-div {
+    width: 50%;
+}
+.nav-bar {
+    list-style-type: none;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+.burger-menu {
+    background-color: #1259c3;
+    color: #ebebeb;
+    width: 6%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+}
+.burger-nav-div {
+    background-color: #31466a;
+}
+/*FIN HEADER*/
+
+/*MAIN*/
+/*FIN MAIN*/
+
+/*FOOTER*/
+footer {
+    width: 100%;
+}
+.div-footer {
+    width: 100%;
+    background-color: #001F3F;
+    height: 220px;
+}
+.div-logo {
+    background-color: #001F3F;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+}
+.div-contacto {
+    background-color: #001F3F;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+.div-social-media {
+    background-color: #001F3F;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+}
+.div-derechos-reservados {
+    background-color: #001F3F;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+}
+.logo-footer {
+    width: 70%;
+    height: 120px;
+    padding: 10px 20px 20px 20px;
+}
+.links {
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#icons {
+    color: #FFFFFF;
+    padding-right: 5px;
+}
+/*FIN FOOTER*/
