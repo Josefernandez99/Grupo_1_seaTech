@@ -79,8 +79,13 @@ main {
     margin-top: 10px;
 }
 
+.producto button a{
+    text-decoration: none;
+    color: white;
+}
+
 .producto button:hover{
-    background-color: #0022AA;
+    background-color: #007a9b;
 }
 
 .descripcionProducto{
