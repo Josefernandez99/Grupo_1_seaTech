@@ -1,12 +1,68 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+:root {
+    --primary-100:#0074D9;
+    --primary-200:#5fa2ff;
+    --primary-300:#d1ffff;
+    --accent-100:#7FDBFF;
+    --accent-200:#007a9b;
+    --text-100:#FFFFFF;
+    --text-200:#e0e0e0;
+    --background-color:#01203f;
+    --bg-200:#162e50;
+    --bg-300:#31466a;    
+}
+
+
+
+body{
+    background-color: #01203f;
+}
+
+main{
+    width: 90%;
+    margin:auto;
 
 }
- 
-.form-login{
-    width: 400px;
-    height: 340px;
-    background-color: blue;
+
+.contenedor-principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    background-color:#13a3cb;
+    border-radius: 15px;
+    width: 80%;
+    padding: 40px;
+
+
+
+}
+.contenedor-form{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 30px;
+
+}
+.controls{
+    border: none;
+    padding: 12px;
+    border-radius: 20px; 
+    margin: 10px 0px;
+}
+.button{
+    border-radius: 10px;
+    margin: 10px 0px;
+    padding: 3px;
+
+}
+.olvidaste-tu-password{
+    margin: 10px 0px;
+}
+
+@media (min-width:768px){
+   
+    .contenedor-form{
+        width: 100%;
+       
+    }
 }
