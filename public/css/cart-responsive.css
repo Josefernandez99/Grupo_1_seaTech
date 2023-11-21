@@ -1,0 +1,20 @@
+@media (min-width: 426px) {
+  .form-cant {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 80%;
+    height: 1.5em;
+    margin: 1em;
+  }
+
+  .product-desc-part1 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product {
+    height: 15em;
+  }
+}
