@@ -1,0 +1,29 @@
+@media (min-width:768px) {
+
+    .contenedor-input,
+    .contenedor-select {
+        display: block;
+    }
+
+    .boton {
+        width: 30%;
+    }
+
+    .contenedor-input input,
+    .contenedor-select select {
+        width: 70%;
+        margin-left: 10px;
+    }
+}
+
+@media (min-width:1024px) {
+
+    .contenedor-input input,
+    .contenedor-select select {
+        width: 50%;
+    }
+
+    .boton {
+        width: 20%;
+    }
+}
