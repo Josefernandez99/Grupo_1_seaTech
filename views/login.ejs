@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> login </title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+        <main>
+            <div class="contenedor-principal">
+                <div class="titulo-del-form">
+                    <h3>Accede A tu Cuenta</h3>
+                </div>
+
+                <form action="login.html" method="post" class="contenedor-form">
+
+
+                    <input class="controls" type="text" name="value" placeholder="Tu Email">
+
+                    <input class="controls" type="password" name="contraseña" placeholder="contraseña">
+
+
+
+
+                    <label for="guardado">
+                        <input class="checkbox" type="checkbox" name="checkbox"> mostrar contraseña
+
+                    </label>
+                    <div class="olvidaste-tu-password">
+                        <p><a href="#"> ¿olvidaste tu contraseña? </a></p>
+                    </div>
+
+                    <input class="button" type="submit" name="submit" value="Ingresar">
+
+
+                </form>
+
+
+
+
+
+
+            </div>
+
+
+
+        </main>
+        <%- include('./partials/footer') %>
+
+</body>
+
+</html>
