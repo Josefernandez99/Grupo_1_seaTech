@@ -7,4 +7,6 @@ route.get('/cart', productsController.cart);
 
 route.get('/productDetail', productsController.productDetail);
 
+route.get('/productAdd', productsController.productAdd);
+
 module.exports = route;

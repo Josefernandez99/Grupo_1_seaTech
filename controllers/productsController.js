@@ -4,6 +4,9 @@ const controller = {
     },
     productDetail: function (req, res) {
         res.render('./products/productDetail');
+    },
+    productAdd: function (req, res) {
+        res.render('./products/productAdd');
     }
 }
 
