@@ -1,0 +1,67 @@
+main {
+    margin: 35px auto;
+    width: 90%;
+
+    display: flex;
+    justify-content: center;
+
+
+
+}
+
+.info {
+    margin-right: 25px;
+    width: 30%;
+    padding: 10px;
+
+}
+
+.info p {
+    margin-bottom: 10px;
+    text-align: justify;
+    font-size: 1rem;
+    color: grey;
+
+}
+
+.form-product-add {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.caja-superior {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.caja-superior div {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.izq {
+    margin-right: 8px;
+
+}
+
+.der {
+    margin-left: 8px;
+}
+
+.caja-superior div input {
+    padding: 12px;
+    margin: 8px 0px;
+
+}
+
+.form-product-add input {
+    margin: 10px 0px;
+}
+
+.form-product-add button {
+    width: 25%;
+    margin: 10px 0px;
+}
