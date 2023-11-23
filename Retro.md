@@ -14,3 +14,25 @@ En esta retrospectiva nos centramos en las cinco áreas clave:
 
 Al centrarnos en estas cinco áreas clave, como equipo pudimos abordar tanto las prácticas positivas como las negativas de manera equilibrada, fomentando la colaboración y mejorando nuestro rendimiento.
 
+# Retrospectiva Grupo SeaTech Sprint 3
+
+- ***Comenzar a Hacer*** (Start Doing): 
+    - Definir diás y horarios fijos para reuniones entre semana.
+    - Dividirse las tares adecuadamente.
+    - Aumentar la comunicación entre los miembros del equipo.
+    - Usar Trello.
+
+- ***Hacer Más*** (More of):
+    - Usar Trello.
+    - Programar.
+
+- ***Seguir Haciendo*** (Keep Doing):
+    - Que al momento de tomar decisiones votemos.
+    - Ayudarnos para avanzar con el código y las tareas.
+
+- ***Hacer Menos*** (Less of):
+    - Dedicar poco tiempo a la tarea de programar.
+    - Posponer las reuniones.
+
+- ***Dejar de Hacer*** (Stop Doing):
+    - Por el momento no tenemos nada que dejar de hacer.
