@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include ('../partials/head',{estilos:"login",responsive:"login-responsive",titulo:"login"}) %>
+
+    <body>
+        <%- include('../partials/header') %>
+            <main>
+                <div class="contenedor-principal">
+                    <div class="titulo-del-form">
+                        <h3>Accede A tu Cuenta</h3>
+                    </div>
+
+                    <form action="login.html" method="post" class="contenedor-form">
+
+
+                        <input class="controls" type="text" name="value" placeholder="Tu Email">
+
+                        <input class="controls" type="password" name="contraseña" placeholder="contraseña">
+
+
+
+
+                        <label for="guardado">
+                            <input class="checkbox" type="checkbox" name="checkbox"> mostrar contraseña
+
+                        </label>
+                        <div class="olvidaste-tu-password">
+                            <p><a href="#"> ¿olvidaste tu contraseña? </a></p>
+                        </div>
+
+                        <input class="button" type="submit" name="submit" value="Ingresar">
+
+
+                    </form>
+
+
+
+
+
+
+                </div>
+
+
+
+            </main>
+            <%- include('../partials/footer') %>
+
+    </body>
+
+</html>

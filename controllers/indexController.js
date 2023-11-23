@@ -3,16 +3,16 @@ const controller = {
         res.render('index');
     },
     login: function (req, res) {
-        res.render('login');
+        res.render('./users/login');
     },
     register: function (req, res) {
-        res.render('register');
+        res.render('./users/register');
     },
     cart: function (req, res) {
-        res.render('cart');
+        res.render('./products/cart');
     },
     productDetail: function (req, res) {
-        res.render('productDetail');
+        res.render('./products/productDetail');
     }
 }
 
