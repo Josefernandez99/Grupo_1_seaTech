@@ -1,17 +1,11 @@
 main {
     margin: 35px auto;
     width: 90%;
-
-    display: flex;
-    justify-content: center;
-
-
-
 }
 
 .info {
-    margin-right: 25px;
-    width: 30%;
+    /*margin-right: 25px;*/
+    /*width: 30%;*/
     padding: 10px;
 
 }
@@ -32,14 +26,11 @@ main {
 
 .caja-superior {
     display: flex;
-    justify-content: space-between;
-
 }
 
 .caja-superior div {
     display: flex;
     flex-direction: column;
-
 }
 
 .izq {
@@ -54,6 +45,7 @@ main {
 .caja-superior div input {
     padding: 12px;
     margin: 8px 0px;
+    width: 100%;
 
 }
 

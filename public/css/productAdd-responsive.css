@@ -1,29 +1,14 @@
-@media (max-width: 426px) {
-  main {
-    display: flex;
-    flex-direction: column;
-  }
-  .info {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 0%;
-  }
-  .form-product-add {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  .caja-superior {
-    display: flex;
-    flex-direction: row;
-  }
-  .izq {
-    margin: 0px;
-    width: 45%;
-  }
-  .der {
-    margin: 0px;
-    width: 45%;
-  }
+@media (min-width:768px) {
+    main {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (min-width:1024px) {
+    .info {
+        margin-right: 25px;
+        width: 30%;
+
+    }
 }
