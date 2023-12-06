@@ -15,3 +15,7 @@ En primer lugar definimos los JSON de usuarios y productos, los atributos por lo
 Nos dividimos las vistas y tareas pendientes para el proximo sprint como son: el abm correspondiente para producto, corregir algunos fallos.
 Acordamos unificar los estilos de botones y colores con un css del cual tomariamos las propiedades para que todo siga un mismo parametro.
 Quedamos en utilizar ramas en forma de prueba a ver que tal nos va... (esperemos que no explote nada).
+
+Fecha: 15/12
+
+Probamos plataformas de cloud para trabajar remotamente.
