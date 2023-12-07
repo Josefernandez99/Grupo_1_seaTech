@@ -6,35 +6,44 @@
 
     <body>
         <%- include('../partials/header') %>
-            <main> 
+            <main>
                 <div class="info">
-                    <p>Por favor introduzca su nombre, información de contacto y datos de su embarcacion en el siguiente formulario.</p>
-                    <p>Adjuntá las fotos de tu embarcación en la mayor calidad y tamaño posible haciendo click en el botón «seleccionar archivo».</p>
+                    <p>Por favor introduzca su nombre, información de contacto y datos de su embarcacion en el siguiente
+                        formulario.</p>
+                    <p>Adjuntá las fotos de tu embarcación en la mayor calidad y tamaño posible haciendo click en el
+                        botón «seleccionar archivo».</p>
                     <p>Las casillas marcadas con * son obligatorias</p>
                 </div>
                 <form action="/productAdd" class="form-product-add">
                     <div class="caja-superior">
-                        <div class="izq">
-                            <input type="text" placeholder="Nombre*" required>
-                            <input type="email" placeholder="Email*" required>
-                            <input type="text" placeholder="Categoria" required>
-                            <input type="text" placeholder="Estola (m)" required>
-                        </div>
-                        <div class="der">
-                            <input type="text" placeholder="Apellido*" required>
-                            <input type="tel" placeholder="Telefono" required>
-                            <input type="text" placeholder="Marca/Modelo" required>
-                            <input type="text" placeholder="valor(usd)" required>
-                        </div>
+
+                        <input type="text" placeholder="Nombre de producto*" required>
+                        <label for="embarcacion">Selecciona una embarcación:</label>
+                        <select id="embarcacion" name="embarcacion">
+                            <option value="velero">Velero</option>
+                            <option value="lancha">Lancha</option>
+                            <option value="yate">Yate</option>
+                            <option value="moto_agua">Moto de Agua</option>
+                        </select>
+                        <input type="text" placeholder="Precio" required>
+                        <input type="text" placeholder="Año" required>
+
 
                     </div>
-                    <textarea name="textarea" rows="10" cols="50"> </textarea>
-                    <input type="file" multiple required accept=".png, .jpg" >
-                    
+
+                    <div class="radios">
+                        <label for="embarcacion">Estado de la embarcacion:</label>
+                        <label for="nuevo" class="radio_btn"><input type="radio" name="embarcacion" id="nuevo" required>Nuevo</label>
+                        <label for="usado" class="radio_btn"><input type="radio" name="embarcacion" id="usado">Usado</label>
+                    </div>
+                    <textarea name="textarea" rows="10" cols="50" placeholder="Agrega una descripción..."
+                        id="textarea_text"></textarea>
+                    <input type="file" multiple required accept=".png, .jpg">
+
                     <button type="submit">Añadir Producto</button>
 
 
-                
+
                 </form>
 
 

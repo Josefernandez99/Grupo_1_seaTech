@@ -27,25 +27,21 @@ main {
     display: flex;
 }
 
-.caja-superior div {
+.caja-superior{
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
 }
 
-.izq {
-    margin-right: 8px;
-
-}
-
-.der {
-    margin-left: 8px;
-}
-
-.caja-superior div input {
+.caja-superior input , .caja-superior select{
     padding: 12px;
     margin: 8px 0px;
     width: 100%;
 
+}
+
+.radio_btn{
+padding: 5px;
 }
 
 .form-product-add input {
@@ -55,4 +51,12 @@ main {
 .form-product-add button {
     width: 25%;
     margin: 10px 0px;
+}
+
+#textarea_text{
+    padding: 5px;
+}
+
+.caja-superior label{
+    color: grey;
 }
