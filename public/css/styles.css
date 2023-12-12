@@ -337,6 +337,7 @@ footer {
     /*FIN HEADER*/
     /*FOOTER*/
     .logo-footer {
+        width: auto;
         height: 110px;
         padding: 10px 20px 20px 20px;
     }
@@ -382,7 +383,7 @@ footer {
     }
     .search-bar-div form {
         width: 100%;
-        padding: 25px;
+        padding-left: 25px;
     }
     .search-bar-div input[type=text] {
         width: 75%;
@@ -409,6 +410,10 @@ footer {
     }
     /*FIN HEADER*/
     /*FOOTER*/
+    .logo-footer {
+        width: auto;
+        height: 130px;
+    }
     .nav-var-1-list {
         padding-left: 20px;
         padding-right: 20px;
@@ -418,10 +423,6 @@ footer {
     }
     .links {
         padding: 5px 20px 5px 20px;
-    }
-    .logo-footer {
-        height: 130px;
-        padding: 10px 20px 20px 20px;
     }
     /*FIN FOOTER*/
 }
