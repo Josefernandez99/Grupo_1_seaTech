@@ -7,6 +7,9 @@ const controller = {
     },
     productAdd: function (req, res) {
         res.render('./products/productAdd');
+    },
+    edit: function (req, res) {
+        res.render('./products/productEdit');
     }
 }
 
