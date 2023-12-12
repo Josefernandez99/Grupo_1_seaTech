@@ -36,3 +36,26 @@ Al centrarnos en estas cinco áreas clave, como equipo pudimos abordar tanto las
 
 - ***Dejar de Hacer*** (Stop Doing):
     - Por el momento no tenemos nada que dejar de hacer.
+
+    # Retrospectiva Grupo SeaTech Sprint 4
+
+- ***Comenzar a Hacer*** (Start Doing): 
+    - Dividirse las tares en el Trello.
+    - Compartir responsabilidades.
+    - Buscar la coherencia entre las distintas vistas de la aplicación.
+
+- ***Hacer Más*** (More of):
+    - Aumentar la comunicación entre los miembros del equipo.   
+    - Usar Trello.
+    - Programar.
+
+- ***Seguir Haciendo*** (Keep Doing):
+    - Que al momento de tomar decisiones votemos.
+    - Ayudarnos para avanzar con el código y las tareas.
+
+- ***Hacer Menos*** (Less of):
+    - Dedicar poco tiempo a la tarea de programar.
+    - Posponer las reuniones.
+
+- ***Dejar de Hacer*** (Stop Doing):
+    - Trabajar individualmente.
