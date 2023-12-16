@@ -18,4 +18,8 @@ Quedamos en utilizar ramas en forma de prueba a ver que tal nos va... (esperemos
 
 Fecha: 15/12
 
-Probamos plataformas de cloud para trabajar remotamente.
+- Probamos plataformas de cloud para trabajar remotamente.
+- Hablamos sobre como vamos en nivel gral siguiendo el curso.
+- Planteamos usar las ramas con el nombre de la funcionalidad a realizar, en lugar de los nombres de los integrantes.
+- Intercambiamos los avances que realizamos cada uno de los integrantes del grupo.
+- Acordamos en trabajar de forma colaborativa, es decir, ayudar y participar en las tareas de todos, si se necesita.

@@ -3,7 +3,7 @@ const route = express.Router();
 const productsController = require('../controllers/productsController');
 
 //Listado de productos
-//route.get('/', productsController.list);
+route.get('/', productsController.list);
 
 //Vista del carrtito
 route.get('/cart', productsController.cart);

@@ -10,6 +10,9 @@ const controller = {
     },
     edit: function (req, res) {
         res.render('./products/productEdit');
+    },
+    list: function (req, res) {
+        res.render('./products/listaProductos');
     }
 }
 
