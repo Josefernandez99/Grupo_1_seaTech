@@ -23,3 +23,9 @@ Fecha: 15/12
 - Planteamos usar las ramas con el nombre de la funcionalidad a realizar, en lugar de los nombres de los integrantes.
 - Intercambiamos los avances que realizamos cada uno de los integrantes del grupo.
 - Acordamos en trabajar de forma colaborativa, es decir, ayudar y participar en las tareas de todos, si se necesita.
+
+Fecha: 2/01/24
+
+- Nos hemos reunido para charlar el grado de avance del sprint 4 y completar el sprint 5 para el martes.
+- También hablamos de que a pesar de dividirnos las tareas, trabajaremos en grupo en las distintas divisiones.
+- Nos pusimos de acuerdo con los atributos del JSON de productos.

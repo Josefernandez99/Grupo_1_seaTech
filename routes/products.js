@@ -11,6 +11,9 @@ route.get('/cart', productsController.cart);
 //Vista de crear un producto
 route.get('/create', productsController.productAdd);
 
+//Procesar la creación de un producto
+//route.post('/create', productsController.create);
+
 //Vista de un producto en particular
 route.get('/:id', productsController.productDetail);
 
@@ -19,9 +22,6 @@ route.get('/:id/edit', productsController.edit);
 
 //Procesar la edición de un producto en particular
 //route.put('/:id/edit', productsController.update);
-
-//Procesar la creación de un producto
-//route.post('/create', productsController.create);
 
 //Eliminar producto
 //route.delete('/:id/delete', productsController.delete);
