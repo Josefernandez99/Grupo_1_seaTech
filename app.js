@@ -3,10 +3,10 @@ const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
 
-const indexRoute = require('./routes/index');
+const indexRoute = require('./routes/index.Routes');
 
-const usersRoute = require('./routes/users');
-const productsRoute = require('./routes/products');
+const usersRoute = require('./routes/users.Routes');
+const productsRoute = require('./routes/products.Routes');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -20,7 +20,7 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRoute);
 app.use('/user', usersRoute);
-app.use('/product', productsRoute);
+app.use('/products', productsRoute);
 
 const puerto = 3000
 app.listen(puerto, () =>

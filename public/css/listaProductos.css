@@ -54,40 +54,15 @@ main {
 }
 
 .buy-button button {
-    background-color: #000000;
     border-radius: 10px;
     padding: 5px 20px 5px 20px;
     border: 0;
     background-image: linear-gradient(135deg, #0074D9 40%, #5fa2ff);
-    cursor: pointer;
     color: #fff;
 }
 
 .detalle {
     background-color: #31466a;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-}
-
-.see-more-button {
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.see-more-button div {
-    background-color: #fff;
-    border-radius: 10px;
-}
-
-.see-more-button button {
-    padding: 5px 80px 5px 80px;
-    text-transform: uppercase;
-    color: #fff;
-    background-image: linear-gradient(135deg, #0074D9 40%, #5fa2ff);
-    border: 0;
-    border-radius: 10px;
-    cursor: pointer;
 }
 
 /*FIN MAIN*/

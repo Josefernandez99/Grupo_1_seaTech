@@ -2,13 +2,14 @@ const controller = {
     cart: function (req, res) {
         res.render('./products/cart');
     },
-    productDetail: function (req, res) {
+    detail: function (req, res) {
         res.render('./products/productDetail');
     },
-    productAdd: function (req, res) {
+    add: function (req, res) {
         res.render('./products/productAdd');
     },
     edit: function (req, res) {
+
         res.render('./products/productEdit');
     },
     list: function (req, res) {

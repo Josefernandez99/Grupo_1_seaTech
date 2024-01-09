@@ -9,13 +9,13 @@ route.get('/', productsController.list);
 route.get('/cart', productsController.cart);
 
 //Vista de crear un producto
-route.get('/create', productsController.productAdd);
+route.get('/create', productsController.add);
 
 //Procesar la creación de un producto
 //route.post('/create', productsController.create);
 
 //Vista de un producto en particular
-route.get('/:id', productsController.productDetail);
+route.get('/:id', productsController.detail);
 
 //Vista de editar un producto en particular
 route.get('/:id/edit', productsController.edit);
