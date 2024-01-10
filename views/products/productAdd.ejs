@@ -17,7 +17,7 @@
                 <form action="/products/create" class="form-product-add" method="POST">
                     <div class="caja-superior">
 
-                        <input type="text" placeholder="Nombre de producto*" required name="name">
+                        <input type="text" placeholder="Nombre de producto*" required name="name" name="name">
                         <label for="embarcacion">Selecciona una embarcación:</label>
                         <select id="embarcacion" name="category">
                             <option value="velero">Velero</option>
@@ -33,8 +33,10 @@
 
                     <div class="radios">
                         <label for="state_embarcation">Estado de la embarcacion:</label>
-                        <label for="nuevo" class="radio_btn"><input type="radio" name="state_embarcation" id="nuevo" value="Nuevo" required>Nuevo</label>
-                        <label for="usado" class="radio_btn"><input type="radio" name="state_embarcation" id="usado" value="Usado">Usado</label>
+                        <label for="nuevo" class="radio_btn"><input type="radio" name="state_embarcation" id="nuevo"
+                                value="Nuevo" required>Nuevo</label>
+                        <label for="usado" class="radio_btn"><input type="radio" name="state_embarcation" id="usado"
+                                value="Usado">Usado</label>
                     </div>
                     <textarea name="description" rows="10" cols="50" placeholder="Agrega una descripción..."
                         id="textarea_text"></textarea>

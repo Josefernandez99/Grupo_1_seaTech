@@ -38,5 +38,35 @@
   "state_embarcation": "Nuevo",
   "price": 53704.7,
   "year": 1989
+ },
+ {
+  "id": 5,
+  "name": "asd",
+  "category": "velero",
+  "price": "asd",
+  "year": "asd",
+  "state_embarcation": "Nuevo",
+  "description": "asda",
+  "image": "BBBBBBBBBBBBBB.pdf"
+ },
+ {
+  "id": 6,
+  "name": "sad",
+  "category": "velero",
+  "price": "asd",
+  "year": "sda",
+  "state_embarcation": "Nuevo",
+  "description": "sdsd",
+  "image": "23435523439_RG_4815_25112023-124320.pdf"
+ },
+ {
+  "id": 7,
+  "name": "Pablo",
+  "category": "velero",
+  "price": "asd",
+  "year": "123123",
+  "state_embarcation": "Nuevo",
+  "description": "asda",
+  "image": "23435523439_RG_4815_25112023-124320.pdf"
  }
 ]
