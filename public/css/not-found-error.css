@@ -1,14 +1,14 @@
 :root {
-    --primary-100:#0074D9;
-    --primary-200:#5fa2ff;
-    --primary-300:#d1ffff;
-    --accent-100:#7FDBFF;
-    --accent-200:#007a9b;
-    --text-100:#FFFFFF;
-    --text-200:#e0e0e0;
-    --background-color:#01203f;
-    --bg-200:#162e50;
-    --bg-300:#31466a;    
+    --primary-100: #0074D9;
+    --primary-200: #5fa2ff;
+    --primary-300: #d1ffff;
+    --accent-100: #7FDBFF;
+    --accent-200: #007a9b;
+    --text-100: #FFFFFF;
+    --text-200: #e0e0e0;
+    --background-color: #01203f;
+    --bg-200: #162e50;
+    --bg-300: #31466a;    
 }
 
 main {
@@ -22,46 +22,53 @@ main {
     background-image: linear-gradient(135deg, #3c28af 40%, #041182);
 }
 
-.outer-container {
-    width: 700px; /* Ancho del cuadrado */
-    height: 400px; /* Alto del cuadrado */
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-
-.image-container {
-    width: 300px;
-    height: 300px;
-}
-.text-container {
-    padding: 10px;
-}
-
-.image-container img {
-    width: 300px;
-    height: 300px;
-}
-.h3-404 {
-    font-size: 80px;
-}
-.p-text {
-    font-size: 20px;
-}
-.button-back {
-    width: 80px;
-    height: 40px;
-    background-image: linear-gradient(135deg, #3c28af 40%, #041182);
-    border-radius: 10%;
-    border-style: hidden;
-    color: #FFFFFF;
-    cursor: pointer;
-}
-.div-button-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    .outer-container {
+        width: 100%;
+        max-width: 320px; /* Ancho máximo de 320px */
+        height: 400px;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px; /* Ajuste de relleno para pantallas más pequeñas */
+    }
+    
+    .image-container {
+        width: 200px;
+        height: auto;
+    }
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .text-container {
+        padding: 5px; /* Ajuste de relleno para pantallas más pequeñas */
+        text-align: center;
+    }
+    
+    .h3-404 {
+        font-size: 26px; /* Ajuste de tamaño de fuente para pantallas más pequeñas */
+    }
+    
+    .p-text {
+        font-size: 16px; /* Ajuste de tamaño de fuente para pantallas más pequeñas */
+    }
+    
+    .button-back {
+        color: #FFFFFF;
+        width: 80px;
+        height: 30px; /* Ajuste de altura para pantallas más pequeñas */
+        font-size: 12px; /* Ajuste de tamaño de fuente para pantallas más pequeñas */
+        border-radius: 8px; /* Reducción del radio de borde para un aspecto más suave */
+        background-image: linear-gradient(135deg, #3c28af 40%, #041182);
+        border-style: hidden;
+    }
+    
+    .div-button-top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }

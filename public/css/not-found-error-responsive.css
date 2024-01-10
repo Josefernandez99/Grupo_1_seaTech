@@ -1,0 +1,71 @@
+@media (max-width: 320px) {
+    
+}
+
+@media (min-width: 768px) {
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .outer-container {
+        max-width: 620px; /* Ancho máximo de 320px */
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+    .image-container {
+        width: 250px;
+        height: auto;
+    }
+    .text-container {
+        width: 250px;
+    }
+    .h3-404 {
+        font-size: 80px; 
+    }
+
+    .p-text {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .button-back {
+        width: 80px; 
+        height: 40px;
+        font-size: 16px;
+    }
+}
+@media (min-width: 1440px) {
+    .outer-container {
+        max-width: 920px; /* Ancho máximo de 920px */
+        height: 500px;
+    }
+    .image-container {
+        width: 350px;
+        height: auto;
+    }
+    .text-container {
+        width: 250px;
+    }
+    .h3-404 {
+        font-size: 110px; /* Ajuste de tamaño de fuente para pantallas de 1440px width */
+    }
+
+    .p-text {
+        font-size: 22px; /* Ajuste de tamaño de fuente para pantallas de 1440px width */
+        padding: 15px;
+    }
+
+    .button-back {
+        width: auto; /* Ajuste del ancho del botón para para pantallas de 1440px width */
+        height: auto; /* Ajuste del alto del botón para pantallas de 1440px width */
+        font-size: 20px; /* Ajuste de la fuente tamaño del botón para pantallas de 1440px width */
+        cursor: pointer;
+        padding: 15px;
+    }
+    .div-button-top {
+        width: auto;
+        height: auto;
+    }
+}
