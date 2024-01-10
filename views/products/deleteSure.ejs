@@ -11,31 +11,36 @@
                     <article class="articulo-box-2">
                         <div class="art-div-box">
                             <div>
-                                <img src="/images/productos/barco-img-2.png" alt="cookies">
+                                <img src="/images/productos/<%= locals.body.image %>" alt="barco">
                             </div>
                         </div>
                         <div class="detalle">
                             <div class="title-producto">
-                                <p>Nombre del producto</p>
+                                <p>
+                                    <%= locals.body.name %>
+                                </p>
                             </div>
                             <div class="modelo">
-                                <p>Modelo</p>
+                                <p>
+                                    <%= locals.body.year %>
+                                </p>
                             </div>
                             <div class="precio">
-                                <p>precio de producto</p>
+                                <p>
+                                    <%= locals.body.price %>
+                                </p>
                             </div>
                             <div class="buy-button">
-                                <a href="/products/productDetail">
-                                    <button>
-                                        COMPRAR
-                                    </button>
-                                </a>
-                            </div>
-                            <div class="buy-button">
-                                <a href="/products/productDetail">
-                                    <button>
-                                        BORRAR
-                                    </button>
+                                <div class="title-producto">
+                                    <p>¿ ESTAS SEGURO ?</p>
+                                </div>
+                                <br />
+                                <form action="/products/detail/:id/delete?_method=DELETE" method="post">
+                                    <button type="submit">BORRAR</button>
+                                </form>
+                                <br />
+                                <a href="/products/detail/:id">
+                                    <button>CANCELAR</button>
                                 </a>
                             </div>
                         </div>
