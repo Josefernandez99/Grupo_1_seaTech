@@ -3,7 +3,7 @@ main {
     padding: 5%;
 }
 
-.carrousel{
+.foto_producto{
     width: 45%;
     padding: 50px;
 }
@@ -21,16 +21,28 @@ main {
     color: white;
 }
 
+.nombre_producto{
+    font-size: xx-large;
+    padding: 5px;
+}
+.precio_producto{
+    font-size: medium;
+    padding: 5px;
+}
+
 .producto button:hover{
     background-color: #007a9b;
 }
 
 .descripcionProducto{
     display: flex;
+    flex-direction: column;
     padding: 25px;
     justify-content: center;
 }
-
+.descripcionProducto p{
+    padding: 5px;
+}
 .caja_contenedora{
     display: flex;
     justify-content: space-around;

@@ -16,35 +16,64 @@
                 </div>
                 <form action="/products/create" class="form-product-add" method="POST">
                     <div class="caja-superior">
-
-                        <input type="text" placeholder="Nombre de producto*" required name="name">
-                        <label for="embarcacion">Selecciona una embarcación:</label>
-                        <select id="embarcacion" name="category">
-                            <option value="velero">Velero</option>
-                            <option value="lancha">Lancha</option>
-                            <option value="yate">Yate</option>
-                            <option value="moto_agua">Moto de Agua</option>
-                        </select>
-                        <input type="text" placeholder="Precio" required name="price">
-                        <input type="text" placeholder="Año" required name="year">
-
-
+                        <input type="text" placeholder="Nombre de producto*" required name="name" <% if (locals.oldBody)
+                            { %>
+                        value="<%= locals.oldBody.name %>"
+                            <% } %>>
+                                <% if (locals.errors && errors.name) { %>
+                                    <%= errors.name.msg %>
+                                        <% } %>
+                                            <label for="embarcacion">Selecciona una embarcación:</label>
+                                            <select id="embarcacion" name="category">
+                                                <option value="velero">Velero</option>
+                                                <option value="lancha">Lancha</option>
+                                                <option value="yate">Yate</option>
+                                                <option value="moto_agua">Moto de Agua</option>
+                                            </select>
+                                            <% if (locals.errors && errors.category) { %>
+                                                <%= errors.category.msg %>
+                                                    <% } %>
+                                                        <input type="text" placeholder="Precio" required name="price" <%
+                                                            if (locals.oldBody) { %>
+                                                        value="<%= locals.oldBody.price %>"
+                                                            <% } %>>
+                                                                <% if (locals.errors && errors.price) { %>
+                                                                    <%= errors.price.msg %>
+                                                                        <% } %>
+                                                                            <input type="text" placeholder="Año"
+                                                                                required name="year" <% if
+                                                                                (locals.oldBody) { %>
+                                                                            value="<%= locals.oldBody.year %>"
+                                                                                <% } %>>
+                                                                                    <% if (locals.errors && errors.year)
+                                                                                        { %>
+                                                                                        <%= errors.year.msg %>
+                                                                                            <% } %>
                     </div>
 
                     <div class="radios">
                         <label for="state_embarcation">Estado de la embarcacion:</label>
-                        <label for="nuevo" class="radio_btn"><input type="radio" name="state_embarcation" id="nuevo" value="Nuevo" required>Nuevo</label>
-                        <label for="usado" class="radio_btn"><input type="radio" name="state_embarcation" id="usado" value="Usado">Usado</label>
+                        <label for="nuevo" class="radio_btn"><input type="radio" name="state_embarcation" id="nuevo"
+                                value="Nuevo" required>Nuevo</label>
+                        <label for="usado" class="radio_btn"><input type="radio" name="state_embarcation" id="usado"
+                                value="Usado">Usado</label>
+                        <% if (locals.errors && errors.state_embarcation) { %>
+                            <%= errors.state_embarcation.msg %>
+                                <% } %>
                     </div>
                     <textarea name="description" rows="10" cols="50" placeholder="Agrega una descripción..."
-                        id="textarea_text"></textarea>
-                    <input type="file" required accept=".png, .jpg" name="image">
-
-                    <button type="submit">AGREGAR PRODUCTO</button>
-
+                        id="textarea_text"><% if (locals.oldBody) { %>
+                                                                            <%= locals.oldBody.description %>
+                                                                                <% } %></textarea>
+                    <% if (locals.errors && errors.description) { %>
+                        <%= errors.description.msg %>
+                            <% } %>
+                                <input type="file" required accept=".png, .jpg" name="image">
+                                <% if (locals.errors && errors.image) { %>
+                                    <%= errors.image.msg %>
+                                        <% } %>
+                                            <button type="submit">AGREGAR PRODUCTO</button>
                 </form>
-
-
             </main>
             <%- include('../partials/footer') %>
     </body>

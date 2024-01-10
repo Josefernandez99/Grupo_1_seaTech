@@ -8,23 +8,23 @@
         <%- include('../partials/header') %>
             <main>
                 <section class="caja_contenedora">
-                    <div class="carrousel">
-                        <textarea name="textarea" rows="10" cols="50" placeholder="AQUI VA UNA IMAGEN"
-                        id="textarea_text"></textarea>
+                    <div class="foto_producto">
+                        <img src="/images/productos/<%= selectedProduct.image %>">
                     </div>
                     <div class="producto">
-                        <p>Nombre del producto</p>
-                        <p>$ XXXX,XX</p>
-                        <button type="submit"><a href="cart">COMPRAR</a></button>
+                        <p class="nombre_producto"><%= selectedProduct.name %></p>
+                        <p class="precio_producto">$<%= selectedProduct.price %></p>
+                        <button type="submit"><a href="#">Comprar</a></button>
+                        <button type="submit"><a href="cart">Agregar al carrito</a></button>
+                        <button type="submit"><a href="<%= selectedProduct.id %>/delete">Eliminar</a></button>
+                        <button type="submit"><a href="detail/<%= selectedProduct.id %>/edit">Actualizar</a></button>
                     </div>
                 </section>
                 <div class="descripcionProducto">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempore ab corporis minus,
-                        enim
-                        recusandae, impedit illo voluptatum sit nulla atque consectetur aliquam quas cupiditate beatae
-                        velit
-                        optio.
-                        Blanditiis, rerum.</p>
+                    <p><%= selectedProduct.description %></p>
+                    <p>Año: <%= selectedProduct.year %></p>
+                    <p>Tipo de embarcacion: <%= selectedProduct.category %></p>
+                    <p>Condicion: <%= selectedProduct.state_embarcation %></p>
                 </div>
             </main>
             <%- include('../partials/footer') %>
