@@ -1,3 +1,4 @@
+const { validationResult } = require("express-validator");
 const product = require('../models/Productos')
 
 const controller = {
@@ -11,10 +12,17 @@ const controller = {
         res.render('./products/productAdd');
     },
     create: function (req, res) {
-        product.create(req.body);
-        //Sujeto a cambios
-        res.redirect('/');
-    },
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+          product.create(req.body);
+          //Sujeto a cambios
+          return res.redirect("/");
+        }
+        let oldBody = req.body;
+        errors = errors.mapped();
+        console.log(errors);
+        res.render("./products/productAdd", { errors, oldBody });
+      },
     edit: function (req, res) {
 
         res.render('./products/productEdit');
