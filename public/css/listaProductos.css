@@ -2,7 +2,7 @@
 main {
     background-color: var(--background-color);
     margin: auto;
-    width: 90%;
+    width: 100%;
 }
 
 .container-main {
@@ -10,20 +10,12 @@ main {
     flex-wrap: wrap;
 }
 
-.articulo-box-1,
-.articulo-box-2,
-.articulo-box-3,
-.articulo-box-4 {
+.articulo {
     margin: 10px;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
-
-
-.articulo-box-1 img,
-.articulo-box-2 img,
-.articulo-box-3 img,
-.articulo-box-4 img {
+.articulo img {
     max-width: 100%;
     height: auto;
 }
@@ -50,7 +42,7 @@ main {
 
 .buy-button {
     text-align: center;
-    margin: 10px 0px
+    margin-top: 10px;
 }
 
 .buy-button button {
@@ -62,6 +54,7 @@ main {
 }
 
 .detalle {
+    padding: 10px;
     background-color: #31466a;
 }
 

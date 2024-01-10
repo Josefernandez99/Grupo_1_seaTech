@@ -6,113 +6,33 @@
 
     <body>
         <%- include('../partials/header') %>
+
             <main>
                 <div class="conteiner-main">
-                    <article class="articulo-box-1">
-                        <div>
-                            <img src="/images/productos/barco-img-1.png" alt="cookies">
-                        </div>
-                        <div class="detalle">
-                            <div class="title-producto">
-                                <p>Nombre del producto</p>
-                            </div>
-                            <div class="modelo">
-                                <p>Modelo</p>
-                            </div>
-                            <div class="precio">
-                                <p>precio de producto</p>
-                            </div>
-                            <div class="buy-button">
-                                <a href="/products/productDetail">
-                                    <button>
-                                        COMPRAR
-                                    </button>
-                                </a>
-                                <a href="/product/cart">
-                                    <button>
-                                        AÑADIR AL CARRITO
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="articulo-box-2">
-                        <div class="art-div-box">
+                    <% allProducts.forEach(articulo=> { %>
+                        <article class="articulo">
                             <div>
-                                <img src="/images/productos/barco-img-2.png" alt="cookies">
+                                <img src="/images/productos/<%= articulo.image %>" alt="cookies">
                             </div>
-                        </div>
-                        <div class="detalle">
-                            <div class="title-producto">
-                                <p>Nombre del producto</p>
+                            <div class="detalle">
+                                <div class="title-producto">
+                                    <p><%= articulo.name %></p>
+                                </div>
+                                <div class="modelo">
+                                    <p><%= articulo.category %></p>
+                                </div>
+                                <div class="precio">
+                                    <p>$<%= articulo.price %></p>
+                                </div>
+                                <div class="buy-button">
+                                    <a href="/products/<%= articulo.id %>"><button>DETALLES</button></a>
+                                </div>
                             </div>
-                            <div class="modelo">
-                                <p>Modelo</p>
-                            </div>
-                            <div class="precio">
-                                <p>precio de producto</p>
-                            </div>
-                            <div class="buy-button">
-                                <a href="/products/productDetail">
-                                    <button>
-                                        COMPRAR
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="articulo-box-3">
-                        <div class="art-div-box">
-                            <div>
-                                <img src="/images/productos/barco-img-3.png" alt="cookies">
-                            </div>
-                        </div>
-                        <div class="detalle">
-                            <div class="title-producto">
-                                <p>Nombre del producto</p>
-                            </div>
-                            <div class="modelo">
-                                <p>Modelo</p>
-                            </div>
-                            <div class="precio">
-                                <p>precio de producto</p>
-                            </div>
-                            <div class="buy-button">
-                                <a href="/products/productDetail">
-                                    <button>
-                                        COMPRAR
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="articulo-box-4">
-                        <div class="art-div-box">
-                            <div>
-                                <img src="/images/productos/barco-img-4.png" alt="cookies">
-                            </div>
-                        </div>
-                        <div class="detalle">
-                            <div class="title-producto">
-                                <p>Nombre del producto</p>
-                            </div>
-                            <div class="modelo">
-                                <p>Modelo</p>
-                            </div>
-                            <div class="precio">
-                                <p>precio de producto</p>
-                            </div>
-                            <div class="buy-button">
-                                <a href="/products/productDetail">
-                                    <button>
-                                        COMPRAR
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
+                        </article>
+                        <% }) %>
                 </div>
             </main>
+
             <%- include('../partials/footer') %>
     </body>
 

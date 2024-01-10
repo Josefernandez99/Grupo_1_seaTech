@@ -38,13 +38,5 @@
   "state_embarcation": "Nuevo",
   "price": 53704.7,
   "year": 1989
- },
- {
-  "id": 5,
-  "embarcacion": [
-   "velero",
-   "on"
-  ],
-  "textarea": "Esto es una prueba"
  }
 ]
