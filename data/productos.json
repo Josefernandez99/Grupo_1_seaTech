@@ -41,10 +41,12 @@
  },
  {
   "id": 5,
-  "embarcacion": [
-   "velero",
-   "on"
-  ],
-  "textarea": "Esto es una prueba"
+  "name": "Prueba Nueva",
+  "category": "lancha",
+  "price": "15000",
+  "year": "1993",
+  "state_embarcation": "nuevo",
+  "description": "Esto es otra prueba.",
+  "image": "GA29oPDaMAAMkHx.jpg"
  }
 ]
