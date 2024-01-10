@@ -20,7 +20,8 @@ const controller = {
         res.render('./products/productEdit');
     },
     list: function (req, res) {
-        res.render('./products/listaProductos');
+        const allProducts = product.findAll();
+        res.render('./products/listaProductos', {allProducts});
     }
 }
 
