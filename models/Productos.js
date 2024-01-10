@@ -87,7 +87,7 @@ const Producto = {
     },
     delete: function (id) {
         let allProducts = this.findAll();
-        let finaProducts = allProducts.filter(oneProduct => oneProduct.id !== id);
+        let finalProducts = allProducts.filter(oneProduct => oneProduct.id !== id);
         fs.writeFileSync(path.join(__dirname, this.filename), JSON.stringify(finalProducts, null, ' '));
         return true;
     }
