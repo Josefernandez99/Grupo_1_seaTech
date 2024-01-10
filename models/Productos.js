@@ -46,7 +46,43 @@ const Producto = {
         return true;
 
     },
-    update: function () {
+    update: function (productUpdate, id) {
+
+        let allProducts = this.findAll();
+
+        // Buscar el índice del objeto a actualizar
+        let indexToUpdate = -1;
+        for (let i = 0; i < allProducts.length; i++) {
+            if (allProducts[i].id == id) {
+                indexToUpdate = i;
+                break;
+            }
+        }
+
+        // Si no se encuentra el objeto, devolver false
+        if (indexToUpdate === -1) {
+            return false;
+        }
+
+        // Actualizar campos del objeto
+        let oldProduct = allProducts[indexToUpdate];
+        console.log("Antes de la actualización:", oldProduct);
+
+        for (let field in productUpdate) {
+            if (oldProduct.hasOwnProperty(field)) {
+                oldProduct[field] = productUpdate[field];
+            }
+        }
+
+        console.log("Después de la actualización:", oldProduct);
+
+        // Actualizar el array con el objeto modificado
+        allProducts[indexToUpdate] = oldProduct;
+
+        // Guardar el array actualizado en el archivo JSON
+        fs.writeFileSync(path.join(__dirname, this.filename), JSON.stringify(allProducts, null, ' '));
+
+        return true;
 
     },
     delete: function () {
