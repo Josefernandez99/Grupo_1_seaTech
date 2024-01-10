@@ -11,23 +11,23 @@
                     <article class="articulo-box-2">
                         <div class="art-div-box">
                             <div>
-                                <img src="/images/productos/<%= locals.body.image %>" alt="barco">
+                                <img src="/images/productos/<%= selectedProduct.image %>" alt="barco">
                             </div>
                         </div>
                         <div class="detalle">
                             <div class="title-producto">
                                 <p>
-                                    <%= locals.body.name %>
+                                    <%= selectedProduct.name %>
                                 </p>
                             </div>
                             <div class="modelo">
                                 <p>
-                                    <%= locals.body.year %>
+                                    <%= selectedProduct.year %>
                                 </p>
                             </div>
                             <div class="precio">
                                 <p>
-                                    <%= locals.body.price %>
+                                    <%= selectedProduct.price %>
                                 </p>
                             </div>
                             <div class="buy-button">
@@ -35,11 +35,11 @@
                                     <p>¿ ESTAS SEGURO ?</p>
                                 </div>
                                 <br />
-                                <form action="/products/detail/:id/delete?_method=DELETE" method="post">
+                                <form action="/products/detail/<%= selectedProduct.id %>/destroy?_method=DELETE" method="post">
                                     <button type="submit">BORRAR</button>
                                 </form>
                                 <br />
-                                <a href="/products/detail/:id">
+                                <a href="/products/detail/<%= selectedProduct.id %>">
                                     <button>CANCELAR</button>
                                 </a>
                             </div>

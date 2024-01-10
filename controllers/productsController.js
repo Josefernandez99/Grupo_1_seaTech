@@ -6,7 +6,8 @@ const controller = {
     res.render("./products/cart");
   },
   detail: function (req, res) {
-    res.render("./products/productDetail");
+    const selectedProduct = product.findByPk(req.params.id);
+    res.render("./products/productDetail", {selectedProduct});
   },
   add: function (req, res) {
     res.render("./products/productAdd");
@@ -17,7 +18,7 @@ const controller = {
     if (errors.isEmpty()) {
       product.create(req.body);
       //Sujeto a cambios
-      return res.redirect("/");
+      return res.redirect("/products");
     }
     let oldBody = req.body;
     errors.mapped();
@@ -31,11 +32,13 @@ const controller = {
     res.render("./products/listaProductos", { allProducts });
   },
   delete: function (req, res) {
-    res.render("./products/deleteSure");
+    const selectedProduct = product.findByPk(req.params.id);
+    res.render("./products/deleteSure", {selectedProduct});
   },
-  deleteSure: function (req, res) {
+  destroy: function (req, res) {
     product.delete(req.params.id);
-  },
+    res.redirect("/products");
+  }
 };
 
 module.exports = controller;

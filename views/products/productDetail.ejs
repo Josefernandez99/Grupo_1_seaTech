@@ -9,22 +9,19 @@
             <main>
                 <section class="caja_contenedora">
                     <div class="carrousel">
-                        <textarea name="textarea" rows="10" cols="50" placeholder="AQUI VA UNA IMAGEN"
-                        id="textarea_text"></textarea>
+                        <img src="/images/productos/<%= selectedProduct.image %>">
                     </div>
                     <div class="producto">
-                        <p>Nombre del producto</p>
-                        <p>$ XXXX,XX</p>
-                        <button type="submit"><a href="cart">COMPRAR</a></button>
+                        <p><%= selectedProduct.name %></p>
+                        <p>$<%= selectedProduct.price %></p>
+                        <button type="submit"><a href="#">Comprar</a></button>
+                        <button type="submit"><a href="cart">Agregar al carrito</a></button>
+                        <button type="submit"><a href="<%= selectedProduct.id %>/delete">Eliminar</a></button>
+                        <button type="submit"><a href="detail/<%= selectedProduct.id %>/edit">Actualizar</a></button>
                     </div>
                 </section>
                 <div class="descripcionProducto">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempore ab corporis minus,
-                        enim
-                        recusandae, impedit illo voluptatum sit nulla atque consectetur aliquam quas cupiditate beatae
-                        velit
-                        optio.
-                        Blanditiis, rerum.</p>
+                    <%= selectedProduct.description %>
                 </div>
             </main>
             <%- include('../partials/footer') %>
