@@ -43,6 +43,14 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+    .search-bar-div input[type=text] {
+        width: 89%;
+        padding: 3px;
+        border: 1px solid #ccc;
+    }
+    .search-bar-div button {
+        width: 10%;
+    }
     /*FIN MAIN*/
 }
 @media (min-width:1024px) {
@@ -60,6 +68,14 @@
     }
     .articulo-box-4 {
         display: none;
+    }
+    .search-bar-div input[type=text] {
+        width: 89%;
+        padding: 3px;
+        border: 1px solid #ccc;
+    }
+    .search-bar-div button {
+        width: 10%;
     }
     /*FIN MAIN*/
 }
