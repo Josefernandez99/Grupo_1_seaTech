@@ -25,7 +25,19 @@ const controller = {
     res.render("./products/productAdd", { errors, oldBody });
   },
   edit: function (req, res) {
-    res.render("./products/productEdit");
+    const idProducto=req.params.id;
+    const productoAactualizar=product.findByPk(idProducto);
+    const categorias=["velero","lancha","yate","moto_agua"];
+    
+    res.render("./products/productEdit",{
+      productoAactualizar,
+      categorias
+    });
+  },
+
+  update:function(req, res){
+product.update(req.body,req.params.id);
+res.redirect("/products");
   },
   list: function (req, res) {
     const allProducts = product.findAll();

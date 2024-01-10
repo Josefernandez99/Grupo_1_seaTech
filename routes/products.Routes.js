@@ -22,7 +22,7 @@ route.get("/detail/:id", productsController.detail);
 route.get("/detail/:id/edit", productsController.edit);
 
 //Procesar la edición de un producto en particular
-//route.put('detail/:id/update', productsController.update);
+route.put('/detail/:id/update', productsController.update);
 
 //Eliminar producto
 route.get("/detail/:id/delete", productsController.delete);

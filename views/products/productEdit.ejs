@@ -14,39 +14,53 @@
                         botón «seleccionar archivo».</p>
                     <p>Las casillas marcadas con * son obligatorias</p>
                 </div>
-                <form action="/productAdd" class="form-product-add">
+                <form action="/products/detail/<%= productoAactualizar.id %>/update?_method=PUT" class="form-product-add" method="POST">
                     <div class="caja-superior">
-
-                        <input type="text" placeholder="Nombre de producto*" required>
+                        <input type="text" placeholder="Nombre de producto*" required name="name"
+                            value="<%= productoAactualizar.name %>">
                         <label for="embarcacion">Selecciona una embarcación:</label>
-                        <select id="embarcacion" name="embarcacion">
-                            <option value="velero">Velero</option>
-                            <option value="lancha">Lancha</option>
-                            <option value="yate">Yate</option>
-                            <option value="moto_agua">Moto de Agua</option>
+                        <select id="embarcacion" name="category">
+                            <%categorias.forEach(categoria=> { %>
+                                <option value="<%= categoria %>" <% if (categoria==productoAactualizar.category) { %>
+                                    <%= "selected" %>
+                                        <% } %>
+                                            ><%= categoria %>
+                                </option>
+                                <% }) %>
+
                         </select>
-                        <input type="text" placeholder="Precio" required>
-                        <input type="text" placeholder="Año" required>
+                        <input type="text" placeholder="Precio" required name="price"
+                            value="<%= productoAactualizar.price %>">
+                        <input type="text" placeholder="Año" required name="year"
+                            value="<%= productoAactualizar.year%>">
+
 
 
                     </div>
 
                     <div class="radios">
-                        <label for="embarcacion">Estado de la embarcacion:</label>
-                        <label for="nuevo" class="radio_btn"><input type="radio" name="embarcacion" id="nuevo" required>Nuevo</label>
-                        <label for="usado" class="radio_btn"><input type="radio" name="embarcacion" id="usado">Usado</label>
+                        <label for="state_embarcation">Estado de la embarcacion:</label>
+                        <label for="nuevo" class="radio_btn"><input type="radio" name="state_embarcation" id="nuevo"
+                                value="Nuevo" required <% if (productoAactualizar.state_embarcation=="Nuevo" ) { %>
+                            <%= "checked" %>
+                                <% } %>
+                                    >Nuevo
+                        </label>
+                        <label for="usado" class="radio_btn"><input type="radio" name="state_embarcation" id="usado"
+                                value="Usado" <% if (productoAactualizar.state_embarcation=="Usado" ) { %>
+                            <%= "checked" %>
+                                <% } %>
+                                    >Usado
+                        </label>
+
                     </div>
-                    <textarea name="textarea" rows="10" cols="50" placeholder="Agrega una descripción..."
-                        id="textarea_text"></textarea>
-                    <input type="file" multiple required accept=".png, .jpg">
+                    <textarea name="description" rows="10" cols="50" placeholder="Agrega una descripción..."
+                        id="textarea_text"><%= productoAactualizar.description %></textarea>
 
-                    <button type="submit">Añadir Producto</button>
+                    <input type="file" required accept=".png, .jpg" name="image">
 
-
-
+                    <button type="submit">MODIFICAR PRODUCTO</button>
                 </form>
-
-
             </main>
             <%- include('../partials/footer') %>
     </body>
