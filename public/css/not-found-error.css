@@ -10,65 +10,47 @@
     --bg-200: #162e50;
     --bg-300: #31466a;    
 }
-
-main {
+body {
     margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #01203f;
-    /*background-image: linear-gradient(135deg, #663366 40%, #EE7317); */
+    padding: 0;
     background-image: linear-gradient(135deg, #3c28af 40%, #041182);
+    height: 100vh;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-    .outer-container {
-        width: 100%;
-        max-width: 320px; /* Ancho máximo de 320px */
-        height: 400px;
-        background-color: #ffffff;
-        border: 1px solid #ccc;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 10px; /* Ajuste de relleno para pantallas más pequeñas */
-    }
-    
-    .image-container {
-        width: 200px;
-        height: auto;
-    }
-    .image-container img {
-        width: 100%;
-        height: auto;
-    }
-    
-    .text-container {
-        padding: 5px; /* Ajuste de relleno para pantallas más pequeñas */
-        text-align: center;
-    }
-    
-    .h3-404 {
-        font-size: 26px; /* Ajuste de tamaño de fuente para pantallas más pequeñas */
-    }
-    
-    .p-text {
-        font-size: 16px; /* Ajuste de tamaño de fuente para pantallas más pequeñas */
-    }
-    
-    .button-back {
-        color: #FFFFFF;
-        width: 80px;
-        height: 30px; /* Ajuste de altura para pantallas más pequeñas */
-        font-size: 12px; /* Ajuste de tamaño de fuente para pantallas más pequeñas */
-        border-radius: 8px; /* Reducción del radio de borde para un aspecto más suave */
-        background-image: linear-gradient(135deg, #3c28af 40%, #041182);
-        border-style: hidden;
-    }
-    
-    .div-button-top {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.image-container {
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    padding-bottom: 10px;
+}
+.image-container img {
+    width: 80%;
+}
+.text-container {
+    text-align: center;
+}
+
+.h3-404 {
+    font-size: 40px;
+    color: #e0e0e0;
+}
+.p-text {
+    font-size: 25px;
+    font-style: normal;
+    color: #e0e0e0
+}
+.button-back {
+    color: #FFFFFF;
+    padding: 10px;
+    background-image: linear-gradient(135deg, #3c28af 40%, #041182);
+    border-radius: 10%;
+    border-color: #FFFFFF;
+}
+.div-button-top {
+    margin-top: 15px;
+}
