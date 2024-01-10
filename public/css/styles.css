@@ -261,7 +261,7 @@ footer {
 /*FIN MOBILE TO TABLE*/
 }
 /*TABLET*/
-@media (min-width:768px) and (max-width:1023px) {
+@media (min-width:768px) {
     /*HEADER*/
     .logo-bar {
         display: flex;
@@ -291,20 +291,20 @@ footer {
         padding-left: 10px;
         padding-right: 10px;
     }
-    .search-bar-div2 {
-        display: none;
-    }
     .search-bar-div {
-        width: 100%;
         display: flex;
         justify-content: center;
+        align-items: center;
+        background-color: #001F3F;
     }
     .search-bar-div-2 {
         width: 100%;
+        max-width: 600px;
     }
     .search-bar-div form {
         width: 100%;
-        padding: 25px;
+        padding: 15px;
+        box-sizing: border-box;
     }
     .search-bar-div input[type=text] {
         width: 75%;
@@ -317,7 +317,6 @@ footer {
     .search-bar {
         width: 100%;
         padding: 4px;
-        background-color: #001F3F;
     }
     .search-bar input {
         width: 60%;
@@ -380,33 +379,6 @@ footer {
     .nav-var-1-list {
         padding-left: 20px;
         padding-right: 20px;
-    }
-    .search-bar-div form {
-        width: 100%;
-        padding-left: 25px;
-    }
-    .search-bar-div input[type=text] {
-        width: 75%;
-        padding: 3px;
-        border: 1px solid #ccc;
-    }
-    .search-bar-div button {
-        width: 19%;
-
-    }
-    .search-bar {
-        width: 100%;
-        padding: 4px;
-        background-color: #001F3F;
-    }
-    .search-bar input {
-        width: 60%;
-    }
-    .button-search-bar {
-        width: auto;
-    }
-    .search-bar-div2 {
-        display: none;
     }
     /*FIN HEADER*/
     /*FOOTER*/
