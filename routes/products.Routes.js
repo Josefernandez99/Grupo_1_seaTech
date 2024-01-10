@@ -15,7 +15,7 @@ route.get('/create', productsController.add);
 route.post('/create', productsController.create);
 
 //Vista de un producto en particular
-route.get('/detail/:id', productsController.detail);
+route.get('/:id', productsController.detail);
 
 //Vista de editar un producto en particular
 route.get('/detail/:id/edit', productsController.edit);
