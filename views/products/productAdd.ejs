@@ -17,28 +17,28 @@
                 <form action="/products/create" class="form-product-add" method="POST">
                     <div class="caja-superior">
 
-                        <input type="text" placeholder="Nombre de producto*" required>
+                        <input type="text" placeholder="Nombre de producto*" required name="name">
                         <label for="embarcacion">Selecciona una embarcación:</label>
-                        <select id="embarcacion" name="embarcacion">
+                        <select id="embarcacion" name="category">
                             <option value="velero">Velero</option>
                             <option value="lancha">Lancha</option>
                             <option value="yate">Yate</option>
                             <option value="moto_agua">Moto de Agua</option>
                         </select>
-                        <input type="text" placeholder="Precio" required>
-                        <input type="text" placeholder="Año" required>
+                        <input type="text" placeholder="Precio" required name="price">
+                        <input type="text" placeholder="Año" required name="year">
 
 
                     </div>
 
                     <div class="radios">
-                        <label for="embarcacion">Estado de la embarcacion:</label>
-                        <label for="nuevo" class="radio_btn"><input type="radio" name="embarcacion" id="nuevo" required>Nuevo</label>
-                        <label for="usado" class="radio_btn"><input type="radio" name="embarcacion" id="usado">Usado</label>
+                        <label for="state_embarcation">Estado de la embarcacion:</label>
+                        <label for="nuevo" class="radio_btn"><input type="radio" name="state_embarcation" id="nuevo" value="Nuevo" required>Nuevo</label>
+                        <label for="usado" class="radio_btn"><input type="radio" name="state_embarcation" id="usado" value="Usado">Usado</label>
                     </div>
-                    <textarea name="textarea" rows="10" cols="50" placeholder="Agrega una descripción..."
+                    <textarea name="description" rows="10" cols="50" placeholder="Agrega una descripción..."
                         id="textarea_text"></textarea>
-                    <input type="file" multiple required accept=".png, .jpg">
+                    <input type="file" required accept=".png, .jpg" name="image">
 
                     <button type="submit">AGREGAR PRODUCTO</button>
 
