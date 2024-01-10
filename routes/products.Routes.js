@@ -24,6 +24,7 @@ route.get('/:id/edit', productsController.edit);
 //route.put('/:id/edit', productsController.update);
 
 //Eliminar producto
-//route.delete('/:id/delete', productsController.delete);
+route.get('/:id/delete', productsController.delete);
+route.delete('/:id/delete', productsController.delete);
 
 module.exports = route;
