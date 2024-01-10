@@ -12,13 +12,13 @@ route.get('/cart', productsController.cart);
 route.get('/create', productsController.add);
 
 //Procesar la creación de un producto
-//route.post('/create', productsController.create);
+route.post('/create', productsController.create);
 
 //Vista de un producto en particular
-route.get('/:id', productsController.detail);
+route.get('/detail/:id', productsController.detail);
 
 //Vista de editar un producto en particular
-route.get('/:id/edit', productsController.edit);
+route.get('/detail/:id/edit', productsController.edit);
 
 //Procesar la edición de un producto en particular
 //route.put('/:id/edit', productsController.update);

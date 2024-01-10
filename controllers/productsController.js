@@ -1,3 +1,5 @@
+const product = require('../models/Productos')
+
 const controller = {
     cart: function (req, res) {
         res.render('./products/cart');
@@ -7,6 +9,11 @@ const controller = {
     },
     add: function (req, res) {
         res.render('./products/productAdd');
+    },
+    create: function (req, res) {
+        product.create(req.body);
+        //Sujeto a cambios
+        res.redirect('/');
     },
     edit: function (req, res) {
 
