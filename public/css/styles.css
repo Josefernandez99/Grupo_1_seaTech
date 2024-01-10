@@ -261,7 +261,7 @@ footer {
 /*FIN MOBILE TO TABLE*/
 }
 /*TABLET*/
-@media (min-width:768px) {
+@media (min-width:768px)  {
     /*HEADER*/
     .logo-bar {
         display: flex;

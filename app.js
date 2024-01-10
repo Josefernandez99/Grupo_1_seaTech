@@ -22,6 +22,10 @@ app.use('/', indexRoute);
 app.use('/user', usersRoute);
 app.use('/products', productsRoute);
 
+app.use((req, res, next) => {
+    res.status(404).render('not-found');
+});
+
 const puerto = 3000
 app.listen(puerto, () =>
     console.log('Servidor corriendo puerto: http://localhost:' + puerto));

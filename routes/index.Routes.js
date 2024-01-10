@@ -5,6 +5,6 @@ const { login, index, register, cart, productDetail } = require('../controllers/
 
 
 route.get('/', index);
-route.get('/index', index);
+route.get('/home', index);
 
 module.exports = route;
