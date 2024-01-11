@@ -12,19 +12,27 @@
                         <img src="/images/productos/<%= selectedProduct.image %>">
                     </div>
                     <div class="producto">
-                        <p class="nombre_producto"><%= selectedProduct.name %></p>
-                        <p class="precio_producto">$<%= selectedProduct.price %></p>
+                        <p class="nombre_producto">
+                            <%= selectedProduct.name %>
+                        </p>
+                        <p class="precio_producto">$<%= selectedProduct.price %>
+                        </p>
                         <button type="submit"><a href="#">Comprar</a></button>
-                        <button type="submit"><a href="cart">Agregar al carrito</a></button>
+                        <button type="submit"><a href="/products/cart">Agregar al carrito</a></button>
                         <button type="submit"><a href="<%= selectedProduct.id %>/delete">Eliminar</a></button>
                         <button type="submit"><a href="<%= selectedProduct.id %>/edit">Actualizar</a></button>
                     </div>
                 </section>
                 <div class="descripcionProducto">
-                    <p><%= selectedProduct.description %></p>
-                    <p>Año: <%= selectedProduct.year %></p>
-                    <p>Tipo de embarcacion: <%= selectedProduct.category %></p>
-                    <p>Condicion: <%= selectedProduct.state_embarcation %></p>
+                    <p>
+                        <%= selectedProduct.description %>
+                    </p>
+                    <p>Año: <%= selectedProduct.year %>
+                    </p>
+                    <p>Tipo de embarcacion: <%= selectedProduct.category %>
+                    </p>
+                    <p>Condicion: <%= selectedProduct.state_embarcation %>
+                    </p>
                 </div>
             </main>
             <%- include('../partials/footer') %>
