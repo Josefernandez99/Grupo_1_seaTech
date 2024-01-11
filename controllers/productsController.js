@@ -41,7 +41,11 @@ const controller = {
   },
 
   update: function (req, res) {
-    product.update(req.body, req.params.id);
+    const updateProduct = {
+      image: req.file?.filename || ([1, 2, 3, 4].includes(Number(req.params.id)) ? `barco-img-${req.params.id}.png` : 'default_image.png'),
+      ...req.body
+    }
+    product.update(updateProduct, req.params.id);
     res.redirect("/products");
   },
   list: function (req, res) {
