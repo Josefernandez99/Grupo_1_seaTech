@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
 const session = require("express-session");
+const cookieParser = require("cookie-parser");
 
 const indexRoute = require("./routes/index.Routes");
 
@@ -26,6 +27,8 @@ app.use(
     saveUninitialized: false,
   })
 );
+
+app.use(cookieParser());
 
 app.use("/", indexRoute);
 app.use("/user", usersRoute);

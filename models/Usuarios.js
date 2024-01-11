@@ -98,3 +98,5 @@ const Usuario = {
     return true;
   },
 };
+
+module.exports = Usuario;
