@@ -23,8 +23,8 @@ const controller = {
     res.render("./users/logout");
   },
   logoutP: function (req, res) {
-    req.session.destroy();
     res.clearCookie("userEmail");
+    req.session.destroy();
     return res.redirect("/");
   },
   register: function (req, res) {

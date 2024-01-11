@@ -58,4 +58,26 @@ Al centrarnos en estas cinco áreas clave, como equipo pudimos abordar tanto las
     - Posponer las reuniones.
 
 - ***Dejar de Hacer*** (Stop Doing):
-    - Trabajar individualmente.
+    - Trabajar individualmente. (Tocar codigo de la aplicación web sin consultar o comentar al resto del equipo.)
+
+# Retrospectiva Grupo SeaTech Sprint 5
+
+- ***Comenzar a Hacer*** (Start Doing): 
+    - Juntarnos los días que se puedan y ejercitarnos juntos sobre temas que estemos un poco flojos.
+    - Hacer competencias de codeo entre todos para aumentar la práctica.
+
+- ***Hacer Más*** (More of):
+    - Usar Trello.
+    - Programar.
+
+- ***Seguir Haciendo*** (Keep Doing):
+    - Que al momento de tomar decisiones votemos.
+    - Ayudarnos para avanzar con el código y las tareas.
+    - Mantener la comunicación entre los miembros del equipo.
+
+- ***Hacer Menos*** (Less of):
+    - Dedicar poco tiempo a la tarea de programar.
+    - Posponer las reuniones.
+
+- ***Dejar de Hacer*** (Stop Doing):
+    - Dividir responsabilidades en cuanto al código.
