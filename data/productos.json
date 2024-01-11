@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Estrellita Azul",
         "description": "Asientos acolchados y cómodos",
-        "image": "barco-img-3.png",
+        "image": "6959856023418.jpg",
         "category": "yate",
         "state_embarcation": "Usado",
         "price": "73743.56",
@@ -38,15 +38,5 @@
         "state_embarcation": "Nuevo",
         "price": 53704.7,
         "year": 1989
-    },
-    {
-        "id": 5,
-        "name": "Prueba",
-        "category": "yate",
-        "price": "1323",
-        "year": "2003",
-        "state_embarcation": "Nuevo",
-        "description": "Hola chicosssss",
-        "image": "geogebra-export.png"
     }
 ]

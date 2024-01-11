@@ -7,37 +7,36 @@ const controller = {
   },
   detail: function (req, res) {
     const selectedProduct = product.findByPk(req.params.id);
-    res.render("./products/productDetail", {selectedProduct});
+    res.render("./products/productDetail", { selectedProduct });
   },
   add: function (req, res) {
     res.render("./products/productAdd");
   },
   create: function (req, res) {
     let errors = validationResult(req);
-    console.log(errors);
     if (errors.isEmpty()) {
       product.create(req.body);
       //Sujeto a cambios
       return res.redirect("/products");
     }
     let oldBody = req.body;
-    errors.mapped();
+    errors = errors.mapped();
     res.render("./products/productAdd", { errors, oldBody });
   },
   edit: function (req, res) {
-    const idProducto=req.params.id;
-    const productoAactualizar=product.findByPk(idProducto);
-    const categorias=["velero","lancha","yate","moto_agua"];
-    
-    res.render("./products/productEdit",{
+    const idProducto = req.params.id;
+    const productoAactualizar = product.findByPk(idProducto);
+    const categorias = ["velero", "lancha", "yate", "moto_agua"];
+
+    res.render("./products/productEdit", {
       productoAactualizar,
-      categorias
+      categorias,
     });
   },
 
-  update:function(req, res){
-product.update(req.body,req.params.id);
-res.redirect("/products");
+  update: function (req, res) {
+    product.update(req.body, req.params.id);
+    res.redirect("/products");
   },
   list: function (req, res) {
     const allProducts = product.findAll();
@@ -45,12 +44,12 @@ res.redirect("/products");
   },
   delete: function (req, res) {
     const selectedProduct = product.findByPk(req.params.id);
-    res.render("./products/deleteSure", {selectedProduct});
+    res.render("./products/deleteSure", { selectedProduct });
   },
   destroy: function (req, res) {
     product.delete(req.params.id);
     res.redirect("/products");
-  }
+  },
 };
 
 module.exports = controller;
