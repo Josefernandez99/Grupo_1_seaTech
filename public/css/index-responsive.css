@@ -1,61 +1,72 @@
 /*MOBILE*/
 @media (min-width:321px) {
-    
+
     /*MAIN*/
-    .articulo-box-1, .articulo-box-2, .articulo-box-3, .articulo-box-4 {
+    .articulo-box {
         width: 100%;
         margin: auto;
         margin-top: 10px;
     }
+
     .conteiner-main {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
+
     /*FIN MAIN*/
 }
+
 @media (min-width:425px) {
+
     /*MAIN*/
-    .articulo-box-1, .articulo-box-2, .articulo-box-3, .articulo-box-4 {
+    .articulo-box {
         width: 100%;
         margin: auto;
         margin-top: 10px;
         max-width: 350px;
     }
-    
+
     /*FIN MAIN*/
 }
+
 @media (min-width:530px) {
-/*MOBILE TO TABLE*/
-.articulo-box-1, .articulo-box-2, .articulo-box-3, .articulo-box-4 {
-    width: 45%;
-    margin: auto;
-    margin-top: 10px;
-    max-width: 350px;
+
+    /*MOBILE TO TABLE*/
+    .articulo-box {
+        width: 45%;
+        margin: auto;
+        margin-top: 10px;
+        max-width: 350px;
+    }
+
+    /*FIN MOBILE TO TABLE*/
 }
 
-/*FIN MOBILE TO TABLE*/
-}
 /*TABLET*/
 @media (min-width:768px) {
 
     /*MAIN*/
-    .articulo-box-1, .articulo-box-2, .articulo-box-3, .articulo-box-4 {
+    .articulo-box {
         width: 44%;
         margin: 23px;
         margin-top: 10px;
         max-width: 350px;
     }
+
     .search-bar-div input[type=text] {
         width: 89%;
         padding: 3px;
         border: 1px solid #ccc;
     }
+
     .search-bar-div button {
         width: 10%;
     }
+
     /*FIN MAIN*/
 }
+
 @media (min-width:1023px) {
 
     /*MAIN*/
@@ -64,30 +75,36 @@
         padding: 3px;
         border: 1px solid #ccc;
     }
+
     .search-bar-div button {
         width: 10%;
     }
+
     /*FIN MAIN*/
 }
+
 @media (min-width:1180px) {
 
     /*MAIN*/
-    .articulo-box-1,.articulo-box-2,.articulo-box-3,.articulo-box-4 {
+    .articulo-box {
         width: 20%;
         max-width: 450px;
         margin: auto;
         margin-top: 10px;
     }
+
     /*FIN MAIN*/
 }
+
 @media (min-width:1450px) {
 
     /*MAIN*/
-    .articulo-box-1,.articulo-box-2,.articulo-box-3,.articulo-box-4 {
+    .articulo-box {
         width: 20%;
         max-width: 450px;
         margin: auto;
         margin-top: 10px;
     }
+
     /*FIN MAIN*/
 }

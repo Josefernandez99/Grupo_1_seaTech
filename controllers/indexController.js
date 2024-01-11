@@ -1,6 +1,9 @@
+const Product = require('../models/Productos');
+
 const controller = {
     index: function (req, res) {
-        res.render('index');
+        const allProducts = Product.findAll();
+        res.render('index', { allProducts });
     }
 }
 
