@@ -22,6 +22,8 @@ app.use(methodOverride("_method"));
 app.use(
   session({
     secret: "MEGA SECRETO",
+    resave: false,
+    saveUninitialized: false,
   })
 );
 
