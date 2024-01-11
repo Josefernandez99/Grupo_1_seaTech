@@ -1,42 +1,42 @@
 [
-    {
-        "id": 1,
-        "name": "Estrellita Azul",
-        "description": "Asientos acolchados y cómodos",
-        "image": "barco-img-3.png",
-        "category": "yate",
-        "state_embarcation": "Usado",
-        "price": "73743.56",
-        "year": "1997"
-    },
-    {
-        "id": 2,
-        "name": "El Dorado",
-        "description": "Motor potente de 200 caballos de fuerza",
-        "image": "barco-img-1.png",
-        "category": "yate",
-        "state_embarcation": "Usado",
-        "price": 35421.67,
-        "year": 1996
-    },
-    {
-        "id": 3,
-        "name": "Estrella del Mar",
-        "description": "Luces de navegación LED",
-        "image": "barco-img-2.png",
-        "category": "yate",
-        "state_embarcation": "Usado",
-        "price": 79429.44,
-        "year": 2010
-    },
-    {
-        "id": 4,
-        "name": "Mariposa",
-        "description": "Ancla y cabrestante eléctrico",
-        "image": "barco-img-4.png",
-        "category": "moto de agua",
-        "state_embarcation": "Nuevo",
-        "price": 53704.7,
-        "year": 1989
-    }
+ {
+  "id": 1,
+  "name": "Estrellita Azul",
+  "description": "Asientos acolchados y cómodos",
+  "image": "barco-img-3.png",
+  "category": "yate",
+  "state_embarcation": "Usado",
+  "price": "73743.56",
+  "year": "1997"
+ },
+ {
+  "id": 2,
+  "name": "El Dorado",
+  "description": "Motor potente de 200 caballos de fuerza",
+  "image": "barco-img-1.png",
+  "category": "yate",
+  "state_embarcation": "Usado",
+  "price": 35421.67,
+  "year": 1996
+ },
+ {
+  "id": 3,
+  "name": "Estrella del Mar",
+  "description": "Luces de navegación LED",
+  "image": "barco-img-2.png",
+  "category": "yate",
+  "state_embarcation": "Usado",
+  "price": 79429.44,
+  "year": 2010
+ },
+ {
+  "id": 4,
+  "name": "Mariposa",
+  "description": "Ancla y cabrestante eléctrico",
+  "image": "barco-img-4.png",
+  "category": "moto de agua",
+  "state_embarcation": "Nuevo",
+  "price": 53704.7,
+  "year": 1989
+ }
 ]

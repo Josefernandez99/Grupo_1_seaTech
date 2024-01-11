@@ -14,7 +14,8 @@
                         botón «seleccionar archivo».</p>
                     <p>Las casillas marcadas con * son obligatorias</p>
                 </div>
-                <form action="/products/detail/<%= productoAactualizar.id %>/update?_method=PUT" class="form-product-add" method="POST">
+                <form action="/products/detail/<%= productoAactualizar.id %>/update?_method=PUT"
+                    class="form-product-add" method="POST" enctype="multipart/form-data">
                     <div class="caja-superior">
                         <input type="text" placeholder="Nombre de producto*" required name="name"
                             value="<%= productoAactualizar.name %>">
@@ -57,7 +58,7 @@
                     <textarea name="description" rows="10" cols="50" placeholder="Agrega una descripción..."
                         id="textarea_text"><%= productoAactualizar.description %></textarea>
 
-                    <input type="file" required accept=".png, .jpg" name="image">
+                    <input type="file" accept=".png, .jpg" name="image">
 
                     <button type="submit">MODIFICAR PRODUCTO</button>
                 </form>

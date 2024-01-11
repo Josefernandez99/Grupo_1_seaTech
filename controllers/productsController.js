@@ -15,7 +15,13 @@ const controller = {
   create: function (req, res) {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      product.create(req.body);
+
+      const newProduct = {
+        image: req.file?.filename || 'default_image.png',
+        ...req.body
+      }
+
+      product.create(newProduct);
       //Sujeto a cambios
       return res.redirect("/products");
     }
