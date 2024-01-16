@@ -12,17 +12,22 @@
                     <% allProducts.forEach(articulo=> { %>
                         <article class="articulo">
                             <div>
-                                <img src="/images/productos/<%= articulo.image %>" alt="cookies">
+                                <img src="<%= articulo.image %>" alt="cookies">
                             </div>
                             <div class="detalle">
                                 <div class="title-producto">
-                                    <p><%= articulo.name %></p>
+                                    <p>
+                                        <%= articulo.name %>
+                                    </p>
                                 </div>
                                 <div class="modelo">
-                                    <p><%= articulo.category %></p>
+                                    <p>
+                                        <%= articulo.category %>
+                                    </p>
                                 </div>
                                 <div class="precio">
-                                    <p>$<%= articulo.price %></p>
+                                    <p>$<%= articulo.price %>
+                                    </p>
                                 </div>
                                 <div class="buy-button">
                                     <a href="/products/detail/<%= articulo.id %>"><button>DETALLES</button></a>

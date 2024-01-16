@@ -1,5 +1,5 @@
 const { validationResult } = require("express-validator");
-const product = require("../models/Productos");
+const product = require("../tools/Productos");
 
 const controller = {
   cart: function (req, res) {
@@ -15,9 +15,9 @@ const controller = {
   create: function (req, res) {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-
+      let imagen_default = 'https://res.cloudinary.com/draudtuyr/image/upload/v1705370351/seatech/product_default_image.png';
       const newProduct = {
-        image: req.file?.filename || 'default_image.png',
+        image: req.file?.cloudinaryUrl || imagen_default,
         ...req.body
       }
 

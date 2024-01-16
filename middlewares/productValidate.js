@@ -19,10 +19,7 @@ module.exports = validate = [
   body("description")
     .notEmpty()
     .withMessage("La descripcion no puede estar vacio"),
-  // body("img").custom((value, { req }) => {
-  //   if (!req.file) {
-  //     throw new Error("Se necesita 1 o mas imagenes");
-  //   }
+  // body("imgage").custom((value, { req }) => {
   //   if (
   //     req.file.mimetype == "image/png" ||
   //     req.file.mimetype == "image/jpg" ||

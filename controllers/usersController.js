@@ -1,4 +1,4 @@
-const user = require("../models/Usuarios");
+const user = require("../tools/Usuarios");
 const bcriptjs = require("bcryptjs");
 const controller = {
   login: function (req, res) {
