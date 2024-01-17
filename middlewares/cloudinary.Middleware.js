@@ -1,21 +1,30 @@
-const cloudinary = require('cloudinary').v2;
-const path = require('path');
 const fs = require('fs');
-const { log } = require('console');
-
-cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET,
-    secure: true
-});
+const cloudinary = require('../tools/cloudinaryConfig');
+const path = require('path');
+const { validationResult } = require("express-validator");
 
 const cloudinaryMiddleware = async (req, res, next) => {
     try {
         const file = req.file;
+        let errors = validationResult(req);
+        if (!file) {
+            return next();
+        }
 
         // Ruta local del archivo
         const filePath = path.join(__dirname, '../public/images/temp', file.filename);
+
+        if (!errors.isEmpty()) {
+
+            fs.unlink(filePath, (error) => {
+                if (error) {
+                    console.error(err);
+                } else {
+                    console.log(`Archivo eliminado: ${filePath}`);
+                }
+            });
+            return next();
+        }
 
         // Carga el archivo a Cloudinary utilizando el método upload
         const result = await cloudinary.uploader.upload(filePath, {
@@ -37,7 +46,7 @@ const cloudinaryMiddleware = async (req, res, next) => {
         });
 
         // Continúa con la ejecución de la siguiente función en la cadena de middleware
-        next();
+        return next();
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Error al subir el archivo a Cloudinary' });

@@ -15,10 +15,15 @@ const controller = {
   create: function (req, res) {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      let imagen_default = 'https://res.cloudinary.com/draudtuyr/image/upload/v1705370351/seatech/product_default_image.png';
+      let bodyCopy = { ...req.body };
+      let price = Number(bodyCopy.price), year = Number(bodyCopy.year);
+      delete bodyCopy.price;
+      delete bodyCopy.year;
       const newProduct = {
-        image: req.file?.cloudinaryUrl || imagen_default,
-        ...req.body
+        image: req.file.cloudinaryUrl,
+        price,
+        year,
+        ...bodyCopy
       }
 
       product.create(newProduct);

@@ -1,42 +1,52 @@
 [
-    {
-        "id": 1,
-        "name": "Estrella Azul",
-        "description": "Asientos acolchados y cómodos",
-        "image": "https://res.cloudinary.com/draudtuyr/image/upload/v1705370353/seatech/uhflq2xllzndhylrtlmo.png",
-        "category": "yate",
-        "state_embarcation": "Usado",
-        "price": "73743.56",
-        "year": "1997"
-    },
-    {
-        "id": 2,
-        "name": "El Dorado",
-        "description": "Motor potente de 200 caballos de fuerza\r\n\r\nMás cosas",
-        "image": "https://res.cloudinary.com/draudtuyr/image/upload/v1705370352/seatech/sodkuz9jubzku7lowocx.png",
-        "category": "yate",
-        "state_embarcation": "Usado",
-        "price": "35421.67",
-        "year": "1996"
-    },
-    {
-        "id": 3,
-        "name": "Estrella del Mar",
-        "description": "Luces de navegación LED",
-        "image": "https://res.cloudinary.com/draudtuyr/image/upload/v1705370352/seatech/jajiauxyqzr4sumopo9f.png",
-        "category": "yate",
-        "state_embarcation": "Usado",
-        "price": 79429.44,
-        "year": 2010
-    },
-    {
-        "id": 4,
-        "name": "Mariposa",
-        "description": "Ancla y cabrestante eléctrico",
-        "image": "https://res.cloudinary.com/draudtuyr/image/upload/v1705370352/seatech/vyl6qx7bjfzlvxrxtjbl.png",
-        "category": "moto de agua",
-        "state_embarcation": "Nuevo",
-        "price": 53704.7,
-        "year": 1989
-    }
+ {
+  "id": 1,
+  "name": "Estrella Azul",
+  "description": "Asientos acolchados y cómodos",
+  "image": "https://res.cloudinary.com/draudtuyr/image/upload/v1705370353/seatech/uhflq2xllzndhylrtlmo.png",
+  "category": "Yate",
+  "state_embarcation": "Usado",
+  "price": 73743.56,
+  "year": 1997
+ },
+ {
+  "id": 2,
+  "name": "El Dorado",
+  "description": "Motor potente de 200 caballos de fuerza\r\n\r\nMás cosas",
+  "image": "https://res.cloudinary.com/draudtuyr/image/upload/v1705370352/seatech/sodkuz9jubzku7lowocx.png",
+  "category": "Yate",
+  "state_embarcation": "Usado",
+  "price": 35421.67,
+  "year": 1996
+ },
+ {
+  "id": 3,
+  "name": "Estrella del Mar",
+  "description": "Luces de navegación LED",
+  "image": "https://res.cloudinary.com/draudtuyr/image/upload/v1705370352/seatech/jajiauxyqzr4sumopo9f.png",
+  "category": "Yate",
+  "state_embarcation": "Usado",
+  "price": 79429.44,
+  "year": 2010
+ },
+ {
+  "id": 4,
+  "name": "Mariposa",
+  "description": "Ancla y cabrestante eléctrico",
+  "image": "https://res.cloudinary.com/draudtuyr/image/upload/v1705370352/seatech/vyl6qx7bjfzlvxrxtjbl.png",
+  "category": "Moto_de_Agua",
+  "state_embarcation": "Nuevo",
+  "price": 53704.7,
+  "year": 1989
+ },
+ {
+  "id": 5,
+  "image": "https://res.cloudinary.com/draudtuyr/image/upload/v1705524451/seatech/1705524447216-img-geogebra-export.png.png",
+  "price": 1200.87,
+  "year": 2021,
+  "name": "Prueba",
+  "category": "Velero",
+  "state_embarcation": "Usado",
+  "description": "Perro mojado"
+ }
 ]
