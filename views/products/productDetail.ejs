@@ -9,7 +9,7 @@
             <main>
                 <section class="caja_contenedora">
                     <div class="foto_producto">
-                        <img src="<%= selectedProduct.image %>">
+                        <img src="<%= selectedProduct.image.url %>">
                     </div>
                     <div class="producto">
                         <p class="nombre_producto">
@@ -29,13 +29,15 @@
                     </p>
                     <p>Año: <%= selectedProduct.year %>
                     </p>
-                    <p>Tipo de embarcacion: <%= selectedProduct.category %>
+                    <p>Tipo de embarcacion: <%=
+                            selectedProduct.category.includes('_')?selectedProduct.category.replace(/_/g, ' ' ) :
+                            selectedProduct.category %>
                     </p>
                     <p>Condicion: <%= selectedProduct.state_embarcation %>
                     </p>
                 </div>
             </main>
-            <%- include('../partials/footer') %>
+            <%- include("../partials/footer") %>
     </body>
 
 </html>

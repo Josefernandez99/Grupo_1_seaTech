@@ -23,7 +23,7 @@ module.exports = validate = [
   body("description")
     .notEmpty()
     .withMessage("La descripcion no puede estar vacia").bail()
-    .isAlphanumeric('es-ES', { ignore: ' -_' }).withMessage("La descripcion debe ser alfanumerica"),
+    .isAlphanumeric('es-ES', { ignore: ' -_.*/()&#%,:;\r?\n' }).withMessage("La descripcion debe ser alfanumerica"),
   body("image").custom((value, { req }) => {
 
     let file = req.file;

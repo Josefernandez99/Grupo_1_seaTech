@@ -18,49 +18,99 @@
                     class="form-product-add" method="POST" enctype="multipart/form-data">
                     <div class="caja-superior">
                         <input type="text" placeholder="Nombre de producto*" required name="name"
-                            value="<%= productoAactualizar.name %>">
-                        <label for="embarcacion">Selecciona una embarcación:</label>
-                        <select id="embarcacion" name="category">
-                            <%categorias.forEach(categoria=> { %>
-                                <option value="<%= categoria %>" <% if (categoria==productoAactualizar.category) { %>
-                                    <%= "selected" %>
-                                        <% } %>
-                                            ><%= categoria %>
-                                </option>
-                                <% }) %>
+                            value="<%= locals.oldBody?.name || productoAactualizar.name %>"
+                            class="<%= locals.errors?.name ? 'is-invalid' : null %>">
+                        <% if (locals.errors?.name) { %>
+                            <p class="error">
+                                <%= errors.name.msg %>
+                            </p>
+                            <% } %>
+                                <label for="embarcacion">Selecciona una embarcación:</label>
+                                <select id="embarcacion" name="category"
+                                    class="<%= locals.errors?.category ? 'is-invalid' : null %>">
+                                    <option value="">Elegí una categoría</option>
+                                    <% let categorias=['Velero', 'Lancha' , 'Yate' , 'Moto de Agua' ] %>
+                                        <% categorias.forEach(categoria=> { %>
+                                            <option
+                                                value="<%= categoria.includes(' ') ? categoria.replace(/ /g, '_') : categoria %>"
+                                                <%=(locals.oldBody &&
+                                                (categoria===(oldBody.category.includes('_')?oldBody.category.replace(/_/g, ' '
+                                                ) : oldBody.category)) ? 'selected' :null) || (!locals.oldBody &&
+                                                ((productoAactualizar.category.includes('_')?productoAactualizar.category.replace(/_/g, ' '
+                                                ) : productoAactualizar.category)===categoria) ? 'selected' :null)%>
+                                                >
+                                                <%= categoria %>
+                                            </option>
+                                            <% }) %>
+                                </select>
+                                <% if (locals.errors?.category) { %>
+                                    <p class="error">
+                                        <%= errors.category.msg %>
+                                    </p>
+                                    <% } %>
+                                        <input type="text" placeholder="Precio" required name="price"
+                                            value="<%= locals.oldBody?.price || productoAactualizar.price %>"
+                                            class="<%= locals.errors?.price ? 'is-invalid' : null %>">
+                                        <% if (locals.errors?.price) { %>
+                                            <p class="error">
+                                                <%= errors.price.msg %>
+                                            </p>
+                                            <% } %>
 
-                        </select>
-                        <input type="text" placeholder="Precio" required name="price"
-                            value="<%= productoAactualizar.price %>">
-                        <input type="text" placeholder="Año" required name="year"
-                            value="<%= productoAactualizar.year%>">
-
-
+                                                <input type="text" placeholder="Año" required name="year"
+                                                    value="<%= locals.oldBody?.year || productoAactualizar.year %>"
+                                                    class="<%= locals.errors?.year ? 'is-invalid' : null %>">
+                                                <% if (locals.errors?.year) { %>
+                                                    <p class="error">
+                                                        <%= errors.year.msg %>
+                                                    </p>
+                                                    <% } %>
 
                     </div>
 
                     <div class="radios">
                         <label for="state_embarcation">Estado de la embarcacion:</label>
-                        <label for="nuevo" class="radio_btn"><input type="radio" name="state_embarcation" id="nuevo"
-                                value="Nuevo" required <% if (productoAactualizar.state_embarcation=="Nuevo" ) { %>
-                            <%= "checked" %>
-                                <% } %>
-                                    >Nuevo
-                        </label>
-                        <label for="usado" class="radio_btn"><input type="radio" name="state_embarcation" id="usado"
-                                value="Usado" <% if (productoAactualizar.state_embarcation=="Usado" ) { %>
-                            <%= "checked" %>
-                                <% } %>
-                                    >Usado
-                        </label>
+                        <% let estado_embarcacion=['Nuevo', 'Usado' ] %>
+                            <% estado_embarcacion.forEach(estado=> { %>
+                                <label for="<%= estado %>" class="radio_btn">
+                                    <input type="radio" name="state_embarcation" id="<%= estado %>"
+                                        value="<%= estado %>" <%=(estado=='Nuevo' ) ? 'required' : null %>
+                                    <%=(locals.oldBody && (estado===oldBody.state_embarcation) ? 'checked' : null) ||
+                                        (!locals.oldBody && (estado===productoAactualizar.state_embarcation) ? 'checked'
+                                        : null)%>>
+                                        <%= estado %>
+                                </label>
+                                <% }) %>
+                                    <% if (locals.errors?.state_embarcation) { %>
+                                        <p class="error">
+                                            <%= errors.state_embarcation.msg %>
+                                        </p>
+                                        <% } %>
+
 
                     </div>
                     <textarea name="description" rows="10" cols="50" placeholder="Agrega una descripción..."
-                        id="textarea_text"><%= productoAactualizar.description %></textarea>
+                        id="textarea_text"
+                        required><%= locals.oldBody?.description || productoAactualizar.description %></textarea>
+                    <% if (locals.errors?.description) { %>
+                        <p class="error">
+                            <%= errors.description.msg %>
+                        </p>
+                        <% } %>
+                            <label for="imagenActual">Imagen actual</label>
+                            <input type="image" src="<%= productoAactualizar.image.url %>" alt="Barco"
+                                id="imagenActual">
+                            <input type="hidden" name="idImagenAntesDeActualizar"
+                                value="<%= productoAactualizar.image.public_id %>">
+                            <label for="cargarImagen">¿Desea actualizar la imagen?</label>
+                            <input type="file" accept="image/png, image/jpg, image/jpeg" name="image" id="cargarImagen">
+                            <% if (locals.errors && errors.image?.msg.includes("formatos")) { %>
+                                <p class="error">
+                                    <%= errors.image.msg %>
+                                </p>
+                                <% } %>
 
-                    <input type="file" accept=".png, .jpg" name="image">
-
-                    <button type="submit">MODIFICAR PRODUCTO</button>
+                                    <button type="submit">MODIFICAR PRODUCTO</button>
                 </form>
             </main>
             <%- include('../partials/footer') %>
