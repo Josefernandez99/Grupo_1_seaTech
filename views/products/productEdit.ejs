@@ -98,8 +98,8 @@
                         </p>
                         <% } %>
                             <label for="imagenActual">Imagen actual</label>
-                            <input type="image" src="<%= productoAactualizar.image.url %>" alt="Barco"
-                                id="imagenActual">
+                            <input type="image" src="<%= productoAactualizar.image.url %>" alt="Barco" id="imagenActual"
+                                disabled>
                             <input type="hidden" name="idImagenAntesDeActualizar"
                                 value="<%= productoAactualizar.image.public_id %>">
                             <label for="cargarImagen">¿Desea actualizar la imagen?</label>

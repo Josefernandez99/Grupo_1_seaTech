@@ -84,9 +84,17 @@ const controller = {
     const selectedProduct = product.findByPk(req.params.id);
     res.render("./products/deleteSure", { selectedProduct });
   },
-  destroy: function (req, res) {
-    product.delete(req.params.id);
-    res.redirect("/products");
+  destroy: async function (req, res) {
+
+    try {
+
+      await product.delete(req.params.id);
+      res.redirect("/products");
+
+    } catch (error) {
+      res.status(500).json({ error: 'Error al eliminar el producto' });
+    }
+
   },
 };
 
