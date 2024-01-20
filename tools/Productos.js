@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const cloudinary = require('../tools/cloudinaryConfig');
 
 const Producto = {
 
@@ -87,6 +88,10 @@ const Producto = {
     },
     delete: function (id) {
         let allProducts = this.findAll();
+        //Eliminar de cloudinary la imagen------------------
+        const { image: { public_id } } = this.findByPk(id);
+        cloudinary.uploader.destroy(public_id);
+        //---------------------------------------------------
         let finalProducts = allProducts.filter(oneProduct => oneProduct.id != id);
         fs.writeFileSync(path.join(__dirname, this.filename), JSON.stringify(finalProducts, null, ' '));
         return true;

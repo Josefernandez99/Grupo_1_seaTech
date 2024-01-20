@@ -50,18 +50,5 @@
   "state_embarcation": "Nuevo",
   "price": 53704.7,
   "year": 1989
- },
- {
-  "id": 5,
-  "image": {
-   "public_id": "seatech/olouygqiapuvydfiazu6",
-   "url": "https://res.cloudinary.com/draudtuyr/image/upload/v1705629874/seatech/olouygqiapuvydfiazu6.jpg"
-  },
-  "price": 1500,
-  "year": 2005,
-  "name": "Unturned",
-  "category": "Yate",
-  "state_embarcation": "Nuevo",
-  "description": "asdasdasdad"
  }
 ]

@@ -1,5 +1,5 @@
 module.exports = function userLogued(req, res, next) {
-  const user = require("../models/Usuarios");
+  const user = require("../tools/Usuarios");
   if (req.cookies.userEmail) {
     req.session.userLogued = user.findByField("email", req.cookies.userEmail);
   }

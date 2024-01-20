@@ -11,7 +11,7 @@
                     <article class="articulo-box-2">
                         <div class="art-div-box">
                             <div>
-                                <img src="/images/productos/<%= selectedProduct.image %>" alt="barco">
+                                <img src="<%= selectedProduct.image.url %>" alt="barco">
                             </div>
                         </div>
                         <div class="detalle">
@@ -35,7 +35,8 @@
                                     <p>¿ ESTAS SEGURO ?</p>
                                 </div>
                                 <br />
-                                <form action="/products/detail/<%= selectedProduct.id %>/destroy?_method=DELETE" method="post">
+                                <form action="/products/detail/<%= selectedProduct.id %>/destroy?_method=DELETE"
+                                    method="post">
                                     <button type="submit">BORRAR</button>
                                 </form>
                                 <br />
