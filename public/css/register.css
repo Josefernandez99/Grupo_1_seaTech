@@ -24,6 +24,10 @@ main {
     align-items: center;
 }
 
+.contenedor-button {
+    text-align: center;
+}
+
 .contenedor-input input,
 .contenedor-select select {
     width: 90%;

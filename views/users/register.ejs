@@ -12,17 +12,17 @@
 
                     <div class="contenedor-input">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" name="fullname" placeholder="Tu nombre" required>
+                        <input type="text" name="firstName" placeholder="Tu nombre" required>
                     </div>
 
                     <div class="contenedor-input">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input type="email" name="email" placeholder="Tu email" required>
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="lastName" placeholder="Tu apellido" required>
                     </div>
 
                     <div class="contenedor-input">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input type="email" name="emailRepeat" placeholder="Repetir tu email" required>
+                        <i class="fa-solid fa-image"></i>
+                        <input type="file" accept="image/png, image/jpg, image/jpeg" name="image">
                     </div>
 
                     <div class="contenedor-input">
@@ -31,14 +31,15 @@
                     </div>
 
                     <div class="contenedor-input">
-                        <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Contraseña" name="password" required>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" name="direction" placeholder="Tu dirección física" required>
                     </div>
 
                     <div class="contenedor-select">
 
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-map"></i>
                         <select name="provincia">
+                            <option value="">Selecciona una provincia</option>
                             <option value="Buenos Aires">Buenos Aires</option>
                             <option value="Catamarca">Catamarca</option>
                             <option value="Chaco">Chaco</option>
@@ -66,7 +67,19 @@
 
                     </div>
 
-                    <button type="submit" class="boton">Crear cuenta</button>
+                    <div class="contenedor-input">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Tu email" required>
+                    </div>
+
+                    <div class="contenedor-input">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Contraseña" name="password" required>
+                    </div>
+
+                    <div class="contenedor-button">
+                        <button type="submit" class="boton">Crear cuenta</button>
+                    </div>
 
 
                 </form>
