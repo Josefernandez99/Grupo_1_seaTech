@@ -1,5 +1,7 @@
 const user = require("../tools/Usuarios");
 const bcriptjs = require("bcryptjs");
+const { validationResult } = require("express-validator");
+
 const controller = {
   login: function (req, res) {
     res.render("./users/login");
