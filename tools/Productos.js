@@ -13,7 +13,7 @@ const Producto = {
     getId: function () {
         let allProducts = this.getData();
 
-        if (allProducts) {
+        if (allProducts.length > 0) {
             return allProducts.pop().id + 1;
         }
 

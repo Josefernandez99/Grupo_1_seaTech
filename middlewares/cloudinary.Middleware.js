@@ -38,13 +38,13 @@ const cloudinaryMiddleware = async (req, res, next) => {
         const options = {};
 
         if (req.body.idImagenAntesDeActualizar) {
-            //actualizar la imagen de un producto
+            //actualizar la imagen
             options.public_id = req.body.idImagenAntesDeActualizar
             options.invalidate = true
             options.overwrite = true
 
         } else {
-            //subir la imagen a cloudinary del producto creado
+            //subir la imagen a cloudinary
             options.folder = 'seatech'
             options.allowed_formats = ['jpg', 'png', 'jpeg']
         }
