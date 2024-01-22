@@ -13,7 +13,7 @@ const Usuario = {
   getId: function () {
     let allUsers = this.getData();
 
-    if (allUsers) {
+    if (allUsers.length > 0) {
       return allUsers.pop().id + 1;
     }
 
@@ -26,7 +26,7 @@ const Usuario = {
   findByPk: function (id) {
     let allUsers = this.findAll();
 
-    return allUsers.find((oneProduct) => oneUser.id == id);
+    return allUsers.find((oneUser) => oneUser.id == id);
   },
   findByField: function (campo, valor) {
     let allUsers = this.findAll();

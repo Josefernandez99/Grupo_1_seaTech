@@ -1,60 +1,17 @@
 [
     {
-        "nombre": "Carlos",
-        "apellido": "Vargas",
-        "direccion": "46762 Red Cloud Plaza",
-        "DNI": "01HH0VTT1860D95J1R51BMQ6DW",
-        "email": "bdominichetti0@ezinearticles.com",
-        "telefono": "(732) 4253710",
-        "password": "$2a$04$iQFTlIA0rK6LSP9klA94kuOxOKXaMpc/MMQeo4AmANUbioouxhBDS",
-        "nombre_usuario": "kmarnes0",
-        "image": "default_image.jpg"
-    },
-    {
-        "nombre": "Ricardo",
-        "apellido": "Romero",
-        "direccion": "33 Gerald Avenue",
-        "DNI": "01HH0VTT1E4MVQSK2RVX9EE1GS",
-        "email": "wbenyon1@51.la",
-        "telefono": "(426) 2586290",
-        "password": "$2a$04$kP9uu.2pTp5aLQ6OBQabSeqg0SspIel3SFU2RIiXNiihLsOIkUvSi",
-        "nombre_usuario": "smarchelli1",
-        "image": "default_image.jpg"
-    },
-    {
-        "nombre": "Miguel",
-        "apellido": "Rodríguez",
-        "direccion": "93187 Anderson Way",
-        "DNI": "01HH0VTT1JF3TX1MJ7C0TGQAMJ",
-        "email": "rstiff2@pbs.org",
-        "telefono": "(135) 7936804",
-        "password": "$2a$04$QkN1xWxzbFG//lkXUVqV7OMTiPbYCcXKPy9nRDi6xkpLx3JVMW5g.",
-        "nombre_usuario": "jgoch2",
-        "image": "default_image.jpg"
-    },
-    {
-        "id": null,
-        "fullname": "Valentin",
-        "email": "valentin@123.com",
-        "telefono": "3333444444",
-        "password": "$2a$10$/02kok0u2LZe2y8N3JEwGORGBwxpXeaJpLMDQLm7xj.ojz7HFzdmO",
-        "provincia": "Buenos Aires"
-    },
-    {
         "id": 1,
-        "fullname": "juan",
-        "email": "juan@123.com",
-        "telefono": "3333444444",
-        "password": "$2a$10$CpCVxFwr7ejOKAAbjTJFvesnVYcSwaSGU3aHFTDGeCgr0wwJjLx0a",
-        "provincia": "Formosa"
-    },
-    {
-        "id": 2,
-        "fullname": "Pablo",
-        "email": "PabloDelmonte@gmail.com",
-        "emailRepeat": "PabloDelmonte@gmail.com",
-        "telefono": "3333444444",
-        "password": "$2a$10$JUTyxhS0GOxizYoW3hEdruQpfNgNrF1neCZf32IVJmQVubRgtCYnq",
-        "provincia": "Misiones"
+        "firstName": "John",
+        "lastName": "Doe",
+        "telefono": "1111111111",
+        "address": "El País de Nunca Jamas",
+        "provincia": "San_Juan",
+        "email": "test@test.com",
+        "password": "$2a$10$LApqYUN4VTkOenBfS8/Fnua185E7EEOMTBBLrFvlq1OtY2hmCxw.i",
+        "category": 0,
+        "image": {
+            "public_id": "seatech/user_default_image",
+            "url": "https://res.cloudinary.com/draudtuyr/image/upload/v1705370913/seatech/user_default_image.jpg"
+        }
     }
 ]

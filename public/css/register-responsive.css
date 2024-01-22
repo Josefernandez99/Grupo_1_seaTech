@@ -5,19 +5,30 @@
     }
 
     .contenedor-input,
-    .contenedor-select {
+    .contenedor-select,
+    .contenedor-telefono {
         display: block;
     }
 
     .contenedor-input input,
-    .contenedor-select select {
+    .contenedor-select select,
+    .contenedor-telefono input {
         margin-left: 10px;
     }
+
+    .cont-tel-dinamico {
+        width: 67%;
+    }
+
 }
 
 @media (min-width:1024px) {
 
     .contenedor-formulario {
         width: 45%;
+    }
+
+    .cont-tel-dinamico {
+        width: 68%;
     }
 }

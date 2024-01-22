@@ -17,7 +17,8 @@ main {
 }
 
 .contenedor-input,
-.contenedor-select {
+.contenedor-select,
+.contenedor-telefono {
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -36,6 +37,24 @@ main {
     border-radius: 18px;
 }
 
+/* .contenedor-input label {
+    display: block;
+    font-weight: 700;
+} */
+
+.contenedor-telefono input {
+    border: none;
+    padding: 10px;
+    border-radius: 18px;
+}
+
+.cont-tel-constante {
+    width: 60px;
+}
+
+.cont-tel-dinamico {
+    width: 65%;
+}
 
 .boton {
     width: 50%;

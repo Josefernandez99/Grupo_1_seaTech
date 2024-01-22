@@ -1,6 +1,12 @@
 const user = require("../tools/Usuarios");
 const bcriptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
+const getProvincias = require('../tools/provincias');
+
+const imgUserDefault = {
+  public_id: 'seatech/user_default_image',
+  url: 'https://res.cloudinary.com/draudtuyr/image/upload/v1705370913/seatech/user_default_image.jpg'
+}
 
 const controller = {
   login: function (req, res) {
@@ -29,14 +35,57 @@ const controller = {
     req.session.destroy();
     return res.redirect("/");
   },
-  register: function (req, res) {
-    res.render("./users/register");
+  register: async function (req, res) {
+
+    try {
+
+      const provincias = await getProvincias();
+
+      res.render("./users/register", { provincias });
+
+    } catch (error) {
+      res.status(500).json({ error: 'Error al cargar la vista de Registro' });
+    }
+
+
+
   },
-  registerUser: function (req, res) {
-    req.body.password = bcriptjs.hashSync(req.body.password, 10);
-    user.create(req.body);
-    res.redirect("./login");
-  },
+  registerUser: async function (req, res) {
+
+    let errors = validationResult(req);
+
+    if (errors.isEmpty()) {
+
+      req.body.password = bcriptjs.hashSync(req.body.password, 10);
+
+      const newUser = {
+        ...req.body,
+        category: 0,//0: Comprador | 1: Vendedor+Comprador | 2: Admin (sujeto a cambios)
+        image: req.file?.public_id ? { public_id: req.file.public_id, url: req.file.cloudinaryUrl } : imgUserDefault
+      }
+
+      user.create(newUser);
+      res.redirect("./login");
+
+    }
+
+    let oldBody = req.body;
+    errors = errors.mapped();
+    delete oldBody.password;
+
+    try {
+
+      const provincias = await getProvincias();
+
+      res.render("./users/register", { errors, oldBody, provincias });
+
+    } catch (error) {
+
+      res.status(500).json({ error: 'Error al registrarse' });
+
+    }
+
+  }
 };
 
 module.exports = controller;
