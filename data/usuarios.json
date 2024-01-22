@@ -3,7 +3,7 @@
         "id": 1,
         "firstName": "John",
         "lastName": "Doe",
-        "telefono": "1111111111",
+        "telefono": "+54 9 1111111111",
         "address": "El País de Nunca Jamas",
         "provincia": "San_Juan",
         "email": "test@test.com",

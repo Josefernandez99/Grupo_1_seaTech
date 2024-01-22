@@ -57,6 +57,7 @@ const controller = {
     if (errors.isEmpty()) {
 
       req.body.password = bcriptjs.hashSync(req.body.password, 10);
+      req.body.telefono = `+54 9 ${req.body.telefono}`;
 
       const newUser = {
         ...req.body,
