@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const cloudinary = require('../tools/cloudinaryConfig');
 
 const Producto = {
 
@@ -12,7 +13,7 @@ const Producto = {
     getId: function () {
         let allProducts = this.getData();
 
-        if (allProducts) {
+        if (allProducts.length > 0) {
             return allProducts.pop().id + 1;
         }
 
@@ -85,11 +86,28 @@ const Producto = {
         return true;
 
     },
-    delete: function (id) {
-        let allProducts = this.findAll();
-        let finalProducts = allProducts.filter(oneProduct => oneProduct.id != id);
-        fs.writeFileSync(path.join(__dirname, this.filename), JSON.stringify(finalProducts, null, ' '));
-        return true;
+    delete: async function (id) {
+
+        try {
+
+            let allProducts = await this.findAll();
+
+            //Eliminar de cloudinary la imagen------------------
+            const { image: { public_id } } = this.findByPk(id);
+            await cloudinary.uploader.destroy(public_id, {
+                invalidate: true
+            });
+            //---------------------------------------------------
+
+            let finalProducts = allProducts.filter(oneProduct => oneProduct.id != id);
+            fs.writeFileSync(path.join(__dirname, this.filename), JSON.stringify(finalProducts, null, ' '));
+            return true;
+
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ error: 'Error al eliminar la imagen de Cloudinary' });
+        }
+
     }
 
 

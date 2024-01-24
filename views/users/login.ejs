@@ -11,37 +11,21 @@
                         <h3>Accede A tu Cuenta</h3>
                     </div>
 
-                    <form action="login.html" method="post" class="contenedor-form">
+                    <form action="/user/login" method="post" class="contenedor-form">
 
-
-                        <input class="controls" type="text" name="value" placeholder="Tu Email">
-
-                        <input class="controls" type="password" name="contraseña" placeholder="contraseña">
-
-
-
-
-                        <label for="guardado">
-                            <input class="checkbox" type="checkbox" name="checkbox"> mostrar contraseña
-
+                        <input class="controls" type="text" name="email" placeholder="Tu Email">
+                        <input class="controls" type="password" name="password" placeholder="Contraseña">
+                        <label for="recordame">
+                            <input class="checkbox" name="rememberMe" type="checkbox" id="recordame">Recordame
                         </label>
                         <div class="olvidaste-tu-password">
                             <p><a href="#"> ¿olvidaste tu contraseña? </a></p>
                         </div>
-
-                        <input class="button" type="submit" name="submit" value="Ingresar">
-
+                        <button class="button" type="submit">Ingresar</button>
 
                     </form>
 
-
-
-
-
-
                 </div>
-
-
 
             </main>
             <%- include('../partials/footer') %>

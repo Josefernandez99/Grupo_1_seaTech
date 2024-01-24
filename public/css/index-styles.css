@@ -5,8 +5,9 @@ body {
 /*MAIN*/
 main {
     background-color: #e0e0e0;
-    
+
 }
+
 .titulo-h3 {
     font-size: 13px;
     display: flex;
@@ -14,16 +15,19 @@ main {
     margin-bottom: 10px;
     margin-top: 10px;
 }
+
 .titulo-h3 div {
     background-color: #fff;
     border-radius: 10px;
 }
+
 .titulo-h3 h3 {
     font-weight: 400;
     color: #515151;
     width: auto;
     padding: 5px 10px 5px 10px;
 }
+
 .conteiner-main {
     width: 100%;
     padding: 40px;
@@ -31,7 +35,8 @@ main {
     flex-wrap: wrap;
     justify-content: center;
 }
-.articulo-box-1,.articulo-box-2,.articulo-box-3,.articulo-box-4 {
+
+.articulo-box {
     width: auto;
     height: auto;
     margin: 0px 15px 10px 15px;
@@ -39,10 +44,12 @@ main {
     flex-direction: column;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
-.articulo-box-1 img,.articulo-box-2 img,.articulo-box-3 img,.articulo-box-4 img {
+
+.articulo-box img {
     max-width: 100%;
     height: auto;
 }
+
 .title-producto {
     text-align: center;
     font-size: 20px;
@@ -50,21 +57,25 @@ main {
     color: #fff;
     padding-top: 10px;
 }
+
 .modelo {
     text-align: center;
     margin-top: 5px;
     color: #fff;
 }
+
 .precio {
     text-align: center;
     margin-top: 10px;
     color: #fff;
 }
+
 .buy-button {
     text-align: center;
     margin-top: 10px;
     padding-bottom: 10px;
 }
+
 .buy-button button {
     background-color: #000000;
     border-radius: 10px;
@@ -74,20 +85,24 @@ main {
     cursor: pointer;
     color: #fff;
 }
+
 .detalle {
     background-color: #31466a;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
+
 .see-more-button {
     display: flex;
     justify-content: center;
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
 .see-more-button div {
     background-color: #fff;
     border-radius: 10px;
 }
+
 .see-more-button button {
     padding: 5px 80px 5px 80px;
     text-transform: uppercase;
@@ -97,5 +112,5 @@ main {
     border-radius: 10px;
     cursor: pointer;
 }
-/*FIN MAIN*/
 
+/*FIN MAIN*/
