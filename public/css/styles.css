@@ -3,20 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
-    --primary-100:#0074D9;
-    --primary-200:#5fa2ff;
-    --primary-300:#d1ffff;
-    --accent-100:#7FDBFF;
-    --accent-200:#007a9b;
-    --text-100:#FFFFFF;
-    --text-200:#e0e0e0;
-    --text-300:#515151;
-    --background-color:#e0e0e0;
-    --background-color-2:#01203f;
-    --bg-200:#162e50;
-    --bg-300:#31466a;    
+    --primary-100: #0074D9;
+    --primary-200: #5fa2ff;
+    --primary-300: #d1ffff;
+    --accent-100: #7FDBFF;
+    --accent-200: #007a9b;
+    --text-100: #FFFFFF;
+    --text-200: #e0e0e0;
+    --text-300: #515151;
+    --background-color: #e0e0e0;
+    --background-color-2: #01203f;
+    --bg-200: #162e50;
+    --bg-300: #31466a;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -29,56 +31,68 @@ header {
     width: 100%;
     background-color: #001F3F;
 }
+
 .logo-header {
     width: 100%;
     background-color: #001F3F;
 }
+
 .logo-img {
     width: 80%;
 }
+
 .search-bar-div form {
     width: 100%;
     padding-left: 25px;
 }
+
 .search-bar-div input[type=text] {
     width: 75%;
     padding: 3px;
     border: 1px solid #ccc;
 }
+
 .search-bar-div button {
-    background-color:#0074D9;
+    background-color: #0074D9;
     color: #fff;
     padding: 4px 4px 4px 4px;
     border: none;
     cursor: pointer;
     width: 19%;
 }
+
 .search-bar {
     width: 100%;
     padding: 4px;
     background-color: #001F3F;
 }
+
 .search-bar input {
     width: 60%;
 }
+
 .button-search-bar {
     width: auto;
 }
+
 .nav-var-1-list {
     font-size: 14px;
     padding-right: 5px;
     text-decoration: none;
     color: #fff;
 }
+
 .nav-bar-div {
     width: 50%;
     margin-bottom: 10px;
 }
+
 .nav-bar {
     list-style-type: none;
     color: #fff;
     display: flex;
 }
+
 .burger-menu {
     background-color: #1259c3;
     color: #ebebeb;
@@ -89,26 +103,31 @@ header {
     align-items: center;
     font-size: 1vw;
 }
+
 .burger-nav-div {
     background-color: #31466a;
 }
+
 /*FIN HEADER*/
 
 /*FOOTER*/
 footer {
     width: 100%;
 }
+
 .div-footer {
     width: 100%;
     background-color: #001F3F;
     height: 220px;
 }
+
 .div-logo {
     background-color: #001F3F;
     width: 100%;
     display: flex;
     justify-content: center;
 }
+
 .div-contacto {
     background-color: #001F3F;
     width: 100%;
@@ -117,6 +136,7 @@ footer {
     justify-content: center;
     padding: 0px 10px 10px 10px;
 }
+
 .div-social-media {
     background-color: #001F3F;
     width: 100%;
@@ -124,6 +144,7 @@ footer {
     display: flex;
     justify-content: center;
 }
+
 .div-derechos-reservados {
     background-color: #001F3F;
     color: #FFFFFF;
@@ -131,21 +152,47 @@ footer {
     justify-content: center;
     font-size: 14px;
 }
+
 .logo-footer {
     width: auto;
     height: auto;
     padding: 10px 20px 20px 20px;
 }
+
 .links {
     padding: 5px;
     color: #fff;
     text-decoration: none;
 }
+
 #icons {
     color: #fff;
     padding-right: 5px;
 }
+
 /*FIN FOOTER*/
+
+/*EXTRA*/
+.error {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #f00;
+    border-radius: 4px;
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Estilos para input válido */
+.is-valid {
+    border: 1px solid #28a745;
+    /* Borde verde */
+}
+
+/* Estilos para input no válido */
+.is-invalid {
+    border: 1px solid #dc3545;
+    /* Borde rojo */
+}
 
 /*RESPONSIVE HEADER Y FOOTER*/
 
@@ -154,16 +201,20 @@ footer {
     .nav-bar {
         display: none;
     }
+
     .nav-bar-div-2 {
         display: none;
     }
+
     .links {
         font-size: 12px;
     }
+
     .logo-header {
         display: flex;
         justify-content: center;
     }
+
     .logo-footer {
         height: 80px;
         padding-top: 0px;
@@ -171,172 +222,220 @@ footer {
         padding-right: 20px;
         padding-bottom: 0px;
     }
+
     .div-logo {
         height: 80px;
     }
+
     .div-footer {
         width: 100%;
         background-color: #001F3F;
         height: 175px;
     }
+
     .search-bar-div2 {
         display: none;
     }
 }
+
 @media (min-width:321px) and (max-width:424px) {
     .nav-bar {
         display: none;
     }
+
     .nav-bar-div-2 {
         display: none;
     }
+
     .logo-header {
         display: flex;
         justify-content: center;
     }
+
     .links {
         font-size: 12px;
     }
+
     .logo-footer {
         height: 110px;
         padding: 10px 20px 20px 20px;
     }
+
     .div-logo {
         height: 100px;
     }
+
     .div-footer {
         width: 100%;
         background-color: #001F3F;
         height: 170px;
     }
+
     .div-contacto {
         height: 30px;
     }
+
     .search-bar-div2 {
         display: none;
     }
 }
+
 @media (min-width:425px) and (max-width:767px) {
     .nav-bar {
         display: none;
     }
+
     .nav-bar-div-2 {
         display: none;
     }
+
     .logo-header {
         display: flex;
         justify-content: center;
     }
+
     .logo-footer {
         height: 110px;
         padding: 10px 20px 20px 20px;
     }
+
     .search-bar-div2 {
         display: none;
     }
+
     .div-logo {
         height: 100px;
     }
+
     .div-footer {
         width: 100%;
         background-color: #001F3F;
         height: 175px;
     }
+
     .links {
         font-size: 13px;
     }
+
     .div-contacto {
         height: 30px;
     }
 }
+
 @media (min-width:530px) and (max-width:767px) {
-/*MOBILE TO TABLE*/
-.articulo-box-1, .articulo-box-2, .articulo-box-3, .articulo-box-4 {
-    width: 45%;
-    margin: auto;
-    margin-top: 10px;
+
+    /*MOBILE TO TABLE*/
+    .articulo-box-1,
+    .articulo-box-2,
+    .articulo-box-3,
+    .articulo-box-4 {
+        width: 45%;
+        margin: auto;
+        margin-top: 10px;
+    }
+
+    .conteiner-main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /*FIN MOBILE TO TABLE*/
 }
-.conteiner-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-/*FIN MOBILE TO TABLE*/
-}
+
 /*TABLET*/
-@media (min-width:768px)  {
+@media (min-width:768px) {
+
     /*HEADER*/
     .logo-bar {
         display: flex;
         width: 100%;
         height: 105px;
     }
+
     .nav-bar-div-2 {
         display: none;
     }
+
     .logo-header {
         width: 35%;
         height: auto;
     }
+
     .logo-img {
         width: 100%;
         height: 100px;
     }
+
     .nav-bar {
         display: flex;
     }
+
     .nav-bar-div-3 {
         display: flex;
         justify-content: center;
         padding-top: 40px;
         width: 65%;
     }
+
     .nav-var-1-list {
         padding-left: 10px;
         padding-right: 10px;
     }
+
     .search-bar-div {
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: #001F3F;
     }
+
     .search-bar-div-2 {
         width: 100%;
         max-width: 600px;
     }
+
     .search-bar-div form {
         width: 100%;
         padding: 15px;
         box-sizing: border-box;
     }
+
     .search-bar-div input[type=text] {
         width: 75%;
         padding: 3px;
         border: 1px solid #ccc;
     }
+
     .search-bar-div button {
         width: 23%;
     }
+
     .search-bar {
         width: 100%;
         padding: 4px;
     }
+
     .search-bar input {
         width: 60%;
     }
+
     .button-search-bar {
         width: auto;
     }
+
     .burger-nav-div {
         display: none;
     }
+
     .nav-bar-div {
         display: none
     }
+
     .div-centered-nav-bar {
         padding-bottom: 10px;
     }
+
     /*FIN HEADER*/
     /*FOOTER*/
     .logo-footer {
@@ -344,63 +443,81 @@ footer {
         height: 110px;
         padding: 10px 20px 20px 20px;
     }
+
     .div-contacto {
         height: 30px;
     }
+
     .links {
         padding: 5px 20px 5px 20px;
     }
+
     /*FIN FOOTER*/
 }
+
 @media (min-width:1024px) {
+
     /*HEADER*/
     .nav-bar-div {
         display: none;
     }
+
     .burger-nav-div {
         display: none;
     }
+
     .logo-header {
         width: 50%;
     }
+
     .logo-img {
         width: auto;
         height: 100px;
     }
+
     .logo-bar {
         display: flex;
         height: 100px;
     }
+
     .nav-bar-div-3 {
         width: 50%;
         padding: 0%;
     }
+
     .div-centered-nav-bar- {
         display: flex;
         justify-content: center;
         height: 100px;
         padding-top: 40px;
     }
+
     .nav-var-1-list {
         padding-left: 20px;
         padding-right: 20px;
     }
+
     /*FIN HEADER*/
     /*FOOTER*/
     .logo-footer {
         width: auto;
         height: 130px;
     }
+
     .nav-var-1-list {
         padding-left: 20px;
         padding-right: 20px;
     }
+
     .div-contacto {
         height: 30px;
     }
+
     .links {
         padding: 5px 20px 5px 20px;
     }
+
     /*FIN FOOTER*/
 }
+
 /*FIN RESPONSIVE HEADER Y FOOTER*/

@@ -1,29 +1,34 @@
 @media (min-width:768px) {
 
+    .contenedor-formulario {
+        width: 60%;
+    }
+
     .contenedor-input,
-    .contenedor-select {
+    .contenedor-select,
+    .contenedor-telefono {
         display: block;
     }
 
-    .boton {
-        width: 30%;
-    }
-
     .contenedor-input input,
-    .contenedor-select select {
-        width: 70%;
+    .contenedor-select select,
+    .contenedor-telefono input {
         margin-left: 10px;
     }
+
+    .cont-tel-dinamico {
+        width: 67%;
+    }
+
 }
 
 @media (min-width:1024px) {
 
-    .contenedor-input input,
-    .contenedor-select select {
-        width: 50%;
+    .contenedor-formulario {
+        width: 45%;
     }
 
-    .boton {
-        width: 20%;
+    .cont-tel-dinamico {
+        width: 68%;
     }
 }
