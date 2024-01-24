@@ -19,6 +19,9 @@
 }
 body {
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /*HEADER*/
@@ -266,17 +269,18 @@ footer {
     .logo-bar {
         display: flex;
         width: 100%;
+        height: 105px;
     }
     .nav-bar-div-2 {
         display: none;
     }
     .logo-header {
         width: 35%;
-        height: 80px;
+        height: auto;
     }
     .logo-img {
         width: 100%;
-        height: auto;
+        height: 100px;
     }
     .nav-bar {
         display: flex;
@@ -284,7 +288,7 @@ footer {
     .nav-bar-div-3 {
         display: flex;
         justify-content: center;
-        padding-top: 25px;
+        padding-top: 40px;
         width: 65%;
     }
     .nav-var-1-list {
@@ -369,6 +373,7 @@ footer {
     }
     .nav-bar-div-3 {
         width: 50%;
+        padding: 0%;
     }
     .div-centered-nav-bar- {
         display: flex;

@@ -67,6 +67,9 @@
     .search-bar-div button {
         width: 10%;
     }
+    .nav-bar-div-3 {
+        padding: 0%;
+    }
     /*FIN MAIN*/
 }
 @media (min-width:1180px) {
