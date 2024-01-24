@@ -19,27 +19,7 @@ module.exports = validate = [
     body("provincia").notEmpty().withMessage("Tiene que elegir una provincia"),
 
     body("email").notEmpty().withMessage("El campo email no puede estar vacio").bail()
-<<<<<<< HEAD
         .isEmail().withMessage("El valor ingresado debe ser un email valido"),
-=======
-        .isEmail().withMessage("El valor ingresado debe ser un email valido")
-        .custom(async (value, { req }) => {
-
-            try {
-
-                const existingUser = await User.findByField('email', value);
-
-                if (existingUser) {
-                    throw new Error("El email ya se encuentra en uso");
-                }
-                return true;
-
-            } catch (error) {
-                throw error;
-            }
-
-        }),
->>>>>>> b53466c50209c5b758e512870f9d692a00a79f12
 
     body("password").notEmpty().withMessage("El campo contraseña no puede estar vacio").bail()
         .isStrongPassword().withMessage("Contraseña debíl"),
