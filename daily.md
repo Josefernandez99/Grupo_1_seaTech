@@ -29,3 +29,11 @@ Fecha: 2/01/24
 - Nos hemos reunido para charlar el grado de avance del sprint 4 y completar el sprint 5 para el martes.
 - También hablamos de que a pesar de dividirnos las tareas, trabajaremos en grupo en las distintas divisiones.
 - Nos pusimos de acuerdo con los atributos del JSON de productos.
+
+Fecha: 24/01/24
+-cooncordamos horarios acordes a el tiempo libre de todos los integrantes , para reunirnos con comodidad y tratar de estar todos juntos. 
+-Diseñamos el modelo de entidad relacion de la base de datos de seatech.
+-Solucionamos un problema con el archivo .env 
+-Actualizamos trello.
+-Se estan realizando modificaciones a los archivos css del  proyecto.
+-Se estan realizando modificaciones en el backend.
