@@ -14,14 +14,26 @@
                     <form action="/user/login" method="post" class="contenedor-form">
 
                         <input class="controls" type="text" name="email" placeholder="Tu Email">
-                        <input class="controls" type="password" name="password" placeholder="Contraseña">
-                        <label for="recordame">
-                            <input class="checkbox" name="rememberMe" type="checkbox" id="recordame">Recordame
-                        </label>
-                        <div class="olvidaste-tu-password">
-                            <p><a href="#"> ¿olvidaste tu contraseña? </a></p>
-                        </div>
-                        <button class="button" type="submit">Ingresar</button>
+                        <% if (locals.errors?.email) { %>
+                            <p class="error">
+                                <%= errors.email.msg %>
+                            </p>
+                            <% } %>
+                                <input class="controls" type="password" name="password" placeholder="Contraseña">
+                                <% if (locals.errors?.password ? locals.errors.password.msg.includes('vacio') : false) {
+                                    %>
+                                    <p class="error">
+                                        <%= errors.password.msg %>
+                                    </p>
+                                    <% } %>
+                                        <label for="recordame">
+                                            <input class="checkbox" name="rememberMe" type="checkbox"
+                                                id="recordame">Recordame
+                                        </label>
+                                        <div class="olvidaste-tu-password">
+                                            <p><a href="#"> ¿olvidaste tu contraseña? </a></p>
+                                        </div>
+                                        <button class="button" type="submit">Ingresar</button>
 
                     </form>
 

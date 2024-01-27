@@ -13,19 +13,48 @@ const controller = {
   login: function (req, res) {
     res.render("./users/login");
   },
-  checkLogin: function (req, res) {
-    let userToFind = user.findByField("email", req.body.email).pop();
-    if (userToFind) {
-      if (bcriptjs.compareSync(req.body.password, userToFind.password)) {
-        console.log("USUARIO RECONOCIDO");
-        delete userToFind.password;
-        req.session.userLogued = userToFind;
-        if (req.body.rememberMe) {
-          res.cookie("userEmail", req.body.email, { maxAge: 600000 });
-        }
+  checkLogin: async function (req, res) {
+
+    try {
+
+      let errors = validationResult(req);
+      let condicionDeLogueo = typeof (errors.mapped().email) == 'undefined' &&
+        (typeof (errors.mapped().password) == 'undefined' || errors.mapped().password.msg.includes('débil'));
+
+      if (!errors.isEmpty() && !condicionDeLogueo) {
+        errors = errors.mapped();
+        res.render("./users/login", { errors });
+        return;
       }
+
+      let userToFind = await user.findByField("email", req.body.email).pop();
+
+      if (!userToFind) {
+        console.log('DENTRO DE VALIDACION DE USUARIO EXISTENTE');
+        const errors = { email: { msg: 'Usuario no registrado' } };
+        res.render("./users/login", { errors });
+        return;
+      }
+
+      if (!bcriptjs.compareSync(req.body.password, userToFind.password)) {
+        const errors = { email: { msg: 'Credenciales incorrectas' } };
+        res.render("./users/login", { errors });
+        return;
+      }
+
+      delete userToFind.password;
+      console.log("USUARIO RECONOCIDO");
+      req.session.userLogued = userToFind;
+      if (req.body.rememberMe) {
+        res.cookie("userEmail", req.body.email, { maxAge: 600000 });
+      }
+      res.redirect("/products");
+
+
+    } catch (error) {
+      console.log(error);
+      handleError(res, 'Error en el proceso de logueo', 500);
     }
-    res.redirect("/products");
   },
   logout: function (req, res) {
     res.render("./users/logout");

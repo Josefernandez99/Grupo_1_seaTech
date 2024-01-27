@@ -22,7 +22,7 @@ module.exports = validate = [
         .isEmail().withMessage("El valor ingresado debe ser un email valido"),
 
     body("password").notEmpty().withMessage("El campo contraseña no puede estar vacio").bail()
-        .isStrongPassword().withMessage("Contraseña debíl"),
+        .isStrongPassword().withMessage("Contraseña débil"),
 
     body("image").custom((value, { req }) => {
 

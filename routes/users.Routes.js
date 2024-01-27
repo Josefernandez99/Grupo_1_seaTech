@@ -7,7 +7,7 @@ const { cloudinaryMiddleware } = require("../middlewares/cloudinary.Middleware")
 const userLogued = require("../middlewares/userLogued");
 
 route.get("/login", userLogued, usersController.login);
-route.post("/login", usersController.checkLogin);
+route.post("/login", userValidate, usersController.checkLogin);
 
 route.get("/register", userLogued, usersController.register);
 route.post("/register", upload.single('image'), userValidate, cloudinaryMiddleware, usersController.registerUser);
