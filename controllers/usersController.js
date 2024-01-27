@@ -50,7 +50,7 @@ const controller = {
         res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 10 });
       }
 
-      res.redirect("/users/profile");
+      res.redirect("/user/profile");
 
     } catch (error) {
       console.log(error);
