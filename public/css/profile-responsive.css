@@ -1,0 +1,15 @@
+@media (min-width: 768px) {
+
+    /* Estilos para dispositivos con una pantalla de 768px o más */
+    .profile-container {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /* Estilos para dispositivos con una pantalla de 1024px o más */
+    .profile-container {
+        max-width: 60%;
+    }
+}

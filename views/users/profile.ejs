@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head',{estilos: 'profile' , responsive: 'profile-responsive' , titulo: 'Perfil de Usuario' })
+    %>
+
+    <body>
+
+        <%- include('../partials/header') %>
+            <main>
+
+                <div class="profile-container">
+                    <div class="profile-name">NOMBRE DE USUARIO</div>
+                    <img class="profile-image"
+                        src="https://res.cloudinary.com/draudtuyr/image/upload/v1705370913/seatech/user_default_image.jpg"
+                        alt="Imagen de perfil">
+                    <div class="profile-email">correo@example.com</div>
+                    <a href="editar_perfil.html" class="edit-profile-button">Editar Perfil</a>
+                    <!-- Puedes agregar más información del perfil aquí, como la dirección, fecha de nacimiento, etc. -->
+                </div>
+
+            </main>
+            <%- include('../partials/footer') %>
+
+    </body>
+
+</html>

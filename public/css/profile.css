@@ -1,0 +1,55 @@
+main {
+    margin: 20px;
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.profile-image {
+    border-radius: 50%;
+    max-width: 100%;
+    /* La imagen ocupará el 100% del contenedor */
+    margin-bottom: 20px;
+}
+
+.profile-email {
+    font-size: 16px;
+    color: #155724;
+    border: #155724 1px solid;
+    background-color: #d4edda;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 350px;
+}
+
+.edit-profile-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+    /* Agregamos una transición para el cambio de color */
+}
+
+/* Efecto hover para el botón */
+.edit-profile-button:hover {
+    background-color: #0056b3;
+}

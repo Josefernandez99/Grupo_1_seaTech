@@ -30,7 +30,7 @@ const controller = {
       let userToFind = await user.findByField("email", req.body.email).pop();
 
       if (!userToFind) {
-        console.log('DENTRO DE VALIDACION DE USUARIO EXISTENTE');
+
         const errors = { email: { msg: 'Usuario no registrado' } };
         res.render("./users/login", { errors });
         return;
@@ -43,13 +43,14 @@ const controller = {
       }
 
       delete userToFind.password;
-      console.log("USUARIO RECONOCIDO");
-      req.session.userLogued = userToFind;
-      if (req.body.rememberMe) {
-        res.cookie("userEmail", req.body.email, { maxAge: 600000 });
-      }
-      res.redirect("/products");
 
+      req.session.userLogued = userToFind;
+
+      if (req.body.rememberMe) {
+        res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 10 });
+      }
+
+      res.redirect("/users/profile");
 
     } catch (error) {
       console.log(error);
@@ -115,6 +116,9 @@ const controller = {
       handleError(res, 'Error al registrar usuario', 500);
     }
 
+  },
+  profile: function (req, res) {
+    return res.render("./users/profile")
   }
 };
 
