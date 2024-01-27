@@ -17,16 +17,16 @@
                 <form action="/products/create" class="form-product-add" method="POST" enctype="multipart/form-data">
                     <div class="caja-superior">
                         <input type="text" placeholder="Nombre de producto*" required name="name"
-                            value="<%= locals.oldBody ? locals.oldBody.name : null %>"
-                            class="<%= locals.errors && errors.name ? 'is-invalid' : null %>">
-                        <% if (locals.errors && errors.name) { %>
+                            value="<%= locals.oldBody?.name %>"
+                            class="<%= locals.errors?.name ? 'is-invalid' : null %>">
+                        <% if (locals.errors?.name) { %>
                             <p class="error">
                                 <%= errors.name.msg %>
                             </p>
                             <% } %>
                                 <label for="embarcacion">Selecciona una embarcación:</label>
                                 <select id="embarcacion" name="category"
-                                    class="<%= locals.errors && errors.category ? 'is-invalid' : null %>">
+                                    class="<%= locals.errors?.category ? 'is-invalid' : null %>">
                                     <option value="">Elegí una categoría</option>
                                     <% let categorias=['Velero', 'Lancha' , 'Yate' , 'Moto de Agua' ] %>
                                         <% categorias.forEach(categoria=> { %>
@@ -39,24 +39,24 @@
                                             </option>
                                             <% }) %>
                                 </select>
-                                <% if (locals.errors && errors.category) { %>
+                                <% if (locals.errors?.category) { %>
                                     <p class="error">
                                         <%= errors.category.msg %>
                                     </p>
                                     <% } %>
                                         <input type="text" placeholder="Precio" required name="price"
-                                            value="<%= locals.oldBody ? locals.oldBody.price : null %>"
-                                            class="<%= locals.errors && errors.price ? 'is-invalid' : null %>">
-                                        <% if (locals.errors && errors.price) { %>
+                                            value="<%= locals.oldBody?.price %>"
+                                            class="<%= locals.errors?.price ? 'is-invalid' : null %>">
+                                        <% if (locals.errors?.price) { %>
                                             <p class="error">
                                                 <%= errors.price.msg %>
                                             </p>
                                             <% } %>
 
                                                 <input type="text" placeholder="Año" required name="year"
-                                                    value="<%= locals.oldBody ? locals.oldBody.year : null %>"
-                                                    class="<%= locals.errors && errors.year ? 'is-invalid' : null %>">
-                                                <% if (locals.errors && errors.year) { %>
+                                                    value="<%= locals.oldBody?.year %>"
+                                                    class="<%= locals.errors?.year ? 'is-invalid' : null %>">
+                                                <% if (locals.errors?.year) { %>
                                                     <p class="error">
                                                         <%= errors.year.msg %>
                                                     </p>
@@ -75,7 +75,7 @@
                                         <%= estado %>
                                 </label>
                                 <% }) %>
-                                    <% if (locals.errors && errors.state_embarcation) { %>
+                                    <% if (locals.errors?.state_embarcation) { %>
                                         <p class="error">
                                             <%= errors.state_embarcation.msg %>
                                         </p>
@@ -84,15 +84,15 @@
 
                     </div>
                     <textarea name="description" rows="10" cols="50" placeholder="Agrega una descripción..."
-                        id="textarea_text" required><%= locals.oldBody ? locals.oldBody.description : null %></textarea>
-                    <% if (locals.errors && errors.description) { %>
+                        id="textarea_text" required><%= locals.oldBody?.description %></textarea>
+                    <% if (locals.errors?.description) { %>
                         <p class="error">
                             <%= errors.description.msg %>
                         </p>
                         <% } %>
 
                             <input type="file" accept="image/png, image/jpg, image/jpeg" name="image" required>
-                            <% if (locals.errors && errors.image) { %>
+                            <% if (locals.errors?.image) { %>
                                 <p class="error">
                                     <%= errors.image.msg %>
                                 </p>

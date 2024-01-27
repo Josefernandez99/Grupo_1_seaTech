@@ -2,7 +2,7 @@ const user = require("../tools/Usuarios");
 const bcriptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const getProvincias = require('../tools/provincias');
-const { handleValidationErrors, handleExistingUser, hashPasswordAndFormatData, handleError } = require('../tools/extraFunctionsUser');
+const { handleExistingUser, hashPasswordAndFormatData, handleError } = require('../tools/extraFunctions');
 
 const imgUserDefault = {
   public_id: 'seatech/user_default_image',
@@ -14,8 +14,7 @@ const controller = {
     res.render("./users/login");
   },
   checkLogin: function (req, res) {
-    let userToFind = user.findByField("email", req.body.email);
-    userToFind = userToFind.pop();
+    let userToFind = user.findByField("email", req.body.email).pop();
     if (userToFind) {
       if (bcriptjs.compareSync(req.body.password, userToFind.password)) {
         console.log("USUARIO RECONOCIDO");
@@ -45,17 +44,23 @@ const controller = {
       res.render("./users/register", { provincias });
 
     } catch (error) {
-      res.status(500).json({ error: 'Error al cargar la vista de Registro' });
+      console.log(error);
+      handleError(res, 'Error al cargar la vista de Registro', 500);
     }
 
   },
   registerUser: async function (req, res) {
 
     try {
-      const errors = validationResult(req);
+      let errors = validationResult(req);
 
       if (!errors.isEmpty()) {
-        handleValidationErrors(req, res, errors);
+        let oldBody = req.body;
+        errors = errors.mapped();
+        delete oldBody.password;
+        const provincias = await getProvincias();
+        res.render("./users/register", { errors, oldBody, provincias });
+
         return;
       }
 
@@ -77,6 +82,7 @@ const controller = {
       user.create(newUser);
       res.redirect("./login");
     } catch (error) {
+      console.log(error);
       handleError(res, 'Error al registrar usuario', 500);
     }
 
