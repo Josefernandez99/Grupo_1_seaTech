@@ -4,6 +4,7 @@ const productsController = require("../controllers/productsController");
 const productValidate = require("../middlewares/productValidate");
 const upload = require('../middlewares/multer.Middleware');
 const { cloudinaryMiddleware } = require("../middlewares/cloudinary.Middleware");
+const authMiddleware = require("../middlewares/authMiddlewareRoute");
 
 //Listado de productos
 route.get("/", productsController.list);
@@ -12,7 +13,7 @@ route.get("/", productsController.list);
 route.get("/cart", productsController.cart);
 
 //Vista de crear un producto
-route.get("/add", productsController.add);
+route.get("/add", authMiddleware, productsController.add);
 
 //Procesar la creación de un producto
 route.post("/create", upload.single('image'), productValidate, cloudinaryMiddleware, productsController.create);
@@ -21,13 +22,13 @@ route.post("/create", upload.single('image'), productValidate, cloudinaryMiddlew
 route.get("/detail/:id", productsController.detail);
 
 //Vista de editar un producto en particular
-route.get("/detail/:id/edit", productsController.edit);
+route.get("/detail/:id/edit", authMiddleware, productsController.edit);
 
 //Procesar la edición de un producto en particular
 route.put('/detail/:id/update', upload.single('image'), productValidate, cloudinaryMiddleware, productsController.update);
 
 //Eliminar producto
-route.get("/detail/:id/delete", productsController.delete);
+route.get("/detail/:id/delete", authMiddleware, productsController.delete);
 route.delete("/detail/:id/destroy", productsController.destroy);
 
 module.exports = route;

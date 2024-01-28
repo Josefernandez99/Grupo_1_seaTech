@@ -118,7 +118,7 @@ const controller = {
 
   },
   profile: function (req, res) {
-    return res.render("./users/profile")
+    return res.render("./users/profile", { user: req.session.userLogued })
   }
 };
 

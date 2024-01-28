@@ -9,13 +9,14 @@
             <main>
 
                 <div class="profile-container">
-                    <div class="profile-name">NOMBRE DE USUARIO</div>
-                    <img class="profile-image"
-                        src="https://res.cloudinary.com/draudtuyr/image/upload/v1705370913/seatech/user_default_image.jpg"
-                        alt="Imagen de perfil">
-                    <div class="profile-email">correo@example.com</div>
+                    <div class="profile-name">
+                        <%= `${user.firstName} ${user.lastName}` %>
+                    </div>
+                    <img class="profile-image" src="<%= user.image.url %>" alt="Imagen de perfil">
+                    <div class="profile-email">
+                        <%= user.email %>
+                    </div>
                     <a href="editar_perfil.html" class="edit-profile-button">Editar Perfil</a>
-                    <!-- Puedes agregar más información del perfil aquí, como la dirección, fecha de nacimiento, etc. -->
                 </div>
 
             </main>

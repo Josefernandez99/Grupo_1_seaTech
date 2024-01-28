@@ -10,6 +10,7 @@ const indexRoute = require("./routes/index.Routes");
 
 const usersRoute = require("./routes/users.Routes");
 const productsRoute = require("./routes/products.Routes");
+const userLogued = require("./middlewares/userLoguedMiddlewareApp");
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -30,6 +31,8 @@ app.use(
 );
 
 app.use(cookieParser());
+
+app.use(userLogued);
 
 app.use("/", indexRoute);
 app.use("/user", usersRoute);
