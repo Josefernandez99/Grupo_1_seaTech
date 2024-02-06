@@ -6,33 +6,44 @@
     <body>
         <%- include('./partials/header') %>
             <main>
-                    <div class="conteiner-main">
-                        <% allProducts.forEach(articulo=> { %>
-                            <article class="articulo">
-                                <div>
-                                    <img src="<%= articulo.image.url %>" alt="cookies">
+                <div class="titulo-h3">
+                    <div class="titulo-h3">
+                        <h3>PRODUCTOS DESTACADOS</h3>
+                    </div>
+                </div>
+                <div class="conteiner-main">
+                    <% for( let index=0; index < 3; index++ ) { %>
+                        <article class="articulo-box">
+                            <div class="art-div-box">
+                                <img src="<%= allProducts[index].image.url %>" alt="image_boat">
+                            </div>
+                            <div class="detalle">
+                                <div class="title-producto">
+                                    <p>
+                                        <%= allProducts[index].name %>
+                                    </p>
                                 </div>
-                                <div class="detalle">
-                                    <div class="title-producto">
-                                        <p>
-                                            <%= articulo.name %>
-                                        </p>
-                                    </div>
-                                    <div class="modelo">
-                                        <p>
-                                            <%= articulo.category.includes('_') ? articulo.category.replace(/_/g,' ') : articulo.category %>
-                                        </p>
-                                    </div>
-                                    <div class="precio">
-                                        <p>$<%= articulo.price %>
-                                        </p>
-                                    </div>
-                                    <div class="buy-button">
-                                        <a href="/products/detail/<%= articulo.id %>"><button>DETALLES</button></a>
-                                    </div>
+                                <div class="modelo">
+                                    <p>
+                                        <%= allProducts[index].category.includes('_')?allProducts[index].category.replace(/_/g, ' '
+                                            ) : allProducts[index].category %>
+                                    </p>
                                 </div>
-                            </article>
-                            <% }) %>
+                                <div class="precio">
+                                    <p>
+                                        $<%= allProducts[index].price %>
+                                    </p>
+                                </div>
+                                <div class="buy-button">
+                                    <a href="/products/detail/<%= allProducts[index].id %>">
+                                        <button>
+                                            DETALLES
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <% } %>
                     </div>
                 <div class="see-more-button">
                     <div class="see-more-button">

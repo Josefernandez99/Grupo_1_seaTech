@@ -30,82 +30,148 @@ body {
 header {
     width: 100%;
     background-color: #001F3F;
+    height: auto;
 }
 
-.logo-header {
-    width: 100%;
-    background-color: #001F3F;
-}
-
-.logo-img {
-    width: 80%;
-}
-
-.search-bar-div form {
-    width: 100%;
-    padding-left: 25px;
-}
-
-.search-bar-div input[type=text] {
-    width: 75%;
-    padding: 3px;
-    border: 1px solid #ccc;
-}
-
-.search-bar-div button {
-    background-color: #0074D9;
-    color: #fff;
-    padding: 4px 4px 4px 4px;
-    border: none;
-    cursor: pointer;
-    width: 19%;
-}
-
-.search-bar {
-    width: 100%;
-    padding: 4px;
-    background-color: #001F3F;
-}
-
-.search-bar input {
-    width: 60%;
-}
-
-.button-search-bar {
-    width: auto;
-}
-
-.nav-var-1-list {
-    font-size: 14px;
-    padding-right: 5px;
-    text-decoration: none;
-    color: #fff;
-}
-
-.nav-bar-div {
-    width: 50%;
-    margin-bottom: 10px;
-}
-
-.nav-bar {
-    list-style-type: none;
-    color: #fff;
-    display: flex;
-}
-
-.burger-menu {
-    background-color: #1259c3;
-    color: #ebebeb;
-    width: 6%;
-    margin: auto;
+.contenedor {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1vw;
+    width: 90%;
+    justify-content: space-around;
+    margin: auto;
 }
 
-.burger-nav-div {
-    background-color: #31466a;
+.logo-img {
+    width: auto;
+    /* Ajusta automáticamente el ancho de la imagen */
+    height: 45px;
+    /* Establece la altura deseada para la imagen */
+}
+
+.menu-carrito {
+    display: flex;
+    gap: 6px;
+}
+
+/* Estilo para el enlace del carrito de compras */
+.menu-carrito a {
+    text-decoration: none;
+    /* Elimina la decoración de texto predeterminada */
+    color: #333;
+    /* Color del texto */
+}
+
+.menu-carrito button {
+    width: 2.3rem;
+    color: white;
+    padding: 6px;
+    border-radius: 5px;
+    background-color: #0074D9;
+    font-size: large;
+    border: transparent;
+}
+
+.nav-bar-default {
+    display: none;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 8px;
+}
+
+.search-bar input {
+    border: none;
+    padding: 7px;
+    border-radius: 5px 0px 0px 5px;
+    width: 100%;
+}
+
+.search-bar button {
+    border: none;
+    padding: 7px;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #0074D9;
+    color: white;
+}
+
+.nav-bar-mobile {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: #111;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.nav-bar-mobile ul {
+    list-style: none;
+}
+
+/* The navigation menu links */
+.nav-bar-mobile a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    font-weight: 400;
+    display: flex;
+    gap: 14px;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.nav-bar-mobile a:hover {
+    background-color: #0074D9;
+}
+
+/* Position and style the close button (top right corner) */
+.nav-bar-mobile .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/*PARA EL SUBMENU*/
+.nav-bar-mobile .profile-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.nav-bar-mobile .submenu-items {
+    display: none;
+    flex-direction: column;
+    padding-left: 32px;
+    position: relative;
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: #111;
+    /* Fondo del submenú */
+    border: 1px solid #444;
+    /* Borde del submenú */
+    z-index: 1;
+    /* Asegura que el submenú esté sobre otros elementos */
 }
 
 /*FIN HEADER*/
@@ -113,66 +179,59 @@ header {
 /*FOOTER*/
 footer {
     width: 100%;
+    height: auto;
+    background-color: #001F3F;
 }
 
-.div-footer {
-    width: 100%;
-    background-color: #001F3F;
-    height: 220px;
-}
-
-.div-logo {
-    background-color: #001F3F;
-    width: 100%;
+.footer-contenedor-logo {
     display: flex;
     justify-content: center;
-}
-
-.div-contacto {
-    background-color: #001F3F;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    padding: 0px 10px 10px 10px;
-}
-
-.div-social-media {
-    background-color: #001F3F;
-    width: 100%;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.div-derechos-reservados {
-    background-color: #001F3F;
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    font-size: 14px;
 }
 
 .logo-footer {
-    width: auto;
-    height: auto;
-    padding: 10px 20px 20px 20px;
+    width: 60%;
+    overflow: hidden;
 }
 
-.links {
+.footer-links ul,
+.footer-social-media ul {
+    list-style: none;
+    display: flex;
+    color: white;
     padding: 5px;
-    color: #fff;
-    text-decoration: none;
+    justify-content: center;
 }
 
-#icons {
-    color: #fff;
-    padding-right: 5px;
+.footer-links li,
+.footer-social-media li {
+    text-align: center;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.8rem;
+    padding: 9px;
+}
+
+.footer-social-media a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.footer-rights {
+    color: white;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 6px;
 }
 
 /*FIN FOOTER*/
 
-/*EXTRA*/
+/*EXTRA - VALIDACIONES - FORMULARIOS*/
+
 .error {
     padding: 15px;
     margin: 10px 0;
@@ -195,329 +254,107 @@ footer {
 }
 
 /*RESPONSIVE HEADER Y FOOTER*/
-
-/*MOBILE*/
-@media (min-width:1px) and (max-width:320px) {
-    .nav-bar {
-        display: none;
-    }
-
-    .nav-bar-div-2 {
-        display: none;
-    }
-
-    .links {
-        font-size: 12px;
-    }
-
-    .logo-header {
-        display: flex;
-        justify-content: center;
-    }
-
-    .logo-footer {
-        height: 80px;
-        padding-top: 0px;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 0px;
-    }
-
-    .div-logo {
-        height: 80px;
-    }
-
-    .div-footer {
-        width: 100%;
-        background-color: #001F3F;
-        height: 175px;
-    }
-
-    .search-bar-div2 {
-        display: none;
-    }
-}
-
-@media (min-width:321px) and (max-width:424px) {
-    .nav-bar {
-        display: none;
-    }
-
-    .nav-bar-div-2 {
-        display: none;
-    }
-
-    .logo-header {
-        display: flex;
-        justify-content: center;
-    }
-
-    .links {
-        font-size: 12px;
-    }
-
-    .logo-footer {
-        height: 110px;
-        padding: 10px 20px 20px 20px;
-    }
-
-    .div-logo {
-        height: 100px;
-    }
-
-    .div-footer {
-        width: 100%;
-        background-color: #001F3F;
-        height: 170px;
-    }
-
-    .div-contacto {
-        height: 30px;
-    }
-
-    .search-bar-div2 {
-        display: none;
-    }
-}
-
-@media (min-width:425px) and (max-width:767px) {
-    .nav-bar {
-        display: none;
-    }
-
-    .nav-bar-div-2 {
-        display: none;
-    }
-
-    .logo-header {
-        display: flex;
-        justify-content: center;
-    }
-
-    .logo-footer {
-        height: 110px;
-        padding: 10px 20px 20px 20px;
-    }
-
-    .search-bar-div2 {
-        display: none;
-    }
-
-    .div-logo {
-        height: 100px;
-    }
-
-    .div-footer {
-        width: 100%;
-        background-color: #001F3F;
-        height: 175px;
-    }
-
-    .links {
-        font-size: 13px;
-    }
-
-    .div-contacto {
-        height: 30px;
-    }
-}
-
-@media (min-width:530px) and (max-width:767px) {
-
-    /*MOBILE TO TABLE*/
-    .articulo-box-1,
-    .articulo-box-2,
-    .articulo-box-3,
-    .articulo-box-4 {
-        width: 45%;
-        margin: auto;
-        margin-top: 10px;
-    }
-
-    .conteiner-main {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    /*FIN MOBILE TO TABLE*/
-}
-
-/*TABLET*/
+/* TABLET VIEW */
 @media (min-width:768px) {
 
-    /*HEADER*/
-    .logo-bar {
-        display: flex;
-        width: 100%;
-        height: 105px;
-    }
-
-    .nav-bar-div-2 {
+    /* HEADER */
+    .menu-carrito {
         display: none;
     }
 
-    .logo-header {
-        width: 35%;
-        height: auto;
+    .nav-bar-default {
+        display: block;
     }
 
-    .logo-img {
-        width: 100%;
-        height: 100px;
-    }
-
-    .nav-bar {
+    .nav-bar-default ul {
+        list-style: none;
         display: flex;
     }
 
-    .nav-bar-div-3 {
+    .nav-bar-default li {
         display: flex;
-        justify-content: center;
-        padding-top: 40px;
-        width: 65%;
-    }
-
-    .nav-var-1-list {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .search-bar-div {
-        display: flex;
-        justify-content: center;
         align-items: center;
-        background-color: #001F3F;
+        justify-content: center;
     }
 
-    .search-bar-div-2 {
-        width: 100%;
-        max-width: 600px;
+    .nav-bar-default a {
+        text-decoration: none;
+        color: white;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .search-bar-div form {
-        width: 100%;
-        padding: 15px;
-        box-sizing: border-box;
-    }
-
-    .search-bar-div input[type=text] {
-        width: 75%;
-        padding: 3px;
-        border: 1px solid #ccc;
-    }
-
-    .search-bar-div button {
-        width: 23%;
-    }
-
-    .search-bar {
-        width: 100%;
-        padding: 4px;
-    }
-
-    .search-bar input {
-        width: 60%;
-    }
-
-    .button-search-bar {
-        width: auto;
-    }
-
-    .burger-nav-div {
-        display: none;
-    }
-
-    .nav-bar-div {
-        display: none
-    }
-
-    .div-centered-nav-bar {
-        padding-bottom: 10px;
-    }
-
-    /*FIN HEADER*/
-    /*FOOTER*/
-    .logo-footer {
-        width: auto;
-        height: 110px;
-        padding: 10px 20px 20px 20px;
-    }
-
-    .div-contacto {
+    .nav-bar-default .profile-image {
+        width: 30px;
         height: 30px;
+        border-radius: 50%;
     }
 
-    .links {
-        padding: 5px 20px 5px 20px;
+    /* When you mouse over the navigation links, change their color */
+    .nav-bar-default a:hover {
+        background-color: #0074D9;
     }
 
-    /*FIN FOOTER*/
+    .nav-bar-default .submenu-items {
+        display: none;
+        flex-direction: column;
+        position: relative;
+        top: 0;
+        /* Stay at the top */
+        left: 0;
+        background-color: #111;
+        /* Fondo del submenú */
+        border: 1px solid #444;
+        /* Borde del submenú */
+        z-index: 1;
+        /* Asegura que el submenú esté sobre otros elementos */
+    }
+
+    /* FOOTER */
+
+    .logo-footer {
+        width: 40%;
+    }
+
+    .footer-links a {
+        font-size: 1rem;
+        padding: 9px;
+    }
+
+    .footer-social-media a {
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+
+    .footer-rights {
+        font-size: 1rem;
+        padding: 6px;
+    }
 }
 
+/* TABLET VIEW */
 @media (min-width:1024px) {
 
-    /*HEADER*/
-    .nav-bar-div {
-        display: none;
+    /* HEADER */
+
+    /* FOOTER */
+
+    .footer-links a {
+        font-size: 1.2rem;
+        padding: 9px;
     }
 
-    .burger-nav-div {
-        display: none;
+    .footer-social-media a {
+        font-size: 1.4rem;
+        padding: 5px;
     }
 
-    .logo-header {
-        width: 50%;
+    .footer-rights {
+        font-size: 1.2rem;
+        padding: 6px;
     }
-
-    .logo-img {
-        width: auto;
-        height: 100px;
-    }
-
-    .logo-bar {
-        display: flex;
-        height: 100px;
-    }
-
-    .nav-bar-div-3 {
-        width: 50%;
-        padding: 0%;
-    }
-
-    .div-centered-nav-bar- {
-        display: flex;
-        justify-content: center;
-        height: 100px;
-        padding-top: 40px;
-    }
-
-    .nav-var-1-list {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    /*FIN HEADER*/
-    /*FOOTER*/
-    .logo-footer {
-        width: auto;
-        height: 130px;
-    }
-
-    .nav-var-1-list {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .div-contacto {
-        height: 30px;
-    }
-
-    .links {
-        padding: 5px 20px 5px 20px;
-    }
-
-    /*FIN FOOTER*/
 }
 
 /*FIN RESPONSIVE HEADER Y FOOTER*/

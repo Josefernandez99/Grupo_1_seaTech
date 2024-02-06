@@ -1,28 +1,10 @@
-@media (min-width:530px) and (max-width:767px) {
-
-    /*MOBILE TO TABLE*/
-    .articulo {
-        width: 45%;
-        margin: auto;
-        margin-top: 10px;
-    }
-
-    .conteiner-main {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    /*FIN MOBILE TO TABLE*/
-}
-
-/*TABLET*/
-@media (min-width:768px) and (max-width:1023px) {
+/*MOBILE*/
+@media (min-width:321px) {
 
     /*MAIN*/
-    .articulo {
-        width: 44%;
-        margin: 23px;
+    .articulo-box {
+        width: 100%;
+        margin: auto;
         margin-top: 10px;
     }
 
@@ -35,24 +17,96 @@
     /*FIN MAIN*/
 }
 
-@media (min-width:1024px) {
+@media (min-width:425px) {
 
     /*MAIN*/
-    /* .articulo-box {
-        width: 33%;
+    .articulo-box {
+        width: 100%;
         margin: auto;
         margin-top: 10px;
-    } */
-
-    .conteiner-main {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        max-width: 350px;
     }
 
-    /* .articulo-box-4 {
-        display: none;
-    } */
+    /*FIN MAIN*/
+}
+
+@media (min-width:530px) {
+
+    /*MOBILE TO TABLE*/
+    .articulo-box {
+        width: 45%;
+        margin: auto;
+        margin-top: 10px;
+        max-width: 350px;
+    }
+
+    /*FIN MOBILE TO TABLE*/
+}
+
+/*TABLET*/
+@media (min-width:768px) {
+
+    /*MAIN*/
+    .articulo-box {
+        width: 44%;
+        margin: 23px;
+        margin-top: 10px;
+        max-width: 350px;
+    }
+
+    .search-bar-div input[type=text] {
+        width: 89%;
+        padding: 3px;
+        border: 1px solid #ccc;
+    }
+
+    .search-bar-div button {
+        width: 10%;
+    }
+
+    /*FIN MAIN*/
+}
+
+@media (min-width:1023px) {
+
+    /*MAIN*/
+    .search-bar-div input[type=text] {
+        width: 89%;
+        padding: 3px;
+        border: 1px solid #ccc;
+    }
+
+    .search-bar-div button {
+        width: 10%;
+    }
+    .nav-bar-div-3 {
+        padding: 0%;
+    }
+    /*FIN MAIN*/
+}
+
+@media (min-width:1180px) {
+
+    /*MAIN*/
+    .articulo-box {
+        width: 20%;
+        max-width: 450px;
+        margin: auto;
+        margin-top: 10px;
+    }
+
+    /*FIN MAIN*/
+}
+
+@media (min-width:1450px) {
+
+    /*MAIN*/
+    .articulo-box {
+        width: 20%;
+        max-width: 450px;
+        margin: auto;
+        margin-top: 10px;
+    }
 
     /*FIN MAIN*/
 }
