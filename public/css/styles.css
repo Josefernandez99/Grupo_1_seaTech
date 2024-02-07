@@ -87,7 +87,7 @@ header {
     border: none;
     padding: 7px;
     border-radius: 5px 0px 0px 5px;
-    width: 100%;
+    width: 70%;
 }
 
 .search-bar button {
@@ -258,6 +258,11 @@ footer {
 @media (min-width:768px) {
 
     /* HEADER */
+
+    .logo-img {
+        height: 55px;
+    }
+
     .menu-carrito {
         display: none;
     }
@@ -275,6 +280,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 6px;
     }
 
     .nav-bar-default a {
@@ -284,6 +290,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 3px;
     }
 
     .nav-bar-default .profile-image {
@@ -297,13 +304,17 @@ footer {
         background-color: #0074D9;
     }
 
+    .nav-bar-default .submenu {
+        position: relative;
+    }
+
     .nav-bar-default .submenu-items {
         display: none;
         flex-direction: column;
-        position: relative;
-        top: 0;
+        position: absolute;
+        top: 37px;
         /* Stay at the top */
-        left: 0;
+        left: -23px;
         background-color: #111;
         /* Fondo del submenú */
         border: 1px solid #444;
@@ -338,6 +349,9 @@ footer {
 @media (min-width:1024px) {
 
     /* HEADER */
+    .logo-img {
+        height: 75px;
+    }
 
     /* FOOTER */
 

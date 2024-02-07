@@ -58,9 +58,6 @@ const controller = {
     }
   },
   logout: function (req, res) {
-    res.render("./users/logout");
-  },
-  logoutP: function (req, res) {
     res.clearCookie("userEmail");
     req.session.destroy();
     return res.redirect("/");

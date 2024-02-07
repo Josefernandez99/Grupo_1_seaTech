@@ -13,8 +13,7 @@ route.post("/login", userValidate, usersController.checkLogin);
 route.get("/register", guesMiddleware, usersController.register);
 route.post("/register", upload.single('image'), userValidate, cloudinaryMiddleware, usersController.registerUser);
 
-route.get("/logout", authMiddleware, usersController.logout)//Una vez el header esté bien, borrar
-route.post("/logout", usersController.logoutP);
+route.get("/logout", authMiddleware, usersController.logout);
 
 route.get("/profile", authMiddleware, usersController.profile);
 

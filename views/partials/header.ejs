@@ -1,55 +1,68 @@
 <header>
     <div class="contenedor">
         <a href="/"><img src="/images/logo/logo-seatech-2.png" alt="logo-seatech" class="logo-img"></a>
-        <form method="GET" class="search-bar">
-            <input type="text" inputmode="search" placeholder="Buscar producto..." name="search">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-        <div class="menu-carrito">
-            <button type="submit" onclick="openNav();"><i class="fa-solid fa-bars"></i></button>
-            <a href="/products/cart"><button><i class="fa-solid fa-cart-shopping"></i></button></a>
-        </div>
-        <nav class="nav-bar-default">
-            <ul>
-                <li><a href="/user/login"><i class="fa-solid fa-arrow-right-to-bracket"></i>LOGIN</a></li>
-                <li><a href="/user/register"><i class="fa-solid fa-address-card"></i>REGISTER</a></li>
-                <li><a href="#"><i class="fa-solid fa-shop"></i>VENDER</a></li>
-                <li><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i>CARRITO</a></li>
-                <li class="submenu" onclick="toggleSubMenuDefault()">
-                    <a href="#">
-                        <img src="https://res.cloudinary.com/draudtuyr/image/upload/v1705370913/seatech/user_default_image.jpg"
-                            alt="Perfil" class="profile-image">PERFIL<i class="fa-solid fa-square-caret-down"></i>
-                    </a>
-                    <ul class="submenu-items">
-                        <li><a href="#"><i class="fa-solid fa-user"></i>MI PERFIL</a></li>
-                        <li><a href="#"><i class="fa-solid fa-bag-shopping"></i>MIS COMPRAS</a></li>
-                        <li><a href="#"><i class="fa-solid fa-money-bill-1-wave"></i>MIS VENTAS</a></li>
-                        <li><a href="#"><i class="fa-solid fa-person-walking-arrow-right"></i>CERRAR SESIÓN</a></li>
+        <% if (includeSearchBar) { %>
+            <form method="GET" class="search-bar">
+                <input type="text" inputmode="search" placeholder="Buscar producto..." name="search">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <% } %>
+                <div class="menu-carrito">
+                    <button type="submit" onclick="openNav();"><i class="fa-solid fa-bars"></i></button>
+                    <a href="/products/cart"><button><i class="fa-solid fa-cart-shopping"></i></button></a>
+                </div>
+                <nav class="nav-bar-default">
+                    <ul>
+                        <li><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i>CARRITO</a></li>
+                        <% if (locals?.userLogued) { %>
+                            <li><a href="#"><i class="fa-solid fa-shop"></i>VENDER</a></li>
+                            <li class="submenu" onclick="toggleSubMenuDefault()">
+                                <a href="#">
+                                    <img src="<%= locals.userLogued.image.url %>" alt="Perfil" class="profile-image">
+                                    <i class="fa-solid fa-square-caret-down"></i>
+                                </a>
+                                <ul class="submenu-items">
+                                    <li><a href="/user/profile"><i class="fa-solid fa-user"></i>MI PERFIL</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-bag-shopping"></i>MIS COMPRAS</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-money-bill-1-wave"></i>MIS VENTAS</a></li>
+                                    <li><a href="/user/logout"><i
+                                                class="fa-solid fa-person-walking-arrow-right"></i>CERRAR SESIÓN</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <% }else{ %>
+                                <li><a href="/user/login"><i class="fa-solid fa-arrow-right-to-bracket"></i>LOGIN</a>
+                                </li>
+                                <li><a href="/user/register"><i class="fa-solid fa-address-card"></i>REGISTER</a></li>
+                                <% } %>
+
                     </ul>
-                </li>
-            </ul>
-        </nav>
+                </nav>
     </div>
 </header>
 <nav class="nav-bar-mobile">
     <ul>
         <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
-        <li class="submenu" onclick="toggleSubMenuMovil()">
-            <a href="#">
-                <img src="https://res.cloudinary.com/draudtuyr/image/upload/v1705370913/seatech/user_default_image.jpg"
-                    alt="Perfil" class="profile-image">
-                PERFIL
-            </a>
-            <ul class="submenu-items">
-                <li><a href="#"><i class="fa-solid fa-user"></i>MI PERFIL</a></li>
-                <li><a href="#"><i class="fa-solid fa-bag-shopping"></i>MIS COMPRAS</a></li>
-                <li><a href="#"><i class="fa-solid fa-money-bill-1-wave"></i>MIS VENTAS</a></li>
-                <li><a href="#"><i class="fa-solid fa-person-walking-arrow-right"></i>CERRAR SESIÓN</a></li>
-            </ul>
-        </li>
-        <li><a href="/user/login"><i class="fa-solid fa-arrow-right-to-bracket"></i>LOGIN</a></li>
-        <li><a href="/user/register"><i class="fa-solid fa-address-card"></i>REGISTER</a></li>
-        <li><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i>CARRITO</a></li>
-        <li><a href="#"><i class="fa-solid fa-shop"></i>VENDER</a></li>
+        <% if (locals?.userLogued) { %>
+            <li class="submenu" onclick="toggleSubMenuMovil()">
+                <a href="#">
+                    <img src="<%= locals.userLogued.image.url %>" alt="Perfil" class="profile-image">
+                    <%= `${locals.userLogued.firstName} ${locals.userLogued.lastName}` %>
+                </a>
+                <ul class="submenu-items">
+                    <li><a href="/user/profile"><i class="fa-solid fa-user"></i>MI PERFIL</a></li>
+                    <li><a href="#"><i class="fa-solid fa-bag-shopping"></i>MIS COMPRAS</a></li>
+                    <li><a href="#"><i class="fa-solid fa-money-bill-1-wave"></i>MIS VENTAS</a></li>
+                    <li><a href="/user/logout"><i class="fa-solid fa-person-walking-arrow-right"></i>CERRAR SESIÓN</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa-solid fa-shop"></i>VENDER</a></li>
+            <% }else{ %>
+                <li><a href="/user/login"><i class="fa-solid fa-arrow-right-to-bracket"></i>LOGIN</a></li>
+                <li><a href="/user/register"><i class="fa-solid fa-address-card"></i>REGISTER</a></li>
+                <% } %>
+                    <li><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i>CARRITO</a></li>
+
     </ul>
 </nav>
