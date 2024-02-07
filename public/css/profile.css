@@ -17,7 +17,7 @@ main {
     margin-bottom: 10px;
 }
 
-.profile-image {
+.profile-image-view {
     border-radius: 50%;
     max-width: 100%;
     /* La imagen ocupará el 100% del contenedor */
