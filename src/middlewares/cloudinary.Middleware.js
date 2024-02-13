@@ -28,7 +28,7 @@ const cloudinaryMiddleware = async (req, res, next) => {
         }
 
         // Ruta local del archivo
-        const filePath = path.join(__dirname, '../public/images/temp', file.filename);
+        const filePath = path.join(__dirname, '../../public/images/temp', file.filename);
 
         if (!errors.isEmpty()) {
             eliminarImg(filePath);

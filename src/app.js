@@ -12,7 +12,7 @@ const usersRoute = require("./routes/users.Routes");
 const productsRoute = require("./routes/products.Routes");
 const userLogued = require("./middlewares/userLoguedMiddlewareApp");
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../public")));
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");

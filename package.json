@@ -4,8 +4,8 @@
   "description": "Nuestro sitio de ventas de barcos ofrece una amplia gama de productos y servicios relacionados con la compra de embarcaciones. Entre los productos ofrecemos se incluye la venta de barcos nuevos y usados proporcionando una plataforma donde los compradores pueden explorar una variedad de embarcaciones, desde pequeñas lanchas hasta yates de lujo y veleros.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node ./src/app.js",
+    "dev": "nodemon ./src/app.js --ignore ./src/data/*"
   },
   "keywords": [],
   "author": "",
