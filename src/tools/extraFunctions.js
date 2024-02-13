@@ -1,4 +1,5 @@
 const getProvincias = require('./provincias');
+const bcriptjs = require("bcryptjs");
 
 const handleExistingUser = async (req, res) => {
     let oldBody = req.body;

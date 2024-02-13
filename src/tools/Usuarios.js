@@ -88,14 +88,28 @@ const Usuario = {
 
     return true;
   },
-  delete: function (id) {
-    let allUsers = this.findAll();
-    let finalUsers = allUsers.filter((oneUser) => oneUser.id != id);
-    fs.writeFileSync(
-      path.join(__dirname, this.filename),
-      JSON.stringify(finalUsers, null, " ")
-    );
-    return true;
+  delete: async function (id) {
+    try {
+
+      let allUsers = await this.findAll();
+      // Eliminar de cloudinary la imagen de usuario si es que subio una------------
+      const { image: { public_id } } = this.findByPk(id);
+      if (public_id != "seatech/user_default_image") {
+        await cloudinary.uploader.destroy(public_id, {
+          invalidate: true
+        });
+      }
+      //----------------------------------------------------------------------------
+      let finalUsers = allUsers.filter((oneUser) => oneUser.id != id);
+      fs.writeFileSync(
+        path.join(__dirname, this.filename),
+        JSON.stringify(finalUsers, null, " ")
+      );
+      return true;
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Error al eliminar la imagen de Cloudinary' });
+    }
   },
 };
 

@@ -15,7 +15,7 @@
                     <ul>
                         <li><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i>CARRITO</a></li>
                         <% if (locals?.userLogued) { %>
-                            <li><a href="#"><i class="fa-solid fa-shop"></i>VENDER</a></li>
+                            <li><a href="/products/add"><i class="fa-solid fa-shop"></i>VENDER</a></li>
                             <li class="submenu" onclick="toggleSubMenuDefault()">
                                 <a href="#">
                                     <img src="<%= locals.userLogued.image.url %>" alt="Perfil" class="profile-image">
@@ -57,7 +57,7 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="#"><i class="fa-solid fa-shop"></i>VENDER</a></li>
+            <li><a href="/products/add"><i class="fa-solid fa-shop"></i>VENDER</a></li>
             <% }else{ %>
                 <li><a href="/user/login"><i class="fa-solid fa-arrow-right-to-bracket"></i>LOGIN</a></li>
                 <li><a href="/user/register"><i class="fa-solid fa-address-card"></i>REGISTER</a></li>
