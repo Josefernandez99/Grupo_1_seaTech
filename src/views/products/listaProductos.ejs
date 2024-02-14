@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="modelo">
                                     <p>
-                                        <%= articulo.category.includes('_') ? articulo.category.replace(/_/g,' ') : articulo.category %>
+                                        <%= articulo.category %>
                                     </p>
                                 </div>
                                 <div class="precio">
@@ -38,7 +38,7 @@
                 </div>
             </main>
 
-            <%-include("../partials/footer")%>
+            <%-include( "../partials/footer" )%>
     </body>
 
 </html>

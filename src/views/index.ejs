@@ -25,8 +25,7 @@
                                 </div>
                                 <div class="modelo">
                                     <p>
-                                        <%= allProducts[index].category.includes('_')?allProducts[index].category.replace(/_/g, ' '
-                                            ) : allProducts[index].category %>
+                                        <%= allProducts[index].category %>
                                     </p>
                                 </div>
                                 <div class="precio">
@@ -44,7 +43,7 @@
                             </div>
                         </article>
                         <% } %>
-                    </div>
+                </div>
                 <div class="see-more-button">
                     <div class="see-more-button">
                         <a href="/products">

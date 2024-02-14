@@ -75,10 +75,9 @@
                         <select name="provincia">
                             <option value="">Selecciona una provincia</option>
                             <% provincias.forEach(provincia=> { %>
-                                <option value="<%= provincia.includes(' ') ? provincia.replace(/ /g,'_') : provincia %>"
-                                    <%=locals.oldBody &&
-                                    (provincia===(oldBody.provincia.includes('_')?oldBody.provincia.replace(/_/g, ' ' )
-                                    : oldBody.provincia)) ? 'selected' :null %>>
+                                <option value="<%= provincia %>" <%=locals.oldBody?.provincia===provincia ? 'selected'
+                                    :null %>
+                                    >
                                     <%= provincia %>
                                 </option>
                                 <% }) %>

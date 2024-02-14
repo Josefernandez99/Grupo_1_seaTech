@@ -29,9 +29,7 @@
                     </p>
                     <p>Año: <%= selectedProduct.year %>
                     </p>
-                    <p>Tipo de embarcacion: <%=
-                            selectedProduct.category.includes('_')?selectedProduct.category.replace(/_/g, ' ' ) :
-                            selectedProduct.category %>
+                    <p>Tipo de embarcacion: <%= selectedProduct.category %>
                     </p>
                     <p>Condicion: <%= selectedProduct.state_embarcation %>
                     </p>

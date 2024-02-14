@@ -30,10 +30,8 @@
                                     <option value="">Elegí una categoría</option>
                                     <% let categorias=['Velero', 'Lancha' , 'Yate' , 'Moto de Agua' ] %>
                                         <% categorias.forEach(categoria=> { %>
-                                            <option
-                                                value="<%= categoria.includes(' ') ? categoria.replace(' ', '_') : categoria %>"
-                                                <%=locals.oldBody && (categoria===oldBody.category) ? 'selected' : null
-                                                %>
+                                            <option value="<%= categoria %>" <%=locals.oldBody?.category===categoria
+                                                ? 'selected' : null %>
                                                 >
                                                 <%= categoria %>
                                             </option>
