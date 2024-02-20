@@ -9,7 +9,7 @@
             <main>
                 <section class="caja_contenedora">
                     <div class="foto_producto">
-                        <img src="<%= selectedProduct.image.url %>">
+                        <img src="<%= JSON.parse(selectedProduct.image).url %>">
                     </div>
                     <div class="producto">
                         <p class="nombre_producto">
@@ -19,8 +19,8 @@
                         </p>
                         <button type="submit"><a href="#">Comprar</a></button>
                         <button type="submit"><a href="/products/cart">Agregar al carrito</a></button>
-                        <button type="submit"><a href="<%= selectedProduct.id %>/delete">Eliminar</a></button>
-                        <button type="submit"><a href="<%= selectedProduct.id %>/edit">Actualizar</a></button>
+                        <button type="submit"><a href="<%= selectedProduct.uuid %>/delete">Eliminar</a></button>
+                        <button type="submit"><a href="<%= selectedProduct.uuid %>/edit">Actualizar</a></button>
                     </div>
                 </section>
                 <div class="descripcionProducto">
@@ -29,7 +29,7 @@
                     </p>
                     <p>Año: <%= selectedProduct.year %>
                     </p>
-                    <p>Tipo de embarcacion: <%= selectedProduct.category %>
+                    <p>Tipo de embarcacion: <%= selectedProduct.tiene_una_category.name %>
                     </p>
                     <p>Condicion: <%= selectedProduct.state_embarcation %>
                     </p>

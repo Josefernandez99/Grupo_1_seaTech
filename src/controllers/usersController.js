@@ -1,13 +1,8 @@
-const user = require("../tools/Usuarios");
 const bcriptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const getProvincias = require('../tools/provincias');
 const { handleExistingUser, hashPasswordAndFormatData, handleError } = require('../tools/extraFunctions');
-
-const imgUserDefault = {
-  public_id: 'seatech/user_default_image',
-  url: 'https://res.cloudinary.com/draudtuyr/image/upload/v1705370913/seatech/user_default_image.jpg'
-}
+const db = require('../database/models');
 
 const controller = {
   login: function (req, res) {
@@ -27,7 +22,7 @@ const controller = {
         return;
       }
 
-      let userToFind = await user.findByField("email", req.body.email).pop();
+      let userToFind = await db.User.findOne({ where: { email: req.body.email } });
 
       if (!userToFind) {
 
@@ -91,7 +86,7 @@ const controller = {
         return;
       }
 
-      const existingUser = await user.findByField('email', req.body.email).pop();
+      const existingUser = await db.User.findOne({ where: { email: req.body.email } });
 
       if (existingUser) {
         handleExistingUser(req, res);
@@ -101,12 +96,21 @@ const controller = {
       hashPasswordAndFormatData(req);
 
       const newUser = {
-        ...req.body,
-        category: 0, // 0: Comprador | 1: Vendedor+Comprador | 2: Admin (sujeto a cambios)
-        image: req.file?.public_id ? { public_id: req.file.public_id, url: req.file.cloudinaryUrl } : imgUserDefault
+        first_name: req.body.firstName,
+        last_name: req.body.lastName,
+        address: req.body.address,
+        province: req.body.provincia,
+        phone: req.body.telefono,
+        email: req.body.email,
+        password: req.body.password,
+        rol: 1, // 1: Vendedor+Comprador | 2: Admin
       };
 
-      user.create(newUser);
+      if (req.file?.public_id) {
+        newUser.image = JSON.stringify({ public_id: req.file.public_id, url: req.file.cloudinaryUrl })
+      }
+
+      await db.User.create(newUser);
       res.redirect("./login");
     } catch (error) {
       console.log(error);

@@ -10,9 +10,9 @@
 
                 <div class="profile-container">
                     <div class="profile-name">
-                        <%= `${user.firstName} ${user.lastName}` %>
+                        <%= `${user.first_name} ${user.last_name}` %>
                     </div>
-                    <img class="profile-image-view" src="<%= user.image.url %>" alt="Imagen de perfil">
+                    <img class="profile-image-view" src="<%= JSON.parse(user.image).url %>" alt="Imagen de perfil">
                     <div class="profile-email">
                         <%= user.email %>
                     </div>

@@ -14,7 +14,7 @@
                         botón «seleccionar archivo».</p>
                     <p>Las casillas marcadas con * son obligatorias</p>
                 </div>
-                <form action="/products/detail/<%= productoAactualizar.id %>/update?_method=PUT"
+                <form action="/products/detail/<%= productoAactualizar.uuid %>/update?_method=PUT"
                     class="form-product-add" method="POST" enctype="multipart/form-data">
                     <div class="caja-superior">
                         <input type="text" placeholder="Nombre de producto*" required name="name"
@@ -29,15 +29,14 @@
                                 <select id="embarcacion" name="category"
                                     class="<%= locals.errors?.category ? 'is-invalid' : null %>">
                                     <option value="">Elegí una categoría</option>
-                                    <% let categorias=['Velero', 'Lancha' , 'Yate' , 'Moto de Agua' ] %>
-                                        <% categorias.forEach(categoria=> { %>
-                                            <option value="<%= categoria %>" <%=(locals.oldBody?.category===categoria
-                                                ? 'selected' :null) || (!locals.oldBody &&
-                                                (productoAactualizar.category===categoria) ? 'selected' :null)%>
-                                                >
-                                                <%= categoria %>
-                                            </option>
-                                            <% }) %>
+                                    <% categorias.forEach(categoria=> { %>
+                                        <option value="<%= categoria.id %>" <%=(locals.oldBody?.category==categoria.id
+                                            ? 'selected' :null) || (!locals.oldBody &&
+                                            (productoAactualizar.id_category==categoria.id) ? 'selected' :null)%>
+                                            >
+                                            <%= categoria.name %>
+                                        </option>
+                                        <% }) %>
                                 </select>
                                 <% if (locals.errors?.category) { %>
                                     <p class="error">
@@ -94,8 +93,8 @@
                         </p>
                         <% } %>
                             <label for="imagenActual">Imagen actual</label>
-                            <input type="image" src="<%= productoAactualizar.image.url %>" alt="Barco" id="imagenActual"
-                                disabled>
+                            <input type="image" src="<%= JSON.parse(productoAactualizar.image).url %>" alt="Barco"
+                                id="imagenActual" disabled>
                             <input type="hidden" name="idImagenAntesDeActualizar"
                                 value="<%= productoAactualizar.image.public_id %>">
                             <label for="cargarImagen">¿Desea actualizar la imagen?</label>

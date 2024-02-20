@@ -9,16 +9,20 @@
             <% } %>
                 <div class="menu-carrito">
                     <button type="submit" onclick="openNav();"><i class="fa-solid fa-bars"></i></button>
-                    <a href="/products/cart"><button><i class="fa-solid fa-cart-shopping"></i></button></a>
+                    <a href="/products/cart" class="cart-icon-mobile"><button><i class="fa-solid fa-cart-shopping"></i>
+                            <div class="cart-badge-mobile">0</div>
+                        </button></a>
                 </div>
                 <nav class="nav-bar-default">
                     <ul>
-                        <li><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i>CARRITO</a></li>
+                        <li><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i>CARRITO<div
+                                    class="cart-badge-desktop">0</div></a></li>
                         <% if (locals?.userLogued) { %>
                             <li><a href="/products/add"><i class="fa-solid fa-shop"></i>VENDER</a></li>
                             <li class="submenu" onclick="toggleSubMenuDefault()">
                                 <a href="#">
-                                    <img src="<%= locals.userLogued.image.url %>" alt="Perfil" class="profile-image">
+                                    <img src="<%= JSON.parse(locals.userLogued.image).url %>" alt="Perfil"
+                                        class="profile-image">
                                     <i class="fa-solid fa-square-caret-down"></i>
                                 </a>
                                 <ul class="submenu-items">
@@ -46,8 +50,8 @@
         <% if (locals?.userLogued) { %>
             <li class="submenu" onclick="toggleSubMenuMovil()">
                 <a href="#">
-                    <img src="<%= locals.userLogued.image.url %>" alt="Perfil" class="profile-image">
-                    <%= `${locals.userLogued.firstName} ${locals.userLogued.lastName}` %>
+                    <img src="<%= JSON.parse(locals.userLogued.image).url %>" alt="Perfil" class="profile-image">
+                    <%= `${locals.userLogued.first_name} ${locals.userLogued.last_name}` %>
                 </a>
                 <ul class="submenu-items">
                     <li><a href="/user/profile"><i class="fa-solid fa-user"></i>MI PERFIL</a></li>
@@ -62,7 +66,9 @@
                 <li><a href="/user/login"><i class="fa-solid fa-arrow-right-to-bracket"></i>LOGIN</a></li>
                 <li><a href="/user/register"><i class="fa-solid fa-address-card"></i>REGISTER</a></li>
                 <% } %>
-                    <li><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i>CARRITO</a></li>
+                    <li><a href="/products/cart" class="cart-mobile"><i class="fa-solid fa-cart-shopping"></i>CARRITO
+                            <div class="cart-badge-mobile-list">0</div>
+                        </a></li>
 
     </ul>
 </nav>

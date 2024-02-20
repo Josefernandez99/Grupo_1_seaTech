@@ -28,14 +28,13 @@
                                 <select id="embarcacion" name="category"
                                     class="<%= locals.errors?.category ? 'is-invalid' : null %>">
                                     <option value="">Elegí una categoría</option>
-                                    <% let categorias=['Velero', 'Lancha' , 'Yate' , 'Moto de Agua' ] %>
-                                        <% categorias.forEach(categoria=> { %>
-                                            <option value="<%= categoria %>" <%=locals.oldBody?.category===categoria
-                                                ? 'selected' : null %>
-                                                >
-                                                <%= categoria %>
-                                            </option>
-                                            <% }) %>
+                                    <% categorias.forEach(categoria=> { %>
+                                        <option value="<%= categoria.id %>" <%=locals.oldBody?.category==categoria.id
+                                            ? 'selected' : null %>
+                                            >
+                                            <%= categoria.name %>
+                                        </option>
+                                        <% }) %>
                                 </select>
                                 <% if (locals.errors?.category) { %>
                                     <p class="error">

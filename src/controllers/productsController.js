@@ -1,6 +1,6 @@
 const { validationResult } = require("express-validator");
-const product = require("../tools/Productos");
 const { handleError, formatDataProduct } = require('../tools/extraFunctions');
+const db = require("../database/models");
 
 const controller = {
   cart: function (req, res) {
@@ -9,7 +9,7 @@ const controller = {
   detail: async function (req, res) {
     try {
 
-      const selectedProduct = await product.findByPk(req.params.id);
+      const selectedProduct = await db.Product.findOne({ where: { uuid: req.params.id }, include: [{ association: 'tiene_una_category' }] });
       res.render("./products/productDetail", { selectedProduct });
 
     } catch (error) {
@@ -18,8 +18,14 @@ const controller = {
     }
 
   },
-  add: function (req, res) {
-    res.render("./products/productAdd");
+  add: async function (req, res) {
+    try {
+      const categorias = await db.Category.findAll();
+      res.render("./products/productAdd", { categorias });
+    } catch (error) {
+      console.log(error);
+      handleError(res, 'Error al cargar el formulario de añadir producto', 500);
+    }
   },
   create: async function (req, res) {
 
@@ -28,23 +34,28 @@ const controller = {
       let errors = validationResult(req);
 
       if (!errors.isEmpty()) {
+        const categorias = await db.Category.findAll();
         let oldBody = req.body;
         errors = errors.mapped();
-        res.render("./products/productAdd", { errors, oldBody });
+        res.render("./products/productAdd", { errors, oldBody, categorias });
         return;
       }
 
       formatDataProduct(req);
-
+      const body = req.body;
+      const id_category = body.category;
+      delete body.category;
       const newProduct = {
-        ...req.body,
-        image: {
+        id_category,
+        id_user: req.session.userLogued.id,
+        ...body,
+        image: JSON.stringify({
           public_id: req.file.public_id,
           url: req.file.cloudinaryUrl
-        }
+        })
       }
 
-      product.create(newProduct);
+      await db.Product.create(newProduct);
       return res.redirect("/products");
 
     } catch (error) {
@@ -56,12 +67,12 @@ const controller = {
   edit: async function (req, res) {
 
     try {
-
-      const idProducto = req.params.id;
-      const productoAactualizar = product.findByPk(idProducto);
+      const UUIDProducto = req.params.id;
+      const productoAactualizar = await db.Product.findOne({ where: { uuid: UUIDProducto } });
+      const categorias = await db.Category.findAll();
 
       res.render("./products/productEdit", {
-        productoAactualizar
+        productoAactualizar, categorias
       });
 
     } catch (error) {
@@ -75,31 +86,35 @@ const controller = {
 
     try {
 
-      const idProducto = req.params.id;
-      const productoAactualizar = product.findByPk(idProducto);
+      const UUIDProducto = req.params.id;
+      const productoAactualizar = await db.Product.findOne({ where: { uuid: UUIDProducto } });
       let errors = validationResult(req);
       let condicionDeActualizacion = Object.keys(errors.mapped()).length === 1 &&
         errors.mapped()?.image.msg.includes("imagen");
 
-      if (!errors.isEmpty() && !condicionDeActualizacion) {
 
+      if (!errors.isEmpty() && !condicionDeActualizacion) {
+        const categorias = await db.Category.findAll();
         let oldBody = req.body;
         errors = errors.mapped();
-        res.render("./products/productEdit", { errors, oldBody, productoAactualizar });
+        res.render("./products/productEdit", { errors, oldBody, productoAactualizar, categorias });
         return;
       }
 
       formatDataProduct(req);
-
+      const body = req.body;
+      const id_category = body.category;
+      delete body.category;
       const updateProduct = {
-        ...req.body,
-        image: {
-          public_id: req.file?.public_id || productoAactualizar.image.public_id,
-          url: req.file?.cloudinaryUrl || productoAactualizar.image.url
-        }
+        id_category,
+        ...body,
+        image: JSON.stringify({
+          public_id: req.file?.public_id || JSON.parse(productoAactualizar.image).public_id,
+          url: req.file?.cloudinaryUrl || JSON.parse(productoAactualizar.image).url
+        })
       }
 
-      product.update(updateProduct, idProducto);
+      await db.Product.update(updateProduct, { where: { id: productoAactualizar.id } });
       return res.redirect("/products");
 
     } catch (error) {
@@ -112,7 +127,7 @@ const controller = {
 
     try {
 
-      const allProducts = await product.findAll();
+      const allProducts = await db.Product.findAll({ include: [{ association: 'tiene_una_category' }] });
       res.render("./products/listaProductos", { allProducts });
 
     } catch (error) {
@@ -125,7 +140,7 @@ const controller = {
 
     try {
 
-      const selectedProduct = await product.findByPk(req.params.id);
+      const selectedProduct = await db.Product.findOne({ where: { uuid: req.params.id }, include: [{ association: 'tiene_una_category' }] });
       res.render("./products/deleteSure", { selectedProduct });
 
     } catch (error) {
@@ -138,7 +153,7 @@ const controller = {
 
     try {
 
-      await product.delete(req.params.id);
+      await db.Product.destroy({ where: { uuid: req.params.id } });
       res.redirect("/products");
 
     } catch (error) {

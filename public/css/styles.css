@@ -62,6 +62,32 @@ header {
     /* Color del texto */
 }
 
+.cart-icon-mobile {
+    position: relative;
+}
+
+.cart-badge-mobile {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+}
+
+.cart-badge-mobile-list,
+.cart-badge-desktop {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
 .menu-carrito button {
     width: 2.3rem;
     color: white;
