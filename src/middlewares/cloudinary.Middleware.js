@@ -45,7 +45,7 @@ const cloudinaryMiddleware = async (req, res, next) => {
 
         } else {
             //subir la imagen a cloudinary
-            options.folder = 'seatech'
+            options.folder = process.env.CLOUDINARY_FOLDER
             options.allowed_formats = ['jpg', 'png', 'jpeg']
         }
 
