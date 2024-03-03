@@ -11,6 +11,7 @@ route.get("/", productsController.list);
 
 //Vista del carrtito
 route.get("/cart", productsController.cart);
+route.post("/cart", productsController.cartAdd);
 
 //Vista de crear un producto
 route.get("/add", authMiddleware, productsController.add);

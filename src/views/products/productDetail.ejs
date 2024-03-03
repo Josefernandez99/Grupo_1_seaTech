@@ -17,10 +17,19 @@
                         </p>
                         <p class="precio_producto">$<%= selectedProduct.price %>
                         </p>
-                        <button type="submit"><a href="#">Comprar</a></button>
-                        <button type="submit"><a href="/products/cart">Agregar al carrito</a></button>
-                        <button type="submit"><a href="<%= selectedProduct.uuid %>/delete">Eliminar</a></button>
-                        <button type="submit"><a href="<%= selectedProduct.uuid %>/edit">Actualizar</a></button>
+
+                        <button type="button" onclick="agregarItemCarrito('<%= selectedProduct.uuid %>')"
+                            id="primeraCompra">Comprar</button>
+                        <div class="contenedor-botones" hidden>
+                            <button type="button"
+                                onclick="quitarItemsCarrito(null,'<%= selectedProduct.uuid %>')">-</button>
+                            <p id="cantidad-actual">1</p>
+                            <button type="button"
+                                onclick="agregarMasItemsCarrito(null,'<%= selectedProduct.uuid %>')">+</button>
+                        </div>
+
+                        <button type="button"><a href="<%= selectedProduct.uuid %>/delete">Eliminar</a></button>
+                        <button type="button"><a href="<%= selectedProduct.uuid %>/edit">Actualizar</a></button>
                     </div>
                 </section>
                 <div class="descripcionProducto">

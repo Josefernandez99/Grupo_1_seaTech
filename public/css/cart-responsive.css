@@ -1,20 +1,20 @@
-@media (min-width: 426px) {
-  .form-cant {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 80%;
-    height: 1.5em;
-    margin: 1em;
+@media (min-width: 768px) {
+  main {
+    margin: 30px;
   }
 
-  .product-desc-part1 {
-    justify-content: space-between;
+  table {
+    margin-top: 30px;
   }
 }
 
+/* Media query para escritorio (1024px) */
 @media (min-width: 1024px) {
-  .product {
-    height: 15em;
+  main {
+    margin: 40px;
+  }
+
+  .empty-cart img {
+    width: 200px;
   }
 }

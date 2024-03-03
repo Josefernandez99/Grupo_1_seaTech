@@ -5,150 +5,68 @@
 
     <body>
         <%- include('../partials/header',{includeSearchBar: false}) %>
-            <div class="separador"></div>
-            <div class="product">
-                <div class="product-img">
-                    <img class="img-product"
-                        src="https://imgs.search.brave.com/1bCUKUQoFGeHfNsK1eilr2JnYz38m79Mjxv-AioxcVo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2EyLzUz/L2FhL2EyNTNhYTM0/MzIxYWU5NGJiOWU4/YjMyZmM1MmQzYTM4/LmpwZw"
-                        alt="product">
-                </div>
-                <div class="product-desc-part1">
-                    <p class="name-product">Barco Velero - Madera Importada</p>
-                    <p class="model">Año: 2011</p>
-                    <p class="color">Color: Rojo torino</p>
-                    <form action="/cart" method="get" class="form-cant">
-                        <label name="cant">Cantidad
-                            <select name="cant">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </label>
-                    </form>
-                </div>
-                <div class="product-desc-part2">
-                    <button type="reset" name="delete" id="delete-button">Eliminar</button>
-                    <p class="price">$10.000</p>
-                </div>
-            </div>
-
-            <div class="separador"></div>
-            <div class="product">
-                <div class="product-img">
-                    <img class="img-product"
-                        src="https://imgs.search.brave.com/bj9ykPxaN0n4OXjVAWeS4nXKmVHFSCiBN-LvKOod4LU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/bW9udGVtYXJtb3Rv/ci5lcy93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMy8wOC9TRUEt/TVkyNC1HVEktSURG/LVNFLXNzLTEzMC1U/ZWFsLUJsdWUtMDAw/MjlSRTAwLVJTSURF/LU5BLTc3OXg1ODQu/d2VicA"
-                        alt="product">
-                </div>
-                <div class="product-desc-part1">
-                    <p class="name-product">Moto de Agua - Plastico Reforjado</p>
-                    <p class="model">Año: 2023</p>
-                    <p class="color">Color: Azul como el mar azul</p>
-                    <form action="/cart" method="get" class="form-cant">
-                        <label name="cant">Cantidad
-                            <select name="cant">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </label>
-                    </form>
-                </div>
-                <div class="product-desc-part2">
-                    <button type="reset" name="delete" id="delete-button">Eliminar</button>
-                    <p class="price">$10.000</p>
-                </div>
-            </div>
-            <div class="separador"></div>
-            <div class="product">
-                <div class="product-img">
-                    <img class="img-product"
-                        src="https://imgs.search.brave.com/dTHHLYIozHkRGkFciXrnNCSUwwY4Ewi1qlAzeHwYGTk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTcx/NTczMjc5L2VzL2Zv/dG8veWF0ZS1ibGFu/Y28tZW4tZWwtbWVk/aW8tZGVsLWFndWEu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PVVQS0cyQXVIMmdC/dnFDWFNxU1BLSDli/Nm5QSW9iWUtNS01Q/RWJZRGM5U1k9"
-                        alt="product">
-                </div>
-                <div class="product-desc-part1">
-                    <p class="name-product">Yate Insa - Low cost (alquilado) </p>
-                    <p class="model">Año: 2023</p>
-                    <p class="color">Color: Blanco Nieve</p>
-                    <form action="/cart" method="get" class="form-cant">
-                        <label name="cant">Cantidad
-                            <select name="cant">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </label>
-                    </form>
-                </div>
-                <div class="product-desc-part2">
-                    <button type="reset" name="delete" id="delete-button">Eliminar</button>
-                    <p class="price">$1.000.000</p>
-                </div>
-            </div>
-
-            <div class="separador"></div>
-            <div class="product">
-                <div class="product-img">
-                    <img class="img-product"
-                        src="https://imgs.search.brave.com/BX3EA_ldt3pKCXogBv9Od8C069C66kQ-NolaDljtwFg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pY2hl/Zi5iYmNpLmNvLnVr/L25ld3MvNjYwL2Nw/c3Byb2RwYi8xNjE2/Ni9wcm9kdWN0aW9u/L18xMjA2MDc0MDlf/Z2V0dHlpbWFnZXMt/MTIyNDUzNzA2Ny5q/cGc"
-                        alt="product">
-                </div>
-                <div class="product-desc-part1">
-                    <p class="name-product">Submarino v44 - Estilo Baguette</p>
-                    <p class="model">Año: 2001</p>
-                    <p class="color">Color: Amarillo patito</p>
-                    <form action="/cart" method="get" class="form-cant">
-                        <label name="cant">Cantidad
-                            <select name="cant">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </label>
-                    </form>
-                </div>
-                <div class="product-desc-part2">
-                    <button type="reset" name="delete" id="delete-button">Eliminar</button>
-                    <p class="price">$10.000</p>
-                </div>
-            </div>
-
-            <div class="separador"></div>
-            <div class="total">
-                <p class="total-to-pay">Total</p>
-                <p class="total-price">$50.000</p>
-                <form action="/index" method="get" id="form-continue">
-                    <button type="submit" name="continue" id="continue-button"><a href="/index">Continuar</a></button>
-                </form>
-            </div>
-            <div class="separador"></div>
+            <main>
+                <% if (productosCart.length> 0) { %>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Imagen del producto</th>
+                                <th>Nombre del producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio unitario</th>
+                                <th>Subtotal</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% productosCart.forEach(producto=> { %>
+                                <tr>
+                                    <td><img src="<%= JSON.parse(producto.image).url %>" alt="<%= producto.name %>"
+                                            class="tabla-cart-img">
+                                    </td>
+                                    <td>
+                                        <%= producto.name %>
+                                    </td>
+                                    <td>
+                                        <%= carrito.find(elemento=> elemento.id == producto.uuid).cant %>
+                                    </td>
+                                    <td>$<%= producto.price %>
+                                    </td>
+                                    <td>$<%= (carrito.find(elemento=> elemento.id == producto.uuid).cant *
+                                            producto.price).toFixed(2)
+                                            %>
+                                    </td>
+                                    <td>
+                                        <div class="acciones-tabla-cart">
+                                            <button
+                                                onclick="agregarMasItemsCarrito(this,'<%= producto.uuid %>')">+</button>
+                                            <button onclick="quitarItemsCarrito(this,'<%= producto.uuid %>')">-</button>
+                                        </div>
+                                        <button onclick="eliminarItemCarrito(this,'<%= producto.uuid %>')"
+                                            class="eliminar-item-tabla-cart">Eliminar</button>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4" align="right">Total</td>
+                                <td id="tabla-total">$<%= productosCart.map(elementP=> (carrito.find(elementC=>
+                                        elementC.id ==
+                                        elementP.uuid).cant *
+                                        elementP.price)).reduce((acum, cantidad)=> acum += cantidad,0).toFixed(2) %>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <a href=""><button type="button">Continuar</button></a>
+                    <% }else{ %>
+                        <div class="empty-cart">
+                            <h2 class="msj-no-tabla">No hay items en su carrito aún</h2>
+                            <img src="/images/extra/empty-cart.png" alt="empty-cart">
+                        </div>
+                        <% } %>
+            </main>
             <%- include('../partials/footer') %>
     </body>
 

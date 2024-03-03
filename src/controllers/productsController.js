@@ -1,10 +1,33 @@
 const { validationResult } = require("express-validator");
 const { handleError, formatDataProduct } = require('../tools/extraFunctions');
 const db = require("../database/models");
+let carrito = [];
 
 const controller = {
-  cart: function (req, res) {
-    res.render("./products/cart");
+  cart: async function (req, res) {
+
+    try {
+      const productosCartPromises = carrito.map(async (elemento) => {
+        const fullProduct = await db.Product.findOne({ where: { uuid: elemento.id } });
+        return fullProduct;
+      }
+
+      );
+      const productosCart = await Promise.all(productosCartPromises);
+      res.render("./products/cart", { productosCart, carrito });
+
+    } catch (error) {
+      console.log(error);
+      handleError(res, 'Error al cargar la vista del carrito', 500);
+    }
+  },
+  cartAdd: function (req, res) {
+
+    carrito = req.body.carrito;
+    console.log('TODO EL OBJETO', req.body);
+
+    res.status(200).send("INFORMACIÓN RECIBIDA CORRECTAMENTE :D");
+
   },
   detail: async function (req, res) {
     try {
