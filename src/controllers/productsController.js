@@ -1,5 +1,5 @@
 const { validationResult } = require("express-validator");
-const { handleError, formatDataProduct } = require('../tools/extraFunctions');
+const { handleError, formatDataProduct, actualizarCarritoUser, almacenarCarritoEnBD } = require('../tools/extraFunctions');
 const db = require("../database/models");
 let carrito = [];
 
@@ -21,12 +21,34 @@ const controller = {
       handleError(res, 'Error al cargar la vista del carrito', 500);
     }
   },
-  cartAdd: function (req, res) {
+  cartAdd: async function (req, res) {
 
     carrito = req.body.carrito;
-    console.log('TODO EL OBJETO', req.body);
 
-    res.status(200).send("INFORMACIÓN RECIBIDA CORRECTAMENTE :D");
+    if (req.session.userLogued) {
+
+      if (req.body.inicio == 'inicio') {
+
+        carrito = actualizarCarritoUser(req.session.cart, carrito);
+      }
+
+      req.session.cart = carrito;
+
+      try {
+        await almacenarCarritoEnBD(req.session.cart, req.session.userLogued.id);
+      } catch (error) {
+        console.log(error);
+        handleError(res, 'Error al cargar el carrito en la BD', 500);
+      }
+
+      if (req.body.inicio == 'cerro') {
+        req.session.cart = [];
+      }
+
+      res.status(201).json({ carrito: req.session.cart });
+    } else {
+      res.status(200).send("INFORMACIÓN RECIBIDA CORRECTAMENTE :D");
+    }
 
   },
   detail: async function (req, res) {

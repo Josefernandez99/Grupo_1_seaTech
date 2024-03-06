@@ -16,7 +16,7 @@ function toggleSubMenu(elementoLi) {
 }
 
 // Función para eliminar una fila de la tabla del carrito
-function eliminarItemCarrito(boton, item) {
+async function eliminarItemCarrito(boton, item) {
     let carrito = obtenerCarrito();
     carrito = carrito.filter(elemento => elemento.id != item);
     guardarCarrito(carrito);
@@ -32,7 +32,11 @@ function eliminarItemCarrito(boton, item) {
         .reduce((acum, cantidad) => acum += cantidad, 0).toFixed(2);
     totalElemento.textContent = total;
     actualizarCantidadCarrito();
-    mandarCarritoaServer();
+    try {
+        await mandarCarritoaServer();
+    } catch (error) {
+        console.error('Error con el carrito:', error);
+    }
     isTablaVacia();
 }
 
@@ -91,16 +95,21 @@ function mantenerBotones() {
 }
 
 // Función para agregar un item/el primer item al carrito
-function agregarItemCarrito(item) {
+async function agregarItemCarrito(item) {
     let carrito = obtenerCarrito();
     carrito.push({ id: item, cant: 1 });
     guardarCarrito(carrito);
     toggleCompra(0);
+    try {
+        await mandarCarritoaServer();
+    } catch (error) {
+        console.error('Error con el carrito:', error);
+    }
     actualizarCantidadCarrito();
 }
 
 // Función para aumentar en 1 la cantidad de un producto del carrito
-function agregarMasItemsCarrito(boton, item) {
+async function agregarMasItemsCarrito(boton, item) {
     let carrito = obtenerCarrito();
     const producto = carrito.find(elemento => elemento.id == item);
     producto.cant += 1;
@@ -121,17 +130,21 @@ function agregarMasItemsCarrito(boton, item) {
         const total = '$' + [...filas].map(filaT => Number(filaT.querySelector('td:nth-child(5)').textContent.slice(1)))
             .reduce((acum, cantidad) => acum += cantidad, 0).toFixed(2);
         totalElemento.textContent = total;
-        mandarCarritoaServer();
 
     } else {
         document.querySelector('#cantidad-actual').textContent = producto.cant;
+    }
+    try {
+        await mandarCarritoaServer();
+    } catch (error) {
+        console.error('Error con el carrito:', error);
     }
     actualizarCantidadCarrito();
 
 }
 
 // Función para reducir en 1 la cantidad de un producto del carrito
-function quitarItemsCarrito(boton, item) {
+async function quitarItemsCarrito(boton, item) {
     let carrito = obtenerCarrito();
     const producto = carrito.find(elemento => elemento.id == item);
     let desconte = false;
@@ -173,7 +186,6 @@ function quitarItemsCarrito(boton, item) {
         const total = '$' + [...filas].map(filaT => Number(filaT.querySelector('td:nth-child(5)').textContent.slice(1)))
             .reduce((acum, cantidad) => acum += cantidad, 0).toFixed(2);
         totalElemento.textContent = total;
-        mandarCarritoaServer();
         isTablaVacia();
     }
 
@@ -181,7 +193,12 @@ function quitarItemsCarrito(boton, item) {
         document.querySelector('#cantidad-actual').textContent = producto.cant;
     }
 
-    // Actualizar la cantidad del carrito después de actualizar la tabla
+    // Actualizar la cantidad del carrito después de actualizar la tabla y mandar carrito al Server
+    try {
+        await mandarCarritoaServer();
+    } catch (error) {
+        console.error('Error con el carrito:', error);
+    }
     actualizarCantidadCarrito();
 
 }
@@ -191,9 +208,13 @@ function escuchandoBotonesCarrito() {
     const btnsCarrito = document.querySelectorAll('.cart-click');
 
     btnsCarrito.forEach(boton => {
-        boton.addEventListener('click', (e) => {
+        boton.addEventListener('click', async (e) => {
             e.preventDefault();
-            mandarCarritoaServer();
+            try {
+                await mandarCarritoaServer();
+            } catch (error) {
+                console.error('Error con el carrito:', error);
+            }
             window.location.href = '/products/cart';
 
         })
@@ -201,33 +222,38 @@ function escuchandoBotonesCarrito() {
 
 }
 
-function mandarCarritoaServer() {
-    if (localStorage.getItem('cart') && !enviandoCarrito) {
+async function mandarCarritoaServer(inicio = null) {
+    if (obtenerCarrito() && !enviandoCarrito) {
         enviandoCarrito = true;
-        const carrito = obtenerCarrito();
-        fetch('/products/cart', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ carrito, unidadProducto: carrito.length, totalProductos: totalItemsCarrito() }),
-        })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Contenido del carrito enviado exitosamente al servidor');
+        try {
+            const carrito = obtenerCarrito();
+            const response = await fetch('/products/cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ carrito, unidadProducto: carrito.length, totalProductos: totalItemsCarrito(), inicio }),
+            });
+
+            if (response.ok) {
+                if (response.status === 201) {
+                    const data = await response.json();
+                    guardarCarrito(data.carrito);
+                    console.log('Contenido del carrito actualizado desde el servidor:', data.carrito);
                 } else {
-                    console.error('Error al enviar el contenido del carrito al servidor:', response.status);
+                    console.log('Contenido del carrito enviado exitosamente al servidor');
                 }
-            })
-            .catch(error => {
-                console.error('Error al enviar el contenido del carrito al servidor:', error);
-            })
-            .finally(() => {
-                enviandoCarrito = false;
-            })
+            } else {
+                console.error('Error al enviar el contenido del carrito al servidor:', response.status);
+                throw new Error('Error en la solicitud al servidor');
+            }
+        } catch (error) {
+            console.error('Error al enviar el contenido del carrito al servidor:', error);
+        } finally {
+            enviandoCarrito = false;
+        }
     }
 }
-
 // Funciones auxiliares -------------------------------------------
 
 // Función para obtener el carrito desde el almacenamiento local
@@ -246,6 +272,39 @@ function isTablaVacia() {
         window.location.reload();
     }
 }
+
+async function inicioSesion() {
+    if (location.href.includes('profile')) {
+        if (obtenerCarrito()) {
+            try {
+                await mandarCarritoaServer('inicio');
+            } catch (error) {
+                console.error('Error con el carrito:', error);
+            }
+        }
+        actualizarCantidadCarrito();
+
+    }
+}
+
+function cerrarSesion() {
+
+    const btnsCerrarSesion = document.querySelectorAll('.close-sesion');
+
+    btnsCerrarSesion.forEach(boton => {
+        boton.addEventListener('click', async (e) => {
+            e.preventDefault();
+            try {
+                await mandarCarritoaServer('cerro');
+            } catch (error) {
+                console.error('Error con el carrito:', error);
+            }
+            window.location.href = '/user/logout';
+
+        })
+    })
+}
+
 // Funciones auxiliares -------------------------------------------
 
 //al cargarse cualquier vista nueva
@@ -253,11 +312,12 @@ window.addEventListener('load', () => {
     actualizarCantidadCarrito();
     mantenerBotones();
     escuchandoBotonesCarrito();
+    inicioSesion();
+    cerrarSesion();
 });
 
 //para navegacion con flechas
 window.addEventListener('pageshow', () => {
     actualizarCantidadCarrito();
     mantenerBotones();
-})
-
+});

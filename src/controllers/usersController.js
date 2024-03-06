@@ -41,11 +41,21 @@ const controller = {
 
       req.session.userLogued = userToFind;
 
+      //CARRITO si es que tiene
+      req.session.cart = [];
+      let carrito = await db.Cart_Item.findAll({ where: { id_user: userToFind.id }, include: [{ association: 'contiene_un_product' }] });
+      if (carrito.length > 0) {
+
+        req.session.cart = carrito.map(elemento => {
+          return { id: elemento.contiene_un_product.uuid, cant: elemento.quantity }
+        });
+      }
+
       if (req.body.rememberMe) {
         res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 10 });
       }
 
-      res.redirect("/user/profile");
+      res.redirect(`/user/profile/${req.session.userLogued.uuid}`);
 
     } catch (error) {
       console.log(error);

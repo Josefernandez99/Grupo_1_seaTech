@@ -15,6 +15,6 @@ route.post("/register", upload.single('image'), userValidate, cloudinaryMiddlewa
 
 route.get("/logout", authMiddleware, usersController.logout);
 
-route.get("/profile", authMiddleware, usersController.profile);
+route.get("/profile/:id", authMiddleware, usersController.profile);
 
 module.exports = route;

@@ -14,6 +14,16 @@ module.exports = {
         email: 'test@test.com',
         password: '$2a$10$LApqYUN4VTkOenBfS8/Fnua185E7EEOMTBBLrFvlq1OtY2hmCxw.i',
         rol: 2
+      },
+      {
+        first_name: 'Juan',
+        last_name: 'Perez',
+        address: 'Miami me lo confirmo',
+        province: 'Santiago del Estero',
+        phone: '+54 9 2222222222',
+        email: 'juan@juan.com',
+        password: '$2a$10$LApqYUN4VTkOenBfS8/Fnua185E7EEOMTBBLrFvlq1OtY2hmCxw.i',
+        rol: 1
       }
     ], {});
   },
