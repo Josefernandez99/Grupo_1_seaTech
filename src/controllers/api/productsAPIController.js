@@ -85,7 +85,7 @@ const productsAPIController = {
         let productId = req.params.id;
         console.log(productId)
         console.log(req.body)
-        Movies.update(
+        Product.update(
             {
                 name: req.body.name,
                 description: req.body.description,
