@@ -36,7 +36,8 @@
 
                     <div class="contenedor-input">
                         <i class="fa-solid fa-image"></i>
-                        <input type="file" accept="image/png, image/jpg, image/jpeg, .png, .jpg, .jpeg" name="image">
+                        <input type="file" accept="image/png, image/jpg, image/jpeg, image/gif, .gif, .png, .jpg, .jpeg"
+                            name="image">
                         <% if (locals.errors?.image) { %>
                             <p class="error">
                                 <%= errors.image.msg %>
@@ -120,6 +121,8 @@
             </main>
 
             <%- include('../partials/footer') %>
+
+                <%- include('../partials/post-js-frontend',{archivo: 'userValidations' }) %>
 
     </body>
 

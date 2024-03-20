@@ -4,10 +4,12 @@ const path = require('path');
 
 module.exports = validate = [
     body("firstName").notEmpty().withMessage("El campo nombre no puede estar vacio").bail()
-        .isAlpha('es-ES', { ignore: ' ' }).withMessage("El campo nombre debe contener solo letras"),
+        .isAlpha('es-ES', { ignore: ' ' }).withMessage("El campo nombre debe contener solo letras").bail()
+        .isLength({ min: 2 }).withMessage(`El nombre debe contener al menos 2 caracteres`),
 
     body("lastName").notEmpty().withMessage("El campo apellido no puede estar vacio").bail()
-        .isAlpha('es-ES', { ignore: ' ' }).withMessage("El campo apellido debe contener solo letras"),
+        .isAlpha('es-ES', { ignore: ' ' }).withMessage("El campo apellido debe contener solo letras").bail()
+        .isLength({ min: 2 }).withMessage(`El apellido debe contener al menos 2 caracteres`),
 
     body("telefono").notEmpty().withMessage("El campo telefono no puede estar vacio").bail()
         .isNumeric({ no_symbols: true }).withMessage("El campo telefono debe ser numerico").bail()
@@ -27,10 +29,10 @@ module.exports = validate = [
     body("image").custom((value, { req }) => {
 
         let file = req.file;
-        let acceptedExtension = ['.png', '.jpg', '.jpeg'];
+        let acceptedExtension = ['.png', '.jpg', '.jpeg', '.gif'];
 
         if (file && !acceptedExtension.includes(path.extname(file.originalname))) {
-            throw new Error("¡Solo .png, .jpg y .jpeg son los formatos permitidos!");
+            throw new Error("¡Solo .png, .jpg, .jpeg y .gif son los formatos permitidos!");
         }
 
         return true;

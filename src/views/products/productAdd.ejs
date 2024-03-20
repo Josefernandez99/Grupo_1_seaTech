@@ -88,7 +88,8 @@
                         </p>
                         <% } %>
 
-                            <input type="file" accept="image/png, image/jpg, image/jpeg" name="image" required>
+                            <input type="file" accept="image/png, image/jpg, image/jpeg, image/gif" name="image"
+                                required>
                             <% if (locals.errors?.image) { %>
                                 <p class="error">
                                     <%= errors.image.msg %>

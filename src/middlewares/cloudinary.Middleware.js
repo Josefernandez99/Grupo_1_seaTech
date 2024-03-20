@@ -46,7 +46,7 @@ const cloudinaryMiddleware = async (req, res, next) => {
         } else {
             //subir la imagen a cloudinary
             options.folder = process.env.CLOUDINARY_FOLDER
-            options.allowed_formats = ['jpg', 'png', 'jpeg']
+            options.allowed_formats = ['jpg', 'png', 'jpeg', 'gif']
         }
 
         options.transformation = [{ width: 512, height: 512 }]

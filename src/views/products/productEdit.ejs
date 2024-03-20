@@ -98,7 +98,8 @@
                             <input type="hidden" name="idImagenAntesDeActualizar"
                                 value="<%= productoAactualizar.image.public_id %>">
                             <label for="cargarImagen">¿Desea actualizar la imagen?</label>
-                            <input type="file" accept="image/png, image/jpg, image/jpeg" name="image" id="cargarImagen">
+                            <input type="file" accept="image/png, image/jpg, image/jpeg, image/gif" name="image"
+                                id="cargarImagen">
                             <% if (locals.errors && errors.image?.msg.includes("formatos")) { %>
                                 <p class="error">
                                     <%= errors.image.msg %>
