@@ -1,5 +1,6 @@
 const getProvincias = require('./provincias');
 const bcriptjs = require("bcryptjs");
+const db = require("../database/models");
 
 const handleExistingUser = async (req, res) => {
     let oldBody = req.body;
