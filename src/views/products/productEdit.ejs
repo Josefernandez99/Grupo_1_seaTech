@@ -9,11 +9,12 @@
             <main>
                 
                 <form action="/products/detail/<%= productoAactualizar.uuid %>/update?_method=PUT"
-                    class="form-product-add" method="POST" enctype="multipart/form-data">
+                    class="form-product-add" method="POST" enctype="multipart/form-data" id="productForm">
                     <div class="caja-superior">
                         <input type="text" placeholder="Nombre de producto*" required name="name"
                             value="<%= locals.oldBody?.name || productoAactualizar.name %>"
                             class="<%= locals.errors?.name ? 'is-invalid' : null %>">
+                            <p id="nombreError"></p>
                         <% if (locals.errors?.name) { %>
                             <p class="error">
                                 <%= errors.name.msg %>
@@ -81,6 +82,7 @@
                     <textarea name="description" rows="10" cols="50" placeholder="Agrega una descripción..."
                         id="textarea_text"
                         required><%= locals.oldBody?.description || productoAactualizar.description %></textarea>
+                        <p id="descripcionError"></p>
                     <% if (locals.errors?.description) { %>
                         <p class="error">
                             <%= errors.description.msg %>
@@ -94,6 +96,7 @@
                             <label for="cargarImagen">¿Desea actualizar la imagen?</label>
                             <input type="file" accept="image/png, image/jpg, image/jpeg, image/gif" name="image"
                                 id="cargarImagen">
+                                <p id="imageError"></p>
                             <% if (locals.errors && errors.image?.msg.includes("formatos")) { %>
                                 <p class="error">
                                     <%= errors.image.msg %>
@@ -104,6 +107,7 @@
                 </form>
             </main>
             <%- include('../partials/footer') %>
+            <%- include('../partials/post-js-frontend',{archivo: 'productsValidation' }) %>
     </body>
 
 </html>

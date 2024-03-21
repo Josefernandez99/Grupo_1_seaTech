@@ -1,9 +1,16 @@
-const user = require("../tools/Usuarios");
+const db = require('../database/models');
+const { handleError } = require('../tools/extraFunctions');
 
-module.exports = function userLogued(req, res, next) {
+module.exports = async function userLogued(req, res, next) {
 
   if (req.cookies.userEmail) {
-    req.session.userLogued = user.findByField("email", req.cookies.userEmail).pop();
+    
+    try {
+      req.session.userLogued = await db.User.findOne({ where: { email: req.cookies.userEmail } })
+    } catch (error) {
+      console.log(error);
+      handleError(res, 'Error en al encontrar el Usuario - Middleware userLoged', 500);
+    }
   }
 
   if (req.session.userLogued) {
