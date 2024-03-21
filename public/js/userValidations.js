@@ -79,6 +79,9 @@ function validarImagen() {
     const allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
     const fileName = imageInput.value.toLowerCase();
     const extension = fileName.substring(fileName.lastIndexOf('.') + 1);
+    if (!extension && location.href.includes('register')) {
+        return true;
+    }
     if (!allowedExtensions.includes(extension)) {
         imageError.textContent = 'El archivo debe ser una imagen (JPG, JPEG, PNG o GIF)';
         imageInput.classList.add('error');
