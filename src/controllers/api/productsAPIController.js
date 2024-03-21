@@ -31,7 +31,7 @@ const productsAPIController = {
                 let respuesta = {
                     meta: {
                         status: 200,
-                        total: product.length,
+                        total: 1,
                         url: '/api/product/:id'
                     },
                     data: product
@@ -47,6 +47,8 @@ const productsAPIController = {
             .create(
                 {
                     name: req.body.name,
+                    id_category: req.body.category,
+                    id_user: 1,
                     description: req.body.description,
                     image: req.file.image,
                     state_embarcation: req.body.state_embarcation,
@@ -88,6 +90,8 @@ const productsAPIController = {
         Product.update(
             {
                 name: req.body.name,
+                id_category: req.body.category,
+                id_user: 1,
                 description: req.body.description,
                 image: req.file.image,
                 state_embarcation: req.body.state_embarcation,
@@ -128,7 +132,7 @@ const productsAPIController = {
         let productId = req.params.id;
         console.log(productId)
         db.Product
-            .destroy({ where: { id: productId }, force: true }) // force: true es para asegurar que se ejecute la acción
+            .destroy({ where: { id: productId }}) // force: true es para asegurar que se ejecute la acción
             .then(confirm => {
                 let respuesta;
                 console.log('confirm', confirm)
