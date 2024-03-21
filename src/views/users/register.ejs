@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <%- include('../partials/head',{estilos: 'register' , responsive: 'register-responsive' , titulo: 'Registro' }) %>
@@ -7,11 +8,15 @@
         <%- include('../partials/header',{includeSearchBar: false}) %>
 
             <main>
+                <section class="home"></section>
 
                 <form action="/user/register" method="POST" class="contenedor-formulario" enctype="multipart/form-data">
+                    <div class="h3-form">
+                        <h3>Crea tu cuenta</h3>
+                    </div>
 
                     <div class="contenedor-input">
-                        <i class="fa-solid fa-user"></i>
+                        <i class="fa-solid fa-user social-icon"></i>
                         <input type="text" name="firstName" placeholder="Tu nombre" required
                             value="<%= locals.oldBody?.firstName %>">
                         <% if (locals.errors?.firstName) { %>
@@ -23,7 +28,7 @@
 
 
                     <div class="contenedor-input">
-                        <i class="fa-solid fa-user"></i>
+                        <i class="fa-solid fa-user social-icon"></i>
                         <input type="text" name="lastName" placeholder="Tu apellido" required
                             value="<%= locals.oldBody?.lastName %>">
                         <% if (locals.errors?.lastName) { %>
@@ -35,7 +40,7 @@
 
 
                     <div class="contenedor-input">
-                        <i class="fa-solid fa-image"></i>
+                        <i class="fa-solid fa-image social-icon"></i>
                         <input type="file" accept="image/png, image/jpg, image/jpeg, .png, .jpg, .jpeg" name="image">
                         <% if (locals.errors?.image) { %>
                             <p class="error">
@@ -46,7 +51,7 @@
 
 
                     <div class="contenedor-telefono ">
-                        <i class="fa-solid fa-phone"></i>
+                        <i class="fa-solid fa-phone social-icon"></i>
                         <input type="text" value="+54 9" disabled class="cont-tel-constante">
                         <input type="tel" name="telefono" placeholder="Telefono de contacto" required
                             value="<%= locals.oldBody?.telefono %>" class="cont-tel-dinamico">
@@ -59,7 +64,7 @@
 
 
                     <div class="contenedor-input">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-location-dot social-icon"></i>
                         <input type="text" name="address" placeholder="Tu dirección física" required
                             value="<%= locals.oldBody?.address %>">
                         <% if (locals.errors?.address) { %>
@@ -71,7 +76,7 @@
 
                     <div class="contenedor-select">
 
-                        <i class="fa-solid fa-map"></i>
+                        <i class="fa-solid fa-map social-icon"></i>
                         <select name="provincia">
                             <option value="">Selecciona una provincia</option>
                             <% provincias.forEach(provincia=> { %>
@@ -90,7 +95,7 @@
                     </div>
 
                     <div class="contenedor-input">
-                        <i class="fa-solid fa-envelope"></i>
+                        <i class="fa-solid fa-envelope social-icon"></i>
                         <input type="email" name="email" placeholder="Tu email" required
                             value="<%= locals.oldBody?.email %>">
                         <% if (locals.errors?.email) { %>
@@ -101,7 +106,7 @@
                     </div>
 
                     <div class="contenedor-input">
-                        <i class="fa-solid fa-lock"></i>
+                        <i class="fa-solid fa-lock social-icon"></i>
                         <input type="password" placeholder="Contraseña" name="password" required>
                         <% if (locals.errors?.password) { %>
                             <p class="error">

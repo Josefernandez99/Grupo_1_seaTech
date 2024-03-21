@@ -7,15 +7,28 @@
     <body>
         <%- include('../partials/header',{includeSearchBar: false}) %>
             <main>
+                <section class="home"></section>
                 <section class="caja_contenedora">
-                    <div class="foto_producto">
-                        <img src="<%= JSON.parse(selectedProduct.image).url %>">
+                    <div class="foto-div">
+                        <img src="<%= JSON.parse(selectedProduct.image).url %>" class="foto_producto">
                     </div>
-                    <div class="producto">
-                        <p class="nombre_producto">
+                    <section class="producto">
+                        <h3 class="nombre_producto">
                             <%= selectedProduct.name %>
+                        </h3>
+                        <p class="precio_producto">PRECIO: $<%= selectedProduct.price %>
                         </p>
-                        <p class="precio_producto">$<%= selectedProduct.price %>
+                        <p class="descripcion_producto">
+                            Descripcion: <%= selectedProduct.description %>
+                        </p>
+                        <p class="año_producto">
+                            Año: <%= selectedProduct.year %>
+                        </p>
+                        <p class="tipo_producto">
+                            Tipo de embarcacion: <%= selectedProduct.tiene_una_category.name %>
+                        </p>
+                        <p class="condicion_producto">
+                            Condicion: <%= selectedProduct.state_embarcation %>
                         </p>
 
                         <button type="button" onclick="agregarItemCarrito('<%= selectedProduct.uuid %>')"
@@ -23,26 +36,15 @@
                         <div class="contenedor-botones" hidden>
                             <button type="button"
                                 onclick="quitarItemsCarrito(null,'<%= selectedProduct.uuid %>')">-</button>
-                            <p id="cantidad-actual">1</p>
+                            <p id="cantidad-actual" class="cantidad-actual">1</p>
                             <button type="button"
                                 onclick="agregarMasItemsCarrito(null,'<%= selectedProduct.uuid %>')">+</button>
                         </div>
 
                         <button type="button"><a href="<%= selectedProduct.uuid %>/delete">Eliminar</a></button>
                         <button type="button"><a href="<%= selectedProduct.uuid %>/edit">Actualizar</a></button>
-                    </div>
+                    </section>
                 </section>
-                <div class="descripcionProducto">
-                    <p>
-                        <%= selectedProduct.description %>
-                    </p>
-                    <p>Año: <%= selectedProduct.year %>
-                    </p>
-                    <p>Tipo de embarcacion: <%= selectedProduct.tiene_una_category.name %>
-                    </p>
-                    <p>Condicion: <%= selectedProduct.state_embarcation %>
-                    </p>
-                </div>
             </main>
             <%- include("../partials/footer") %>
     </body>

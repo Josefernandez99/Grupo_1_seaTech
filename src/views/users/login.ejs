@@ -6,6 +6,7 @@
     <body>
         <%- include('../partials/header',{includeSearchBar: false}) %>
             <main>
+                <section class="home"></section>
                 <div class="contenedor-principal">
                     <div class="titulo-del-form">
                         <h3>Accede A tu Cuenta</h3>
@@ -26,7 +27,7 @@
                                         <%= errors.password.msg %>
                                     </p>
                                     <% } %>
-                                        <label for="recordame">
+                                        <label for="recordame" class="recordame">
                                             <input class="checkbox" name="rememberMe" type="checkbox"
                                                 id="recordame">Recordame
                                         </label>

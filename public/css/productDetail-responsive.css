@@ -2,6 +2,40 @@
     .carrousel{
         width: 450px ;
     }
+    .caja_contenedora {
+        display: flex;
+        flex-direction: row;
+        background-color: var(--primary-200);
+    }
+    
+    .foto_producto{
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    .foto-div {
+        width: 50%;
+        padding: 40px;
+    }
+    
+    .producto {
+        width: 50%;
+        background-color: var(--primary-300);
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+    }
+    .nombre_producto {
+        font-size: 40px;
+    }
+    .precio_producto, .descripcion_producto, .año_producto, .tipo_producto, .condicion_producto {
+    font-size: 25px;
+    }
+    .producto button{
+        max-width: 350px;
+    }
+    
 }
 
 @media (min-width:1024px) {
