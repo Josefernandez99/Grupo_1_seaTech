@@ -12,7 +12,9 @@ const usersRoute = require("./routes/users.Routes");
 const productsRoute = require("./routes/products.Routes");
 const userLogued = require("./middlewares/userLoguedMiddlewareApp");
 
-const productsAPIRoute = require("./routes/api/productsAPI.Routes")
+const productsAPIRoute = require("./routes/api/productsAPI.Routes");
+
+const usersAPIRoute = require("./routes/api/userAPI.Routes");
 
 app.use(express.static(path.join(__dirname, "../public")));
 
@@ -41,6 +43,8 @@ app.use("/user", usersRoute);
 app.use("/products", productsRoute);
 
 app.use("/products/api", productsAPIRoute);
+
+app.use("/users/api", usersAPIRoute);
 
 
 app.use((req, res, next) => {

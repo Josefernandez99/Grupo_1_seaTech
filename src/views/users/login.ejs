@@ -12,15 +12,17 @@
                         <h3>Accede A tu Cuenta</h3>
                     </div>
 
-                    <form action="/user/login" method="post" class="contenedor-form">
+                    <form action="/user/login" method="post" class="contenedor-form" id="loginForm">
 
                         <input class="controls" type="text" name="email" placeholder="Tu Email">
+                        <p id="emailError"></p>
                         <% if (locals.errors?.email) { %>
                             <p class="error">
                                 <%= errors.email.msg %>
                             </p>
                             <% } %>
                                 <input class="controls" type="password" name="password" placeholder="Contraseña">
+                                <p id="passwordError"></p>
                                 <% if (locals.errors?.password ? locals.errors.password.msg.includes('vacio') : false) {
                                     %>
                                     <p class="error">
@@ -42,6 +44,7 @@
 
             </main>
             <%- include('../partials/footer') %>
+            <%- include('../partials/post-js-frontend',{archivo: 'loginValidations' }) %>
 
     </body>
 

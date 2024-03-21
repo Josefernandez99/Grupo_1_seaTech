@@ -1,5 +1,6 @@
 const db = require("../database/models");
-const Product = require('../tools/Productos');
+const { handleError } = require('../tools/extraFunctions');
+
 
 const controller = {
     index: async function (req, res) {

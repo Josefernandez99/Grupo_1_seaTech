@@ -10,7 +10,7 @@
             <main>
                 <section class="home"></section>
 
-                <form action="/user/register" method="POST" class="contenedor-formulario" enctype="multipart/form-data">
+                <form action="/user/register" method="POST" class="contenedor-formulario" enctype="multipart/form-data" id="registroForm">
                     <div class="h3-form">
                         <h3>Crea tu cuenta</h3>
                     </div>
@@ -19,6 +19,7 @@
                         <i class="fa-solid fa-user social-icon"></i>
                         <input type="text" name="firstName" placeholder="Tu nombre" required
                             value="<%= locals.oldBody?.firstName %>">
+                            <p id="firstNameError"></p>
                         <% if (locals.errors?.firstName) { %>
                             <p class="error">
                                 <%= errors.firstName.msg %>
@@ -31,6 +32,7 @@
                         <i class="fa-solid fa-user social-icon"></i>
                         <input type="text" name="lastName" placeholder="Tu apellido" required
                             value="<%= locals.oldBody?.lastName %>">
+                            <p id="lastNameError"></p>
                         <% if (locals.errors?.lastName) { %>
                             <p class="error">
                                 <%= errors.lastName.msg %>
@@ -41,7 +43,8 @@
 
                     <div class="contenedor-input">
                         <i class="fa-solid fa-image social-icon"></i>
-                        <input type="file" accept="image/png, image/jpg, image/jpeg, .png, .jpg, .jpeg" name="image">
+                        <input type="file" accept="image/png, image/gif, image/jpg, image/jpeg, .png, .jpg, .jpeg, .gif" name="image">
+                        <p id="imageError"></p>
                         <% if (locals.errors?.image) { %>
                             <p class="error">
                                 <%= errors.image.msg %>
@@ -98,6 +101,7 @@
                         <i class="fa-solid fa-envelope social-icon"></i>
                         <input type="email" name="email" placeholder="Tu email" required
                             value="<%= locals.oldBody?.email %>">
+                            <p id="emailError"></p>
                         <% if (locals.errors?.email) { %>
                             <p class="error">
                                 <%= errors.email.msg %>
@@ -108,6 +112,7 @@
                     <div class="contenedor-input">
                         <i class="fa-solid fa-lock social-icon"></i>
                         <input type="password" placeholder="Contraseña" name="password" required>
+                        <p id="passwordError"></p>
                         <% if (locals.errors?.password) { %>
                             <p class="error">
                                 <%= errors.password.msg %>
@@ -125,6 +130,8 @@
             </main>
 
             <%- include('../partials/footer') %>
+
+                <%- include('../partials/post-js-frontend',{archivo: 'userValidations' }) %>
 
     </body>
 

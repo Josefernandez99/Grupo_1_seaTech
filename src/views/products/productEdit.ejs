@@ -8,20 +8,15 @@
         <%- include('../partials/header',{includeSearchBar: false}) %>
         <section class="home"></section>
             <main>
-                <div class="info">
-                    <p>Por favor introduzca su nombre, información de contacto y datos de su embarcacion en el siguiente
-                        formulario.</p>
-                    <p>Adjuntá las fotos de tu embarcación en la mayor calidad y tamaño posible haciendo click en el
-                        botón «seleccionar archivo».</p>
-                    <p>Las casillas marcadas con * son obligatorias</p>
-                </div>
+                
                 <form action="/products/detail/<%= productoAactualizar.uuid %>/update?_method=PUT"
-                    class="form-product-add" method="POST" enctype="multipart/form-data">
+                    class="form-product-add" method="POST" enctype="multipart/form-data" id="productForm">
                     <div class="caja-superior">
                         <label for="name">Nombre del producto: </label>
                         <input type="text" placeholder="Nombre de producto*" required name="name"
                             value="<%= locals.oldBody?.name || productoAactualizar.name %>"
                             class="<%= locals.errors?.name ? 'is-invalid' : null %>">
+                            <p id="nombreError"></p>
                         <% if (locals.errors?.name) { %>
                             <p class="error">
                                 <%= errors.name.msg %>
@@ -90,6 +85,7 @@
                     <textarea name="description" rows="10" cols="50" placeholder="Agrega una descripción..."
                         id="textarea_text"
                         required><%= locals.oldBody?.description || productoAactualizar.description %></textarea>
+                        <p id="descripcionError"></p>
                     <% if (locals.errors?.description) { %>
                         <p class="error">
                             <%= errors.description.msg %>
@@ -102,8 +98,9 @@
                                 value="<%= productoAactualizar.image.public_id %>">
                                 <div class="custom-file-upload">
                                     <label for="cargarImagen">¿Desea actualizar la imagen?</label>
-                                    <input type="file" accept="image/png, image/jpg, image/jpeg" name="image" id="cargarImagen" class="input-file">
+                                    <input type="file" accept="image/png, image/gif, image/jpg, image/jpeg" name="image" id="cargarImagen" class="input-file">
                                 </div>
+                                <p id="imageError"></p>
                                 <% if (locals.errors && errors.image?.msg.includes("formatos")) { %>
                                     <p class="error">
                                         <%= errors.image.msg %>
@@ -115,6 +112,7 @@
                 </form>
             </main>
             <%- include('../partials/footer') %>
+            <%- include('../partials/post-js-frontend',{archivo: 'productsValidation' }) %>
     </body>
 
 </html>
