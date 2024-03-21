@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    letter-spacing: 0.5px;
 }
 
 :root {
@@ -36,6 +37,9 @@ a {
 i {
     color: var(--text-100);
     padding: 2px;
+}
+h1, h2, h3, h4 {
+    font-weight: normal;
 }
 
 body {

@@ -15,7 +15,7 @@
                 <section class="conteiner-main">
                     <% for( let index=0; index < 3; index++ ) { %>
                         <article class="articulo-box">
-                                <img src="<%= JSON.parse(allProducts[index].image).url %>" alt="image_boat">
+                                <img src="<%= JSON.parse(allProducts[index].image).url %>" alt="image_boat" loading="lazy">
                                         <p class="title-producto">
                                             <%= allProducts[index].name %>
                                         </p>
