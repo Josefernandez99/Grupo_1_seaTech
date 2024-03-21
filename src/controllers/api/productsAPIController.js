@@ -25,6 +25,42 @@ const productsAPIController = {
             })
     },
 
+    listCategories: (req, res) => {
+        db.Category.findAll({})
+            .then(categories => {
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        total: categories.length,
+                        url: 'api/categories'
+                    },
+                    data: categories
+                }
+                res.json(respuesta);
+            })
+    },
+
+    productsXCategories: (req, res) => {
+        db.Product.findAll({
+            where : {
+                id_category : req.params.id
+            }
+        })
+            .then(products => {
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        total: products.length,
+                        url: 'api/categories/:id'
+                    },
+                    data: products
+                }
+                res.json(respuesta);
+            })
+    },
+
+
+
     'detail': (req, res) => {
         db.Product.findByPk(req.params.id)
             .then(product => {
