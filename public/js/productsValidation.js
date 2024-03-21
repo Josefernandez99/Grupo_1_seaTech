@@ -41,7 +41,7 @@ function validarImagen() {
     const allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
     const fileName = imageInput.value.toLowerCase();
     const extension = fileName.substring(fileName.lastIndexOf('.') + 1);
-    if (!extension && location.href.includes('edit')) {
+    if (!extension && (location.href.includes('edit') || location.href.includes('update'))) {
         return true;
     }
     if (!allowedExtensions.includes(extension)) {

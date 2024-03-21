@@ -1,7 +1,11 @@
 @media (min-width:768px) {
 
-    .contenedor-formulario {
+    .contenedor-2 {
         width: 60%;
+    }
+
+    .contenedor-formulario {
+        width: 100%;
     }
 
     .contenedor-input,
@@ -24,7 +28,7 @@
 
 @media (min-width:1024px) {
 
-    .contenedor-formulario {
+    .contenedor-2 {
         width: 45%;
     }
 

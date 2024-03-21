@@ -12,13 +12,24 @@ main {
     padding-bottom: 10px;
 }
 
-.contenedor-formulario {
+.h2-form {
+    color: var(--text-100);
+    text-align: center;
+}
+
+.contenedor-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-300);
     margin: 10px auto;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.contenedor-formulario {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    background-color: var(--primary-300);
-    border-radius: 30px;
 }
 
 .contenedor-input,
@@ -28,6 +39,13 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.contenedor-input label {
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--text-100);
+    transition: all 0.3s ease-out;
 }
 
 .social-icon {

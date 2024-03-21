@@ -6,10 +6,12 @@
 
     <body>
         <%- include('../partials/header',{includeSearchBar: false}) %>
+        <section class="home"></section>
             <main>
                 
                 <form action="/products/create" class="form-product-add" method="POST" enctype="multipart/form-data" id="productForm">
                     <div class="caja-superior">
+                        <label for="name">inserte el nombre:</label>
                         <input type="text" placeholder="Nombre de producto*" required name="name"
                             value="<%= locals.oldBody?.name %>"
                             class="<%= locals.errors?.name ? 'is-invalid' : null %>">
@@ -36,6 +38,7 @@
                                         <%= errors.category.msg %>
                                     </p>
                                     <% } %>
+                                    <label for="price">precio:</label>
                                         <input type="text" placeholder="Precio" required name="price"
                                             value="<%= locals.oldBody?.price %>"
                                             class="<%= locals.errors?.price ? 'is-invalid' : null %>">
@@ -44,15 +47,15 @@
                                                 <%= errors.price.msg %>
                                             </p>
                                             <% } %>
-
-                                                <input type="text" placeholder="Año" required name="year"
-                                                    value="<%= locals.oldBody?.year %>"
-                                                    class="<%= locals.errors?.year ? 'is-invalid' : null %>">
-                                                <% if (locals.errors?.year) { %>
-                                                    <p class="error">
-                                                        <%= errors.year.msg %>
-                                                    </p>
-                                                    <% } %>
+                                            <label for="year">año:</label>
+                                            <input type="text" placeholder="Año" required name="year"
+                                                value="<%= locals.oldBody?.year %>"
+                                                class="<%= locals.errors?.year ? 'is-invalid' : null %>">
+                                            <% if (locals.errors?.year) { %>
+                                                <p class="error">
+                                                    <%= errors.year.msg %>
+                                                </p>
+                                                <% } %>
 
                     </div>
 
@@ -75,6 +78,7 @@
 
 
                     </div>
+                    <label for="description">descripción:</label>
                     <textarea name="description" rows="10" cols="50" placeholder="Agrega una descripción..."
                         id="textarea_text" required><%= locals.oldBody?.description %></textarea>
                         <p id="descripcionError"></p>
@@ -83,7 +87,8 @@
                             <%= errors.description.msg %>
                         </p>
                         <% } %>
-
+                        <div class="contenedor-input">
+                            <label for="image">selecciona una imagen:</label>
                             <input type="file" accept="image/png, image/jpg, image/jpeg, image/gif" name="image"
                                 required>
                                 <p id="imageError"></p>
@@ -92,8 +97,11 @@
                                     <%= errors.image.msg %>
                                 </p>
                                 <% } %>
+                        </div>
 
-                                    <button type="submit">AGREGAR PRODUCTO</button>
+                        <div class="contenedor-button">
+                            <button type="submit" class="boton">AGREGAR PRODUCTO</button>
+                        </div>
                 </form>
             </main>
             <%- include('../partials/footer') %>

@@ -1,12 +1,5 @@
 /* Estilos para el formulario de añadir producto */
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: white;
-}
-
 main {
     max-width: 800px;
     margin: 0 auto;
@@ -15,7 +8,7 @@ main {
 
 
 .form-product-add {
-    background-color: #5fa2f5;
+    background-color: var(--bg-200);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10 white;
@@ -29,8 +22,14 @@ main {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid blue;
     border-radius: 5px;
+}
+
+.contenedor-input input[type="file"] {
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--text-100);
+    transition: all 0.3s ease-out;
 }
 
 .form-product-add input[type="text"]:focus,
@@ -55,19 +54,28 @@ main {
     margin-right: 20px;
 }
 
-.form-product-add button {
-    background-color: black;
-    background-image: linear-gradient(135deg, #0074D9 40%, #5fa2ff);
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+.contenedor-button {
+    text-align: center;
 }
 
-.form-product-add button:hover {
-    background-color: #0056b3;
+.boton {
+    width: 50%;
+    padding: 10px 5px;
+    color: var(--text-100);
+    border: none;
+    background-color:var(--primary-400);
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px 0px;
 }
+
+.boton:hover {
+    outline: 1px solid #00c7ec;
+    background-color: #FFFFFF;
+    color: var(--primary-400);
+    transition: all 0.3s ease-out;
+}
+
 #imagenActual{
     max-width: 100%;
     height: auto;

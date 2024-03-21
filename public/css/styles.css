@@ -20,6 +20,24 @@
     --bg-400: #FFFFFF;
 }
 
+.home {
+    height: 100px;
+}
+
+label {
+    color: var(--text-100);
+}
+
+a {
+    color: var(--text-100);
+    text-decoration: none;
+}
+
+i {
+    color: var(--text-100);
+    padding: 2px;
+}
+
 body {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;

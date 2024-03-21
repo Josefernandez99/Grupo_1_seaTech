@@ -6,11 +6,13 @@
 
     <body>
         <%- include('../partials/header',{includeSearchBar: false}) %>
+        <section class="home"></section>
             <main>
                 
                 <form action="/products/detail/<%= productoAactualizar.uuid %>/update?_method=PUT"
                     class="form-product-add" method="POST" enctype="multipart/form-data" id="productForm">
                     <div class="caja-superior">
+                        <label for="name">inserte el nombre:</label>
                         <input type="text" placeholder="Nombre de producto*" required name="name"
                             value="<%= locals.oldBody?.name || productoAactualizar.name %>"
                             class="<%= locals.errors?.name ? 'is-invalid' : null %>">
@@ -38,6 +40,7 @@
                                         <%= errors.category.msg %>
                                     </p>
                                     <% } %>
+                                    <label for="price">precio:</label>
                                         <input type="text" placeholder="Precio" required name="price"
                                             value="<%= locals.oldBody?.price || productoAactualizar.price %>"
                                             class="<%= locals.errors?.price ? 'is-invalid' : null %>">
@@ -46,7 +49,7 @@
                                                 <%= errors.price.msg %>
                                             </p>
                                             <% } %>
-
+                                            <label for="year">año:</label>
                                                 <input type="text" placeholder="Año" required name="year"
                                                     value="<%= locals.oldBody?.year || productoAactualizar.year %>"
                                                     class="<%= locals.errors?.year ? 'is-invalid' : null %>">
@@ -79,6 +82,7 @@
 
 
                     </div>
+                    <label for="description">descripción:</label>
                     <textarea name="description" rows="10" cols="50" placeholder="Agrega una descripción..."
                         id="textarea_text"
                         required><%= locals.oldBody?.description || productoAactualizar.description %></textarea>
@@ -93,7 +97,8 @@
                                 id="imagenActual" disabled>
                             <input type="hidden" name="idImagenAntesDeActualizar"
                                 value="<%= productoAactualizar.image.public_id %>">
-                            <label for="cargarImagen">¿Desea actualizar la imagen?</label>
+                                <div class="contenedor-input">
+                                    <label for="cargarImagen">¿Desea actualizar la imagen?</label>
                             <input type="file" accept="image/png, image/jpg, image/jpeg, image/gif" name="image"
                                 id="cargarImagen">
                                 <p id="imageError"></p>
@@ -103,7 +108,10 @@
                                 </p>
                                 <% } %>
 
-                                    <button type="submit">MODIFICAR PRODUCTO</button>
+                                </div>
+                                <div class="contenedor-button">
+                                    <button type="submit" class="boton">MODIFICAR PRODUCTO</button>
+                                </div>
                 </form>
             </main>
             <%- include('../partials/footer') %>

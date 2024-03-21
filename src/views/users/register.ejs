@@ -6,123 +6,129 @@
 
         <%- include('../partials/header',{includeSearchBar: false}) %>
 
+        <section class="home"></section>
+
             <main>
+                <section class="contenedor-2">
+                    <form action="/user/register" method="POST" class="contenedor-formulario" enctype="multipart/form-data" id="registroForm">
 
-                <form action="/user/register" method="POST" class="contenedor-formulario" enctype="multipart/form-data" id="registroForm">
-
-                    <div class="contenedor-input">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" name="firstName" placeholder="Tu nombre" required
-                            value="<%= locals.oldBody?.firstName %>">
-                            <p id="firstNameError"></p>
-                        <% if (locals.errors?.firstName) { %>
-                            <p class="error">
-                                <%= errors.firstName.msg %>
-                            </p>
-                            <% } %>
-                    </div>
-
-
-                    <div class="contenedor-input">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" name="lastName" placeholder="Tu apellido" required
-                            value="<%= locals.oldBody?.lastName %>">
-                            <p id="lastNameError"></p>
-                        <% if (locals.errors?.lastName) { %>
-                            <p class="error">
-                                <%= errors.lastName.msg %>
-                            </p>
-                            <% } %>
-                    </div>
-
-
-                    <div class="contenedor-input">
-                        <i class="fa-solid fa-image"></i>
-                        <input type="file" accept="image/png, image/jpg, image/jpeg, image/gif, .gif, .png, .jpg, .jpeg"
-                            name="image">
-                            <p id="imageError"></p>
-                        <% if (locals.errors?.image) { %>
-                            <p class="error">
-                                <%= errors.image.msg %>
-                            </p>
-                            <% } %>
-                    </div>
-
-
-                    <div class="contenedor-telefono ">
-                        <i class="fa-solid fa-phone"></i>
-                        <input type="text" value="+54 9" disabled class="cont-tel-constante">
-                        <input type="tel" name="telefono" placeholder="Telefono de contacto" required
-                            value="<%= locals.oldBody?.telefono %>" class="cont-tel-dinamico">
-                        <% if (locals.errors?.telefono) { %>
-                            <p class="error">
-                                <%= errors.telefono.msg %>
-                            </p>
-                            <% } %>
-                    </div>
-
-
-                    <div class="contenedor-input">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <input type="text" name="address" placeholder="Tu dirección física" required
-                            value="<%= locals.oldBody?.address %>">
-                        <% if (locals.errors?.address) { %>
-                            <p class="error">
-                                <%= errors.address.msg %>
-                            </p>
-                            <% } %>
-                    </div>
-
-                    <div class="contenedor-select">
-
-                        <i class="fa-solid fa-map"></i>
-                        <select name="provincia">
-                            <option value="">Selecciona una provincia</option>
-                            <% provincias.forEach(provincia=> { %>
-                                <option value="<%= provincia %>" <%=locals.oldBody?.provincia===provincia ? 'selected'
-                                    :null %>
-                                    >
-                                    <%= provincia %>
-                                </option>
-                                <% }) %>
-                        </select>
-                        <% if (locals.errors?.provincia) { %>
-                            <p class="error">
-                                <%= errors.provincia.msg %>
-                            </p>
-                            <% } %>
-                    </div>
-
-                    <div class="contenedor-input">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input type="email" name="email" placeholder="Tu email" required
-                            value="<%= locals.oldBody?.email %>">
-                            <p id="emailError"></p>
-                        <% if (locals.errors?.email) { %>
-                            <p class="error">
-                                <%= errors.email.msg %>
-                            </p>
-                            <% } %>
-                    </div>
-
-                    <div class="contenedor-input">
-                        <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Contraseña" name="password" required>
-                        <p id="passwordError"></p>
-                        <% if (locals.errors?.password) { %>
-                            <p class="error">
-                                <%= errors.password.msg %>
-                            </p>
-                            <% } %>
-                    </div>
-
-                    <div class="contenedor-button">
-                        <button type="submit" class="boton">Crear cuenta</button>
-                    </div>
-
-
-                </form>
-
+                        <h3 class="h2-form">Crea tu cuenta</h3>
+    
+                        <div class="contenedor-input">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" name="firstName" placeholder="Tu nombre" required
+                                value="<%= locals.oldBody?.firstName %>">
+                                <p id="firstNameError"></p>
+                            <% if (locals.errors?.firstName) { %>
+                                <p class="error">
+                                    <%= errors.firstName.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+    
+    
+                        <div class="contenedor-input">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" name="lastName" placeholder="Tu apellido" required
+                                value="<%= locals.oldBody?.lastName %>">
+                                <p id="lastNameError"></p>
+                            <% if (locals.errors?.lastName) { %>
+                                <p class="error">
+                                    <%= errors.lastName.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+    
+    
+                        <div class="contenedor-input">
+                            <i class="fa-solid fa-image"></i>
+                            <label for="image">
+                            <input type="file" accept="image/png, image/jpg, image/jpeg, image/gif, .gif, .png, .jpg, .jpeg"
+                                name="image">
+                                <p id="imageError"></p>
+                            <% if (locals.errors?.image) { %>
+                                <p class="error">
+                                    <%= errors.image.msg %>
+                                </p>
+                                <% } %>
+                            </label>
+                        </div>
+    
+    
+                        <div class="contenedor-telefono ">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="text" value="+54 9" disabled class="cont-tel-constante">
+                            <input type="tel" name="telefono" placeholder="Telefono de contacto" required
+                                value="<%= locals.oldBody?.telefono %>" class="cont-tel-dinamico">
+                            <% if (locals.errors?.telefono) { %>
+                                <p class="error">
+                                    <%= errors.telefono.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+    
+    
+                        <div class="contenedor-input">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <input type="text" name="address" placeholder="Tu dirección física" required
+                                value="<%= locals.oldBody?.address %>">
+                            <% if (locals.errors?.address) { %>
+                                <p class="error">
+                                    <%= errors.address.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+    
+                        <div class="contenedor-select">
+    
+                            <i class="fa-solid fa-map"></i>
+                            <select name="provincia">
+                                <option value="">Selecciona una provincia</option>
+                                <% provincias.forEach(provincia=> { %>
+                                    <option value="<%= provincia %>" <%=locals.oldBody?.provincia===provincia ? 'selected'
+                                        :null %>
+                                        >
+                                        <%= provincia %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                            <% if (locals.errors?.provincia) { %>
+                                <p class="error">
+                                    <%= errors.provincia.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+    
+                        <div class="contenedor-input">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" name="email" placeholder="Tu email" required
+                                value="<%= locals.oldBody?.email %>">
+                                <p id="emailError"></p>
+                            <% if (locals.errors?.email) { %>
+                                <p class="error">
+                                    <%= errors.email.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+    
+                        <div class="contenedor-input">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" placeholder="Contraseña" name="password" required>
+                            <p id="passwordError"></p>
+                            <% if (locals.errors?.password) { %>
+                                <p class="error">
+                                    <%= errors.password.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+    
+                        <div class="contenedor-button">
+                            <button type="submit" class="boton">Crear cuenta</button>
+                        </div>
+    
+    
+                    </form>
+                </section>
             </main>
 
             <%- include('../partials/footer') %>
