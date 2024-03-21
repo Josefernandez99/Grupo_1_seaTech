@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<%- include('./partials/head',{estilos: 'not-found-error', responsive: 'not-found-error-responsive' , titulo: 'Error 404' }) %>
-
+<%- include('./partials/head', { estilos: 'not-found-error', responsive: 'not-found-error-responsive', titulo: 'Not Found' }) %>
 <body>
     <main>
-        <section class="section_header">
-            <img src="/images/logo/seatech-logo-hd.png" alt="logo seatech" class="img">
-        </section>
-        <section class="section_footer">
-            <h4 class="h4">error 404</h4>
-            <p class="p">lo siento no pudimos encontrar la pagina</p>
-            <a href="/"><button class="button">volver</button></a>
-        </section>
+        <div class="outer-container">
+            <div class="image-container">
+                <img src="/images/gifs/one-piece-ship-ofc.gif" alt="gif-one-piece">
+            </div>
+            <div class="text-container">
+                <div>
+                    <h3 class="h3-404">404</h3>
+                </div>
+                <div>
+                    <p class="p-text">
+                        No pudimos encontrar
+                        <br>
+                        la pagina requerida
+                    </p>
+                </div>
+                <div class="div-button-top">
+                    <div>
+                        <a href="/">
+                            <button class="button-back">
+                                Volver
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 </html>

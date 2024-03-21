@@ -8,33 +8,33 @@
         <%- include('../partials/header',{includeSearchBar: true}) %>
 
             <main>
-                <section class="home"></section>
-                <section class="titulos">
-                    <h2 class="titulo-h2">CONSIGUE</h2>
-                    <h2 class="titulo-h2-2">TU BARCO HOY</h2>
-                    <h3 class="titulo-h3">SEATECH</h3>
-                </section>
-                <section class="home-2"></section>
                 <div class="conteiner-main">
-                    <h2 class="h2-productos">PRODUCTOS</h2>
-                    <div class="conteiner-main">
-                        <% allProducts.forEach(articulo=> { %>
-                            <article class="articulo">
-                                <div>
-                                    <img src="<%= JSON.parse(articulo.image).url %>" alt="cookies">
+                    <% allProducts.forEach(articulo=> { %>
+                        <article class="articulo">
+                            <div>
+                                <img src="<%= JSON.parse(articulo.image).url %>" alt="cookies">
+                            </div>
+                            <div class="detalle">
+                                <div class="title-producto">
+                                    <p>
+                                        <%= articulo.name %>
+                                    </p>
                                 </div>
-                                        <p class="title-producto">
-                                            <%= articulo.name %>
-                                        </p>
-                                        <p class="modelo">
-                                            <%= articulo.tiene_una_category.name %>
-                                        </p>
-                                        <p class="precio">$<%= articulo.price %>
-                                        </p>
-                                        <a href="/products/detail/<%= articulo.uuid %>" class="buy-button"><button>DETALLES</button></a>
-                            </article>
-                            <% }) %>
-                    </div>
+                                <div class="modelo">
+                                    <p>
+                                        <%= articulo.tiene_una_category.name %>
+                                    </p>
+                                </div>
+                                <div class="precio">
+                                    <p>$<%= articulo.price %>
+                                    </p>
+                                </div>
+                                <div class="buy-button">
+                                    <a href="/products/detail/<%= articulo.uuid %>"><button>DETALLES</button></a>
+                                </div>
+                            </div>
+                        </article>
+                        <% }) %>
                 </div>
             </main>
 

@@ -1,15 +1,10 @@
+body {
+    background-color: var(--background-color);
+}
+
 main {
     width: 90%;
     margin: auto;
-}
-
-.home {
-    height: 100px;
-}
-.h3-form {
-    text-align: center;
-    color: var(--text-100);
-    padding-bottom: 10px;
 }
 
 .contenedor-formulario {
@@ -17,21 +12,17 @@ main {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: var(--primary-300);
+    background-color: var(--primary-200);
     border-radius: 30px;
 }
 
 .contenedor-input,
 .contenedor-select,
 .contenedor-telefono {
-    padding: 10px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.social-icon {
-    color: var(--text-100);
 }
 
 .contenedor-button {
@@ -68,17 +59,10 @@ main {
 .boton {
     width: 50%;
     padding: 10px 5px;
-    color: var(--text-100);
-    border: none;
-    background-color:var(--primary-400);
+    color: #fff;
+    background-image: linear-gradient(135deg, #0074D9 40%, #1a65cf);
+    border: 0;
     border-radius: 10px;
     cursor: pointer;
     margin: 10px 0px;
-}
-
-.boton:hover {
-    outline: 1px solid #00c7ec;
-    background-color: #FFFFFF;
-    color: var(--primary-400);
-    transition: all 0.3s ease-out;
 }

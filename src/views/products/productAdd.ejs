@@ -6,12 +6,10 @@
 
     <body>
         <%- include('../partials/header',{includeSearchBar: false}) %>
-        <section class="home"></section>
             <main>
                 
                 <form action="/products/create" class="form-product-add" method="POST" enctype="multipart/form-data" id="productForm">
                     <div class="caja-superior">
-                        <label for="name">Nombre del producto: </label>
                         <input type="text" placeholder="Nombre de producto*" required name="name"
                             value="<%= locals.oldBody?.name %>"
                             class="<%= locals.errors?.name ? 'is-invalid' : null %>">
@@ -38,7 +36,6 @@
                                         <%= errors.category.msg %>
                                     </p>
                                     <% } %>
-                                        <label for="price">Precio: </label>
                                         <input type="text" placeholder="Precio" required name="price"
                                             value="<%= locals.oldBody?.price %>"
                                             class="<%= locals.errors?.price ? 'is-invalid' : null %>">
@@ -47,7 +44,7 @@
                                                 <%= errors.price.msg %>
                                             </p>
                                             <% } %>
-                                                <label for="year">Selecciona el año:</label>
+
                                                 <input type="text" placeholder="Año" required name="year"
                                                     value="<%= locals.oldBody?.year %>"
                                                     class="<%= locals.errors?.year ? 'is-invalid' : null %>">
@@ -86,17 +83,7 @@
                             <%= errors.description.msg %>
                         </p>
                         <% } %>
-                        <div class="custom-file-upload">
-                            <label for="image">Ponga alguna imagen: </label>
-                            <input type="file" accept="image/png, image/jpg, image/jpeg" name="image" id="image" class="input-file" required>
-                        </div>
-                        <% if (locals.errors?.image) { %>
-                            <p class="error">
-                                <%= errors.image.msg %>
-                            </p>
-                        <% } %>
 
-                                    <button type="submit" class="custom-submit-button">AGREGAR PRODUCTO</button>
                             <input type="file" accept="image/png, image/jpg, image/jpeg, image/gif" name="image"
                                 required>
                                 <p id="imageError"></p>

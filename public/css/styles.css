@@ -6,53 +6,44 @@
 
 :root {
     --primary-100: #0074D9;
-    --primary-200: #527498;
-    --primary-300: #243B57;
-    --primary-400: #00c7ec;
+    --primary-200: #5fa2ff;
+    --primary-300: #d1ffff;
     --accent-100: #7FDBFF;
     --accent-200: #007a9b;
     --text-100: #FFFFFF;
     --text-200: #e0e0e0;
     --text-300: #515151;
-    --background-color: #CFB37C;
+    --background-color: #e0e0e0;
     --background-color-2: #01203f;
     --bg-200: #162e50;
-    --bg-400: #FFFFFF;
+    --bg-300: #31466a;
 }
 
 body {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    background-color: var(--background-color-2);
-    height: 100vh;
+    font-family: 'Roboto', sans-serif;
 }
 
 /*HEADER*/
 header {
-    position: fixed;
-    top: 0;
     width: 100%;
-    background-color: rgba(36 59, 87, 0.7);
+    background-color: #001F3F;
     height: auto;
-    z-index: 100;
 }
 
 .contenedor {
     display: flex;
+    justify-content: center;
     align-items: center;
-    width: 95%;
-    justify-content: space-between;
+    width: 90%;
+    justify-content: space-around;
     margin: auto;
 }
-
 
 .logo-img {
     width: auto;
     /* Ajusta automáticamente el ancho de la imagen */
     height: 45px;
     /* Establece la altura deseada para la imagen */
-    flex-grow: 1;
 }
 
 .menu-carrito {
@@ -85,13 +76,13 @@ header {
 
 .cart-badge-mobile-list,
 .cart-badge-desktop {
-    background-color: var(--primary-400);
+    background-color: red;
     color: white;
     border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.9rem;
     display: flex;
-    justify-content: center;
-    width: 25px;
-    height: 25px;
+    align-items: center;
 }
 
 .menu-carrito button {
@@ -99,7 +90,7 @@ header {
     color: white;
     padding: 6px;
     border-radius: 5px;
-    background-color: var(--primary-400);
+    background-color: #0074D9;
     font-size: large;
     border: transparent;
 }
@@ -111,9 +102,8 @@ header {
 .search-bar {
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 100%;
     padding: 8px;
-    flex-grow: 2;
 }
 
 .search-bar input {
@@ -127,9 +117,8 @@ header {
     border: none;
     padding: 7px;
     border-radius: 0px 5px 5px 0px;
-    background-color: var(--primary-400);
+    background-color: #0074D9;
     color: white;
-    cursor: pointer;
 }
 
 .nav-bar-mobile {
@@ -172,7 +161,7 @@ header {
 
 /* When you mouse over the navigation links, change their color */
 .nav-bar-mobile a:hover {
-    background-color: var(--primary-400);
+    background-color: #0074D9;
 }
 
 /* Position and style the close button (top right corner) */
@@ -207,10 +196,6 @@ header {
     z-index: 1;
     /* Asegura que el submenú esté sobre otros elementos */
 }
-.as {
-    color: var(--text-100);
-    text-decoration: none;
-}
 
 /*FIN HEADER*/
 
@@ -218,7 +203,7 @@ header {
 footer {
     width: 100%;
     height: auto;
-    background-color: var(--primary-300);
+    background-color: #001F3F;
 }
 
 .footer-contenedor-logo {
@@ -227,11 +212,8 @@ footer {
 }
 
 .logo-footer {
-    width: 100px;
-    height: 100px;
+    width: 60%;
     overflow: hidden;
-    margin-top: 1%;
-    margin-bottom: 1%;
 }
 
 .footer-links ul,
@@ -241,27 +223,6 @@ footer {
     color: white;
     padding: 5px;
     justify-content: center;
-}
-
-.social-icon-instagram {
-    transition: background 0.3s ease-out;
-}
-
-.social-icon-youtube:hover {
-    transition: all 0.3s ease-out;
-    color: #c4302b;
-}
-.social-icon-facebook:hover {
-    transition: all 0.3s ease-out;
-    color: #3669da;
-}
-.social-icon-instagram:hover {
-    transition: all 0.2s ease-in;
-    color: #fd6f1d;
-}
-.social-icon-twitter:hover {
-    transition: all 0.3s ease-out;
-    color: var(--primary-400);
 }
 
 .footer-links li,
@@ -315,12 +276,12 @@ footer {
     /* Borde rojo */
 }
 
-
 /*RESPONSIVE HEADER Y FOOTER*/
 /* TABLET VIEW */
 @media (min-width:768px) {
 
     /* HEADER */
+
     .logo-img {
         height: 55px;
     }
@@ -345,16 +306,14 @@ footer {
         padding: 6px;
     }
 
-    .nav-bar-default, .a {
+    .nav-bar-default a {
         text-decoration: none;
         color: white;
         font-weight: 400;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
-        flex-grow: 5;
+        justify-content: center;
         gap: 3px;
-        max-width: 330px;
     }
 
     .nav-bar-default .profile-image {
@@ -365,8 +324,7 @@ footer {
 
     /* When you mouse over the navigation links, change their color */
     .nav-bar-default a:hover {
-        cursor: pointer;
-        color: var(--primary-400);
+        background-color: #0074D9;
     }
 
     .nav-bar-default .submenu {
@@ -387,12 +345,13 @@ footer {
         z-index: 1;
         /* Asegura que el submenú esté sobre otros elementos */
     }
-    .cart-badge-desktop {
-        width: 16px;
-        height: 16px;
-    }
 
     /* FOOTER */
+
+    .logo-footer {
+        width: 40%;
+    }
+
     .footer-links a {
         font-size: 1rem;
         padding: 9px;

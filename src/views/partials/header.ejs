@@ -1,6 +1,6 @@
 <header>
     <div class="contenedor">
-            <a href="/"><img src="/images/logo/seatech-logo-hd.png" alt="logo-seatech" class="logo-img"></a>
+        <a href="/"><img src="/images/logo/logo-seatech-2.png" alt="logo-seatech" class="logo-img"></a>
         <% if (includeSearchBar) { %>
             <form method="GET" class="search-bar">
                 <input type="text" inputmode="search" placeholder="Buscar producto..." name="search">
@@ -16,7 +16,7 @@
                 </div>
                 <nav class="nav-bar-default">
                     <ul>
-                        <li><a href="/products/cart" class="cart-click a"><i class="fa-solid fa-cart-shopping"></i>CARRITO
+                        <li><a href="/products/cart" class="cart-click"><i class="fa-solid fa-cart-shopping"></i>CARRITO
                                 <div class="cart-badge-desktop">0</div>
                             </a></li>
                         <% if (locals?.userLogued) { %>
@@ -38,9 +38,9 @@
                                 </ul>
                             </li>
                             <% }else{ %>
-                                <li><a href="/user/login" class="a pepe"><i class="fa-solid fa-arrow-right-to-bracket"></i>INICIAR SESION</a>
+                                <li><a href="/user/login"><i class="fa-solid fa-arrow-right-to-bracket"></i>LOGIN</a>
                                 </li>
-                                <li><a href="/user/register" class="a"><i class="fa-solid fa-address-card"></i>REGISTRARSE</a></li>
+                                <li><a href="/user/register"><i class="fa-solid fa-address-card"></i>REGISTER</a></li>
                                 <% } %>
 
                     </ul>
@@ -57,16 +57,16 @@
                     <%= `${locals.userLogued.first_name} ${locals.userLogued.last_name}` %>
                 </a>
                 <ul class="submenu-items">
-                    <li><a href="/user/profile/<%= locals.userLogued.uuid %>"><i class="fa-solid fa-user perfil"></i>MI
+                    <li><a href="/user/profile/<%= locals.userLogued.uuid %>"><i class="fa-solid fa-user"></i>MI
                             PERFIL</a></li>
-                    <li><a href="#"><i class="fa-solid fa-bag-shopping as"></i>MIS COMPRAS</a></li>
+                    <li><a href="#"><i class="fa-solid fa-bag-shopping"></i>MIS COMPRAS</a></li>
                     <li><a href="#"><i class="fa-solid fa-money-bill-1-wave"></i>MIS VENTAS</a></li>
                     <li><a href="/user/logout" class="close-sesion"><i
                                 class="fa-solid fa-person-walking-arrow-right"></i>CERRAR SESIÓN</a>
                     </li>
                 </ul>
             </li>
-            <li><a href="/products/add"><i class="fa-solid fa-shop vender"></i>VENDER</a></li>
+            <li><a href="/products/add"><i class="fa-solid fa-shop"></i>VENDER</a></li>
             <% }else{ %>
                 <li><a href="/user/login"><i class="fa-solid fa-arrow-right-to-bracket"></i>LOGIN</a></li>
                 <li><a href="/user/register"><i class="fa-solid fa-address-card"></i>REGISTER</a></li>

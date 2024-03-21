@@ -2,10 +2,6 @@ main {
     margin: 20px;
 }
 
-.home {
-    height: 100px;
-}
-
 .profile-container {
     max-width: 600px;
     margin: 0 auto;
@@ -16,7 +12,6 @@ main {
 }
 
 .profile-name {
-    color: var(--text-100);
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;

@@ -1,11 +1,6 @@
 main {
   margin: 20px;
   overflow-x: auto;
-  min-height: 100vh;
-}
-
-.home {
-  height: 100px;
 }
 
 .msj-no-tabla {

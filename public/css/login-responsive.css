@@ -1,31 +1,38 @@
-@media (min-width:420px){
-   .controls {
-    width: 300px;
-   }
-}
-
 @media (min-width:768px){
-    .contenedor-principal {
-    width: 50%;
-    min-width: 500px;;
+   
+    .contenedor-form{
+        width: 100%;
+       
     }
-   .controls {
-    width: 400px;
-   }
-   .titulo-h2, .titulo-h2-2, .titulo-h3 {
-    margin-left: 5%;
-}
+    .contenedor-principal{
+        margin-top: 26px;
+        margin-bottom: 26px;
+        padding: 20px;;
+    }
+    .olvidaste-tu-password{
+        margin: 10px 200px;
+    }
 }
 
 @media (min-width:1024px){
-    .contenedor-principal {
-        min-width: 600px;;
+   
+    .contenedor-form{
+        width: 100%;
+       
     }
-    .controls {
-        width: 500px;
+    .contenedor-principal{
+        margin-top: 26px;
+        margin-bottom: 26px;
+        width: 72%;
+    }
+    .olvidaste-tu-password{
+        margin: 10px 180px;
     }
     .button{
         border-radius: 20px;
-        color:white; 
+    margin: 10px 120px;
+    padding: 3px;
+    background-color:#0074D9;
+    color:white; 
     }
 }

@@ -1,90 +1,56 @@
-
-
-html {
+:root {
+    --primary-100: #0074D9;
+    --primary-200: #5fa2ff;
+    --primary-300: #d1ffff;
+    --accent-100: #7FDBFF;
+    --accent-200: #007a9b;
+    --text-100: #FFFFFF;
+    --text-200: #e0e0e0;
+    --background-color: #01203f;
+    --bg-200: #162e50;
+    --bg-300: #31466a;    
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(135deg, #3c28af 40%, #041182);
     height: 100vh;
 }
-
 main {
-    flex: 1;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.image-container {
+    width: 100%;
     text-align: center;
-    font-size: 24px;
-    height: 100%;
+    padding: 30px;
+    padding-bottom: 10px;
+}
+.image-container img {
+    width: 80%;
+}
+.text-container {
+    text-align: center;
 }
 
-.section_header {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    width: auto;
-    height: 50%;
-    background-color: transparent;
+.h3-404 {
+    font-size: 40px;
+    color: #e0e0e0;
 }
-
-.img {
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
-    transition: all 0.3s ease-out;
+.p-text {
+    font-size: 25px;
+    font-style: normal;
+    color: #e0e0e0
 }
-
-.img:hover {
-    box-shadow: 1px 2px 20px rgba(255, 255, 255, 1);
+.button-back {
+    color: #FFFFFF;
+    padding: 10px;
+    background-image: linear-gradient(135deg, #3c28af 40%, #041182);
+    border-radius: 10%;
+    border-color: #FFFFFF;
 }
-
-.section_footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border-radius: 15px;
-    height: 50%;
-    padding: 1%;
-    animation: aparicion 0.7s forwards;
-}
-
-.h4 {
-    color: var(--text-100);
-    text-transform: uppercase;
-}
-
-.p {
-    color: var(--text-100);
-    line-height: 80%;
-}
-
-.button {
-    background-color: var(--text-300);
-    color: var(--text-100);
-    cursor: pointer;
-    width: 90px;
-    padding: 8px;
-    border: none;
-    border-radius: 15px;
-    transition: all 0.3s ease-out;
-}
-
-.button:hover {
-    color: var(--text-300);
-    outline: 1px solid var(--primary-400);
-    background-color: var(--bg-400);
-}
-
-.h4, .p, .button {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-@keyframes aparicion {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.div-button-top {
+    margin-top: 15px;
 }
