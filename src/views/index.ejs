@@ -1,58 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head',{estilos: 'index-styles' , responsive: 'index-responsive' , titulo: 'Home' }) %>
+<%- include('./partials/head',{estilos: 'index-styles', responsive: 'index-responsive' , titulo: 'Home' }) %>
 
     <body>
         <%- include('./partials/header',{includeSearchBar: true}) %>
             <main>
-                <div class="titulo-h3">
-                    <div class="titulo-h3">
+                <section class="welcome">
+                    <h2>¡BIENVENIDOS A SEATECH!</h2>
+                </section>
+                <section class="titulo-h3">
                         <h3>PRODUCTOS DESTACADOS</h3>
-                    </div>
-                </div>
-                <div class="conteiner-main">
+                </section>
+                <section class="conteiner-main">
                     <% for( let index=0; index < 3; index++ ) { %>
                         <article class="articulo-box">
-                            <div class="art-div-box">
                                 <img src="<%= JSON.parse(allProducts[index].image).url %>" alt="image_boat">
-                            </div>
-                            <div class="detalle">
-                                <div class="title-producto">
-                                    <p>
-                                        <%= allProducts[index].name %>
-                                    </p>
-                                </div>
-                                <div class="modelo">
-                                    <p>
-                                        <%= allProducts[index].tiene_una_category.name %>
-                                    </p>
-                                </div>
-                                <div class="precio">
-                                    <p>
-                                        $<%= allProducts[index].price %>
-                                    </p>
-                                </div>
-                                <div class="buy-button">
-                                    <a href="/products/detail/<%= allProducts[index].uuid %>">
-                                        <button>
-                                            DETALLES
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
+                                        <p class="title-producto">
+                                            <%= allProducts[index].name %>
+                                        </p>
+                                        <p class="modelo">
+                                            <%= allProducts[index].tiene_una_category.name %>
+                                        </p>
+                                        <p class="precio">
+                                            $<%= allProducts[index].price %>
+                                        </p>
+                                        <a href="/products/detail/<%= allProducts[index].uuid %>" class="buy-button">
+                                            <button>
+                                                DETALLES
+                                            </button>
+                                        </a>
                         </article>
                         <% } %>
-                </div>
-                <div class="see-more-button">
-                    <div class="see-more-button">
+                </section>
+                <section class="see-more-button">
+                    <main class="see-more-button">
                         <a href="/products">
                             <button>
                                 VER MÁS
                             </button>
                         </a>
-                    </div>
-                </div>
+                    </main>
+                </section>
             </main>
             <%- include('./partials/footer') %>
     </body>

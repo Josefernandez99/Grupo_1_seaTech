@@ -1,94 +1,104 @@
-body {
-    background-color: #e0e0e0;
+.welcome {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;
+    letter-spacing: 1px;
+    background-image: url(/images/banner-p.jpg);
+    background-size: cover;
+    background-position: top;
 }
-
-/*MAIN*/
-main {
-    background-color: #e0e0e0;
-
+.welcome h2 {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 30px;
+    opacity: 0; 
+    transform: translateY(-50px); 
+    animation: aparecer 0.5s ease forwards;
 }
 
 .titulo-h3 {
-    font-size: 13px;
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
+    align-items: center;
+    font-size: 13px;
+    letter-spacing: 1px;
 
-.titulo-h3 div {
-    background-color: #fff;
-    border-radius: 10px;
 }
 
 .titulo-h3 h3 {
-    font-weight: 400;
-    color: #515151;
+    background-color: var(--primary-300);
+    border-radius: 10px;
+    font-weight: 600;
+    color: #FFFFFF;
     width: auto;
     padding: 5px 10px 5px 10px;
+    margin: 30px;
 }
 
 .conteiner-main {
     width: 100%;
-    padding: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: transparent;
 }
 
 .articulo-box {
-    width: auto;
+    width: 400px;
     height: auto;
     margin: 0px 15px 10px 15px;
     display: flex;
     flex-direction: column;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    justify-content: space-between;
+    background-color: var(--primary-300);
+    border-radius: 8%;
 }
 
 .articulo-box img {
     max-width: 100%;
+    border-radius: 8% 8% 0% 0%;
     height: auto;
 }
 
 .title-producto {
     text-align: center;
     font-size: 20px;
-    font-weight: 100;
-    color: #fff;
-    padding-top: 10px;
+    color: var(--text-100);
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 .modelo {
     text-align: center;
-    margin-top: 5px;
-    color: #fff;
+    color: var(--text-100);
+    padding-bottom: 8px;
 }
 
 .precio {
     text-align: center;
-    margin-top: 10px;
-    color: #fff;
+    color: var(--text-100);
+    padding-bottom: 8px;
 }
 
 .buy-button {
     text-align: center;
-    margin-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
 }
-
 .buy-button button {
-    background-color: #000000;
+    background-color: transparent;
     border-radius: 10px;
     padding: 5px 20px 5px 20px;
     border: 0;
-    background-image: linear-gradient(135deg, #0074D9 40%, #5fa2ff);
     cursor: pointer;
-    color: #fff;
+    color: var(--text-100);
+    border: 1px solid #00c7ec;
+    transition: all 0.3s ease-out;
 }
 
-.detalle {
-    background-color: #31466a;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+.buy-button button:hover {
+    background-color: var(--primary-400);
 }
 
 .see-more-button {
@@ -98,19 +108,38 @@ main {
     margin-bottom: 5px;
 }
 
-.see-more-button div {
-    background-color: #fff;
+.see-more-button main {
+    background-color: var(--bg-400);
     border-radius: 10px;
+    border: 1px solid #00c7ec;
 }
 
 .see-more-button button {
     padding: 5px 80px 5px 80px;
     text-transform: uppercase;
-    color: #fff;
-    background-image: linear-gradient(135deg, #0074D9 40%, #5fa2ff);
+    color: var(--text-100);
+    background-color: var(--primary-300);
     border: 0;
     border-radius: 10px;
     cursor: pointer;
+    transition: all 0.3s ease-out;
 }
 
+.see-more-button button:hover {
+    color: var(--text-100);
+    background-color: var(--primary-400);
+}
 /*FIN MAIN*/
+
+/*ANIMACIONES*/
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-50px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
